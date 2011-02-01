@@ -54,35 +54,36 @@ IslandsSim.prototype = {
 	    }, this);
     },
 
+    placeResource: function(resource){
+	var candidateIslands = _.select(this.islands, function(island){return island.items.length < 2 && _.indexOf(island.items, resource) < 0})
+
+	var island = this.getRandomIsland(candidateIslands)
+
+	island.items.push(resource)
+    },
+
+    placeProblem: function(problem, placeResources){
+
+	var items = [problem, "a"+problem]
+	if (this.resourceTypesPerProblem == 2) {
+	    items.push("b"+problem)
+	}
+
+	var candidateIslands = _.select(this.islands, function(island){return island.problem == null})
+
+	var island = this.getRandomIsland(candidateIslands)
+
+	island.problem = items
+
+	if(placeResources){
+	    _.each(_.rest(items), function(resource){this.placeResource(resource)}, this)
+	}
+    },
+
     initProblems: function(){
 	_.each(_.range(this.numberOfProblemOccurances), function(problem) {
-		var items = [problem, "a"+problem]
-	        if (this.resourceTypesPerProblem == 2) {
-		    items.push("b"+problem)
-		}
+		this.placeProblem(problem, true)
 
-		_.each(items, function(item) {
-		    
-			var destinationIsland = null
-
-			var attempts = 0 //primitive way to avoid futile distribution attempts
-			while(!destinationIsland){	
-			    var island = this.getRandomIsland()
-			    if(typeof item == 'string' && !island.problem){
-				island.problem = items
-				destinationIsland = island
-			    } else if(island.items.length < 2 && !_.any(island.items, function(islandItem) {islandItem === item})){
-				   island.items.push(item)
-				    destinationIsland = island
-			    }
-			    attempts++;
-			    if(attempts > 200) {
-				throw {msg: "Unable to place item "+item+" after 200 retries"}
-			    }
-			}
-
-		    }, this)
-		
 	    }, this);
     },	
 
@@ -94,14 +95,60 @@ IslandsSim.prototype = {
 		x = Math.abs(Math.random()*this.mapWidth)
 		y = Math.abs(Math.random()*this.mapHeight)
 	    }
-	    return {x: x, y: y, dx: 0, dy: 0, destination: null, cargo: null}
+	    return {x: x, y: y, speed: 0, destination: null, direction: null, cargo: []}
 	}, this);
     },
 
-    getRandomIsland: function() {
-	var island = this.islands[Math.floor(Math.abs(Math.random()*this.islands.length))]
+    getRandomIsland: function(islands) {
+	var island = islands[Math.floor(Math.abs(Math.random()*islands.length))]
 	return island
+    },
+
+    isShipOnIsland: function(ship, island){
+	return this.distance(ship.x, ship.y, island.x, island.y) <= island.width/2
+    },
+
+    distance: function(x1,y1,x2,y2){
+	return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))
+    },
+
+    loadResource: function(ship, island, resource){
+	if(this.isShipOnIsland(ship, island) && ship.cargo.length < this.shipCapacity && _.indexOf(island.resources, resource) >= 0){
+	    ship.cargo.push(resource)
+	}
+    },
+
+    unloadResource: function(ship, island, resource){
+	var index = _.indexOf(ship.cargo, resource)
+	if(index > 0 && this.isShipOnIsland(ship, island)){
+	    ship.cargo = ship.cargo.splice(index, 1)
+	    if(island.problem){
+	       	var problemIndex = _.indexOf(island.problem, resource)
+	       if(problemIndex >= 0){
+		    island.problem.splice(problemIndex, 1)
+		    if(island.problem.length == 1){//problem solved
+			var problem = island.problem
+			island.problem = null
+			//respawn problem
+			this.placeProblem(problem, false) //TODO delayed reappearance
+		    }
+	       }
+	   }
+	}
+    },
+
+    setDestination: function(ship, island){
+	ship.destination = island
+    },
+
+    setDirection: function(ship, direction){
+	
+    },
+
+    moveShips: function(){
+
     }
+
 
 
 }
