@@ -11,10 +11,25 @@
     </head>
     <body>
 	<h1>Energy Streetfight</h1>
-	<ul id="controls">
-	    <li><input type="button" name="Play" value="Toggle Play" id="playButton"></li>
-	    <li><input type="button" name="Reset" value="Reset" id="resetButton"></li>
-	</ul>
+	<form id="parameters">
+	    mapWidth: <input type="text" name="mapWidth" value="600" size="5">
+	    mapHeight: <input type="text" name="mapHeight" value="400" size="5">
+	    numberOfIslands: <input type="text" name="numberOfIslands" value="40" size="5">
+	    minIslandSize: <input type="text" name="minIslandSize" value="18" size="5">
+	    maxIslandSize: <input type="text" name="maxIslandSize" value="40" size="5">
+	    numberOfProblemTypes: <input type="text" name="numberOfProblemTypes" value="12" size="5">
+	    numberOfProblemOccurances: <input type="text" name="numberOfProblemOccurances" value="3" size="5">	
+	    resourceTypesPerProblem: <input type="text" name="resourceTypesPerProblem" value="2" size="5">
+	    numberOfShips: <input type="text" name="numberOfShips" value="20" size="5">
+	    playersPerWeek: <input type="text" name="playersPerWeek" value="20" size="5">
+	    isMassStart: <input type="checkbox" name="isMassStart" value="true" size="5">
+	    shipCapacity: <input type="text" name="shipCapacity" value="1" readonly size="5">
+	    fractionOfExplorers: <input type="text" name="fractionOfExplorers" value="0.3" readonly size="5">
+
+	    <input type="button" name="Play" value="Toggle Play" id="playButton">
+	    <input type="button" name="Step" value="Step" id="stepButton">
+	    <input type="button" name="Restart" value="Restart" id="restartButton">
+	</form>
 	<canvas id="worldmap" width="600" height="400">
 	    Sorry, this application depends on the HTML canvas element, which is only implemented in modern browsers (Firefox, Google Chrome, Safari, recent IE).
 	</canvas>

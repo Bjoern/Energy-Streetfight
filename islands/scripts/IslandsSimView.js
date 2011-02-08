@@ -11,25 +11,54 @@ function IslandsSimView(islandsSimController, canvasId){
 }
 
 IslandsSimView.prototype = {
+    setMapDimensions: function(width, height){
+	console.log("set map dimensions")
+	this.width = width
+	this.height = height
+	this.canvas.width = width
+	this.canvas.height = height
+	this.background = null
+    },
+
     registerButtons: function(){
 	var toggle = this.islandsSimController.togglePlay
 
 	$('#playButton').click(function(event){
 		toggle()
-			    });
-	var reset = this.islandsSimController.reset
+	    });
 
+	var restart = this.islandsSimController.restart
 
-	$('#resetButton').click(function(event){
-		reset()
-			    });
+	$('#restartButton').click(function(event){
+		var mapWidth = parseInt($('input[name=mapWidth]').val())
+		var mapHeight = parseInt($('input[name=mapHeight]').val())
+		var numberOfIslands = parseInt($('input[name=numberOfIslands]').val())
+		var minIslandSize = parseInt($('input[name=minIslandSize]').val())
+		var maxIslandSize = parseInt($('input[name=maxIslandSize]').val())
+		var numberOfProblemTypes = parseInt($('input[name=numberOfProblemTypes]').val())
+		var numberOfProblemOccurances = parseInt($('input[name=numberOfProblemOccurances]').val())
+		var resourceTypesPerProblem = parseInt($('input[name=resourceTypesPerProblem]').val())
+		var numberOfShips = parseInt($('input[name=numberOfShips]').val())
+		var playersPerWeek = parseInt($('input[name=playersPerWeek]').val())
+		var isMassStart = $('input[name=isMassStart]').val() === 'true'
+		var shipCapacity = parseInt($('input[name=shipCapacity]').val())
+		var fractionOfExplorers = parseInt($('input[name=fractionOfExplorers]').val())
 
+		restart(mapWidth, mapHeight, numberOfIslands, minIslandSize, maxIslandSize, numberOfProblemTypes,
+	    numberOfProblemOccurances, resourceTypesPerProblem, numberOfShips, playersPerWeek, isMassStart, shipCapacity, fractionOfExplorers)
+	    });
 
+	var doStep = _.bind(this.islandsSimController.doStep, this.islandsSimController)
 
+	$('#stepButton').click(function(event){
+		doStep()
+	    });
     },
     
     draw: function(islandsSim) {
+	console.log("background: "+this.background)
 	if(!this.background) {
+	    console.log("drawing new background")
 	    this.background = this.drawBackgroundImage(islandsSim)
 	}	    
 	var ctx = this.ctx

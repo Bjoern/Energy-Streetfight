@@ -21,6 +21,7 @@ function ShipAI(islandsSim){
 
     this.addProblems = function(island){
 	if(island.problem){
+	    console.log("add problem: "+island.problem.join(", "))
 	    this.problemsToSolve.push({island: island, resource: island.problem[1]})
 	    this.problemsToSolve.push({island: island, resource: island.problem[2]})
 	}
@@ -59,13 +60,13 @@ function ShipAI(islandsSim){
 	    var destination = ship.destination
 	    if(ship.cargo.length > 0){
 		//arrived on problem island, unload resource
-		console.log("unload resource cargo length: %i"+ship.cargo, ship.cargo.length)
+		console.log("unload resource cargo length: %i, contents: "+ship.cargo.join(", "), ship.cargo.length)
 		var solvedProblem = this.islandsSim.unloadResource(ship, ship.destination, ship.cargo[0])
 		if(solvedProblem){
-		    console.log("problem solved: %o", solvedProblem)
+		    console.log("problem solved "+solvedProblem.problem)
 		    this.addProblems(solvedProblem.island)//add to list of problems to solve 
 		} else {
-		    console.log("problem not solved %o", destination.problem)
+		    console.log("problem not solved "+destination.problem.join(", "))
 		}
 		ship.problemToSolve = null
 		ship.destination = null
@@ -75,7 +76,7 @@ function ShipAI(islandsSim){
 		//load resource
 		this.islandsSim.loadResource(ship, ship.destination, ship.problemToSolve.resource)
 		ship.destination = ship.problemToSolve.island //sail to problem island
-		console.log("resource loaded %o", ship)
+		console.log("resource loaded "+ship.cargo.join(", "))
 		console.log(ship)
 	    } else {
 		//must be a solver that was temporarily exploring
@@ -84,7 +85,7 @@ function ShipAI(islandsSim){
 	} else {
 	    //find new destination
 	    //not always optimal, but must do: look for nearest problem, then solve that
-	    console.log("solver needs new destination %o", ship)
+	    console.log("solver needs new destination, current: "+ship.destination+", cargo: "+ship.cargo.join(", "))
 
 	    ship.problemToSolve = this.problemsToSolve.length >= 0 ? _.min(this.problemsToSolve, function(problemToSolve) {
 		    var island = problemToSolve.island

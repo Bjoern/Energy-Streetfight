@@ -1,22 +1,4 @@
 function IslandsSimController(){
-    this.islandsSim = new IslandsSim(
-    	600,//mapWidth,
-	400,//mapHeight,
-	20,//fogOfWarChunkSize,
-	40,//numberOfIslands,
-	18,//minIslandSize,
-	40,//maxIslandSize,
-	12,//numberOfProblemTypes,
-	3,//numberOfProblemOccurances,
-	2,//resourceTypesPerProblem,
-	20,//numberOfShips,
-	20,//playersPerWeek,
-	false,//isMassStart,
-	1//shipCapacity  +
-    )
-
-        this.shipAI = new ShipAI(this.islandsSim)
-
     this.isRunning = false
 
     this.togglePlay = function(){
@@ -38,26 +20,69 @@ function IslandsSimController(){
 	this.isRunning = false
     }
 
-    this.reset = function(){
-	this.pause()
-    }
+    this.restart = function(mapWidth, mapHeight, numberOfIslands, minIslandSize, maxIslandSize, numberOfProblemTypes,
+	    numberOfProblemOccurances, resourceTypesPerProblem, numberOfShips, playersPerWeek, isMassStart, shipCapacity, fractionOfExplorers){
+	    this.pause()
 
-    _.bindAll(this, "togglePlay", "play", "pause", "reset", 'run')
+	    this.islandsSim = new IslandsSim(
+		mapWidth,
+		mapHeight,
+		20,//fogOfWarChunkSize,
+		numberOfIslands,
+		minIslandSize,
+		maxIslandSize,
+		numberOfProblemTypes,
+		numberOfProblemOccurances,
+		resourceTypesPerProblem,
+		numberOfShips,
+		playersPerWeek,
+		isMassStart,
+		shipCapacity,
+		fractionOfExplorers
+	    )
+	    this.shipAI = new ShipAI(this.islandsSim)
+	    if(!this.islandsSimView){
+		this.islandsSimView = new IslandsSimView(this, 'worldmap')
+		this.islandsSimView.registerButtons()
+	    }
 
-    this.run = function(){
-	//console.log("run turn "+this.islandsSim.turn)
+	    this.islandsSimView.setMapDimensions(mapWidth, mapHeight)
+	    this.islandsSimView.draw(this.islandsSim)
+	}
+
+    _.bindAll(this, "togglePlay", "play", "pause", "restart", "run", "doStep")
+
+    this.doStep = function(){
 	this.shipAI.computeShipMovements()
 	this.islandsSim.moveShips()
 	this.islandsSimView.draw(this.islandsSim)
+    }
+
+    this.run = function(){
+	//console.log("run turn "+this.islandsSim.turn)
+	this.doStep()
 
 	if(this.isRunning){
 	    _.defer(_.bind(this.run, this))
 	}
     }
-
-    this.islandsSimView = new IslandsSimView(this, 'worldmap')
-    this.islandsSimView.draw(this.islandsSim)
-    this.islandsSimView.registerButtons()
+ 
+    this.restart(
+    	600,//mapWidth,
+	400,//mapHeight,
+	//20,//fogOfWarChunkSize,
+	40,//numberOfIslands,
+	18,//minIslandSize,
+	40,//maxIslandSize,
+	12,//numberOfProblemTypes,
+	3,//numberOfProblemOccurances,
+	2,//resourceTypesPerProblem,
+	20,//numberOfShips,
+	20,//playersPerWeek,
+	false,//isMassStart,
+	1,//shipCapacity,
+	0.3//fractionOfExplorers
+    )
 
 }
 

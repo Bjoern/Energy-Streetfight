@@ -121,17 +121,17 @@ IslandsSim.prototype = {
 
     loadResource: function(ship, island, resource){
 	if(this.isShipOnIsland(ship, island) && ship.cargo.length < this.shipCapacity && _.indexOf(island.items, resource) >= 0){
-	    console.log("before loading resource %s: %i", resource, ship.cargo.length)
+	    console.log("before loading resource %s: "+ship.cargo.join(", "), resource)
 	    ship.cargo.push(resource)
-	    console.log("loaded: %i", ship.cargo.length)
+	    console.log("loaded: "+ ship.cargo.join(", "))
 	} else {
 	    throw "can't load resource, ship not on island or resource not available"
 	}
     },
 
     unloadResource: function(ship, island, resource){
-	console.log("problem before unload: %i", island.problem.length)
-	console.log("cargo before unload: %i, resource: %s", ship.cargo.length, resource)
+	console.log("problem before unload: "+island.problem.join(", "))
+	console.log("cargo before unload: "+ship.cargo.join(", ")+", resource: %s", resource)
 	var index = _.indexOf(ship.cargo, resource)
 	console.log("cargo index: %i", index)
 	if(index >= 0 && this.isShipOnIsland(ship, island)){
@@ -154,8 +154,8 @@ IslandsSim.prototype = {
 	   }
 	}
 
-	console.log("problem after unload %i", island.problem.length)
-	console.log("cargo after unlaod: %i", ship.cargo.length)
+	console.log("problem after unload "+(island.problem ? null : island.problem.join(", ")))
+	console.log("cargo after unlaod: "+ ship.cargo.join(", "))
     },
 
     setDestination: function(ship, island){
