@@ -40,7 +40,7 @@ IslandsSimView.prototype = {
 		var resourceTypesPerProblem = parseInt($('input[name=resourceTypesPerProblem]').val())
 		var numberOfShips = parseInt($('input[name=numberOfShips]').val())
 		var playersPerWeek = parseInt($('input[name=playersPerWeek]').val())
-		var isMassStart = $('input[name=isMassStart]').val() === 'true'
+		var isMassStart = $('input[name=isMassStart]:checked').length > 0
 		var shipCapacity = parseInt($('input[name=shipCapacity]').val())
 		var fractionOfExplorers = parseInt($('input[name=fractionOfExplorers]').val())
 
