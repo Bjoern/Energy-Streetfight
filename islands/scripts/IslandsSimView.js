@@ -11,6 +11,23 @@ function IslandsSimView(islandsSimController, canvasId){
 }
 
 IslandsSimView.prototype = {
+    registerButtons: function(){
+	var toggle = this.islandsSimController.togglePlay
+
+	$('#playButton').click(function(event){
+		toggle()
+			    });
+	var reset = this.islandsSimController.reset
+
+
+	$('#resetButton').click(function(event){
+		reset()
+			    });
+
+
+
+    },
+    
     draw: function(islandsSim) {
 	if(!this.background) {
 	    this.background = this.drawBackgroundImage(islandsSim)
@@ -19,6 +36,8 @@ IslandsSimView.prototype = {
 	ctx.drawImage(this.background, 0, 0)
 
 	this.drawProblems(islandsSim)
+	
+	this.drawHiddenIslands(islandsSim)
 
 	this.drawShips(islandsSim)
     },
@@ -48,11 +67,25 @@ IslandsSimView.prototype = {
 		
 		ctx.restore()
 
-		console.log("draw island x: "+island.x+", y: "+island.y+", width: "+island.width)
+		//console.log("draw island x: "+island.x+", y: "+island.y+", width: "+island.width)
 
 	    }, this)
 
 	return canvas;
+    },
+
+    drawHiddenIslands: function(islandsSim){
+	var ctx = this.ctx
+	ctx.fillStyle = "#aaaaaa"
+
+	_.each(islandsSim.islands, function(island){
+		if(island.isHidden){
+		    ctx.beginPath()
+		    ctx.arc(island.x,island.y, island.width/2, 0, 2*Math.PI, true)
+		    ctx.fill()
+		}
+	    }, this)
+
     },
 
     drawProblems: function(islandsSim){
@@ -86,6 +119,7 @@ IslandsSimView.prototype = {
 	ctx.save()
 	ctx.translate((-resources.length*this.resourceWidth+resources.length-1)/2, -this.resourceWidth/2)
 	ctx.strokeStyle = "#ffffff"
+
 	_.each(resources, function(resource, index){
 		ctx.translate(index*(this.resourceWidth+1),0)
 		ctx.fillStyle = "#"+this.getResourceColor(resource, maxResources).toString(16)
@@ -94,6 +128,7 @@ IslandsSimView.prototype = {
 	    }, this)
 	ctx.restore()
     },
+
 
     getResourceColor: function(resource, maxResources){
 	var value = parseInt(resource, 16)
@@ -108,16 +143,39 @@ IslandsSimView.prototype = {
 
 	ctx.fillStyle = "#ffffff"
 	_.each(islandsSim.ships, function(ship){
-		console.log(ship)
-		console.log("draw ship "+ship+" x: "+ship.x+", y: "+ship.y)
+
+		if(ship.destination){
+		    this.drawDestinationLine(ship)
+		}
+
+		//console.log("destination: "+ship.destination)
+		//console.log("draw ship "+ship+" x: "+ship.x+", y: "+ship.y)
 		ctx.beginPath();
 		ctx.moveTo(ship.x+3,ship.y-5);
 		ctx.lineTo(ship.x+3,ship.y+5);
 		ctx.lineTo(ship.x-5,ship.y+5);
 		ctx.fill();
 
-		var resources = ["a1"]//testing
-		this.drawResources(ctx, islandsSim.maxResources, resources, ship.x, ship.y)
+		if(ship.cargo.length > 0){
+		    //var resources = ship.cargo//testing
+		    this.drawResources(ctx, islandsSim.shipCapacity, ship.cargo, ship.x, ship.y)
+		}
 	    }, this)
+
+    },
+
+    drawDestinationLine: function(ship){
+	var ctx = this.ctx
+	//console.log("drawDestLine "+ship.x+", "+ship.y+", "+ship.destination.x+", "+ship.destination.y)
+	ctx.strokeStyle = "yellow"
+	ctx.lineWidth = 1
+	if(ship.type === 'solver'){
+	    ctx.strokeStyle = ship.cargo.length > 0 ? "red" : "orange"
+	}
+
+	ctx.beginPath()
+	ctx.moveTo(ship.x, ship.y)
+	ctx.lineTo(ship.destination.x,ship.destination.y)
+	ctx.stroke();
     }
 }

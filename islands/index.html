@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
+	<script src="scripts/jquery-1.5.min.js" type="application/javascript"></script>
 	<script src="scripts/underscore-min.js" type="application/javascript"></script>
 	<!--script src="scripts/energyislands.js" type="application/javascript"></script-->
 	<script src="scripts/IslandsSim.js" type="application/javascript"></script>
 	<script src="scripts/IslandsSimView.js" type="application/javascript"></script>
+	<script src="scripts/ShipAI.js" type="application/javascript"></script>
 	<script src="scripts/IslandsSimController.js" type="application/javascript"></script>
     </head>
-    <body onload="initIslandsSim()">
+    <body>
 	<h1>Energy Streetfight</h1>
+	<ul id="controls">
+	    <li><input type="button" name="Play" value="Toggle Play" id="playButton"></li>
+	    <li><input type="button" name="Reset" value="Reset" id="resetButton"></li>
+	</ul>
 	<canvas id="worldmap" width="600" height="400">
 	    Sorry, this application depends on the HTML canvas element, which is only implemented in modern browsers (Firefox, Google Chrome, Safari, recent IE).
 	</canvas>

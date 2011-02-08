@@ -11,7 +11,8 @@ function IslandsSim(
     numberOfShips,
     playersPerWeek,
     isMassStart,
-    shipCapacity  
+    shipCapacity,
+    fractionOfExplorers
 ){
     this.mapWidth = mapWidth
     this.mapHeight = mapHeight
@@ -26,8 +27,10 @@ function IslandsSim(
     this.playersPerWeek = playersPerWeek
     this.isMassStart = isMassStart
     this.shipCapacity = shipCapacity 
+    this.fractionOfExplorers = fractionOfExplorers
 
     this.maxResources = numberOfProblemTypes*resourceTypesPerProblem
+    this.turn = 0
 
     this.initIslands()
     this.initProblems()
@@ -47,7 +50,8 @@ IslandsSim.prototype = {
 		    y: Math.abs(Math.random()*this.mapHeight),
 		    width: this.minIslandSize + Math.abs(Math.random()*(this.maxIslandSize - this.minIslandSize)),
 		    items: [],
-		    problem: null
+		    problem: null,
+		    isHidden: true
 		}
 		//TODO check distance to nearest island - avoid collisions
 		return island
@@ -76,14 +80,16 @@ IslandsSim.prototype = {
 	island.problem = items
 
 	if(placeResources){
-	    _.each(_.rest(items), function(resource){this.placeResource(resource)}, this)
+	    var resources = _.rest(items)
+	    _.each(resources, function(resource){this.placeResource(resource)}, this)
 	}
+
+	return island
     },
 
     initProblems: function(){
-	_.each(_.range(this.numberOfProblemOccurances), function(problem) {
-		this.placeProblem(problem, true)
-
+	_.each(_.range(this.numberOfProblemOccurances*this.numberOfProblemTypes), function(problem) {
+		this.placeProblem(Math.floor(problem/this.numberOfProblemTypes), true)
 	    }, this);
     },	
 
@@ -95,17 +101,18 @@ IslandsSim.prototype = {
 		x = Math.abs(Math.random()*this.mapWidth)
 		y = Math.abs(Math.random()*this.mapHeight)
 	    }
-	    return {x: x, y: y, speed: 0, destination: null, direction: null, cargo: []}
+	    var type = Math.random() < this.fractionOfExplorers ? 'explorer' : 'solver'
+	    return {x: x, y: y, speed: 5, destination: null, direction: null, cargo: [], type: type, problemToSolve: null}
 	}, this);
     },
 
     getRandomIsland: function(islands) {
-	var island = islands[Math.floor(Math.abs(Math.random()*islands.length))]
+	var island = islands && islands.length > 0 ? islands[Math.floor(Math.abs(Math.random()*islands.length))] : null
 	return island
     },
 
     isShipOnIsland: function(ship, island){
-	return this.distance(ship.x, ship.y, island.x, island.y) <= island.width/2
+	return ship && island && this.distance(ship.x, ship.y, island.x, island.y) <= island.width/2
     },
 
     distance: function(x1,y1,x2,y2){
@@ -113,28 +120,42 @@ IslandsSim.prototype = {
     },
 
     loadResource: function(ship, island, resource){
-	if(this.isShipOnIsland(ship, island) && ship.cargo.length < this.shipCapacity && _.indexOf(island.resources, resource) >= 0){
+	if(this.isShipOnIsland(ship, island) && ship.cargo.length < this.shipCapacity && _.indexOf(island.items, resource) >= 0){
+	    console.log("before loading resource %s: %i", resource, ship.cargo.length)
 	    ship.cargo.push(resource)
+	    console.log("loaded: %i", ship.cargo.length)
+	} else {
+	    throw "can't load resource, ship not on island or resource not available"
 	}
     },
 
     unloadResource: function(ship, island, resource){
+	console.log("problem before unload: %i", island.problem.length)
+	console.log("cargo before unload: %i, resource: %s", ship.cargo.length, resource)
 	var index = _.indexOf(ship.cargo, resource)
-	if(index > 0 && this.isShipOnIsland(ship, island)){
-	    ship.cargo = ship.cargo.splice(index, 1)
+	console.log("cargo index: %i", index)
+	if(index >= 0 && this.isShipOnIsland(ship, island)){
+	    ship.cargo.splice(index, 1)
 	    if(island.problem){
 	       	var problemIndex = _.indexOf(island.problem, resource)
+		console.log("problem index: %i", problemIndex)
 	       if(problemIndex >= 0){
 		    island.problem.splice(problemIndex, 1)
 		    if(island.problem.length == 1){//problem solved
-			var problem = island.problem
+			var problem = island.problem[0]
 			island.problem = null
 			//respawn problem
-			this.placeProblem(problem, false) //TODO delayed reappearance
+			console.log("**** spawn new problem")
+			var nextIsland = this.placeProblem(problem, false) //TODO delayed reappearance
+			
+			return {problem: problem, island: nextIsland} //TODO should fire event instead, too lazy atm
 		    }
 	       }
 	   }
 	}
+
+	console.log("problem after unload %i", island.problem.length)
+	console.log("cargo after unlaod: %i", ship.cargo.length)
     },
 
     setDestination: function(ship, island){
@@ -142,13 +163,42 @@ IslandsSim.prototype = {
     },
 
     setDirection: function(ship, direction){
-	
+	ship.direction = direction
     },
 
     moveShips: function(){
+	_.each(this.ships, function(ship){
+		this.moveShip(ship)
+	    }, this)
 
+	this.turn++
+    },
+
+    moveShip: function(ship){
+	if(ship.destination){
+	    
+	    var destination = ship.destination
+	
+	    var dist = this.distance(ship.x, ship.y, destination.x, destination.y)
+
+	    var dx = (destination.x-ship.x)/dist
+	    var dy = (destination.y-ship.y)/dist
+	    
+	    var faktor = ship.speed > Math.abs(dist-destination.width/2) ?  dist-destination.width/2 + 0.5 : ship.speed
+
+	    //XXX quick fix
+	    faktor = Math.max(faktor, 1)
+
+	    //if(faktor < ship.speed){
+	//	console.log("faktor: "+faktor)
+	  //  }
+
+	    ship.x = ship.x+dx*faktor
+	    ship.y = ship.y+dy*faktor
+
+	    if(destination.isHidden && this.isShipOnIsland(ship, destination)){
+		destination.isHidden = false
+	    }
+	}
     }
-
-
-
 }
