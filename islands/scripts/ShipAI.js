@@ -10,7 +10,7 @@ function ShipAI(islandsSim){
 	_.each(islandsSim.ships, function(ship){
 
 		if(!ship.destination || this.islandsSim.isShipOnIsland(ship, ship.destination)) {
-		    if('explorer' === ship.type || this.problemsToSolve.length === 0){
+		    if('explorer' === ship.type || (!ship.problemToSolve && this.problemsToSolve.length === 0)){
 			this.computeExplorerMovements(ship)	
 		    } else {
 			this.computeSolverMovements(ship)
@@ -35,7 +35,7 @@ function ShipAI(islandsSim){
 	    this.addProblems(ship.destination)    	
 	}
 
-	if(this.islandsToDiscover.length >= 0){
+	if(this.islandsToDiscover.length > 0){
 	    var minIsland = _.min(this.islandsToDiscover, function(island){
 		    return this.islandsSim.distance(ship.x, ship.y, island.x, island.y)
 		}, this)
@@ -93,6 +93,9 @@ function ShipAI(islandsSim){
 		}, this) : null
 
 	    if(ship.problemToSolve) {
+		//remove problem from list of problemsToSolve
+		this.problemsToSolve.splice(_.indexOf(this.problemsToSolve, ship.problemToSolve), 1)
+
 		//find nearest island with required resource
 		var eligibleIslands = _.select(this.islandsSim.islands, function(island){
 			return !island.isHidden && island.items.indexOf(ship.problemToSolve.resource) >= 0

@@ -56,7 +56,7 @@ IslandsSimView.prototype = {
     },
     
     draw: function(islandsSim) {
-	console.log("background: "+this.background)
+	//console.log("background: "+this.background)
 	if(!this.background) {
 	    console.log("drawing new background")
 	    this.background = this.drawBackgroundImage(islandsSim)
@@ -164,6 +164,7 @@ IslandsSimView.prototype = {
 	var maxValue = parseInt("b"+maxResources, 16)
 
 	color = Math.floor(value*0xffffff/maxValue)
+	//console.log("resource color: "+color)
 	return color
     },
 
