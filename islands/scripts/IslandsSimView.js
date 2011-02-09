@@ -55,7 +55,7 @@ IslandsSimView.prototype = {
 	    });
     },
     
-    draw: function(islandsSim) {
+    draw: function(islandsSim, chartData) {
 	//console.log("background: "+this.background)
 	if(!this.background) {
 	    console.log("drawing new background")
@@ -69,6 +69,26 @@ IslandsSimView.prototype = {
 	this.drawHiddenIslands(islandsSim)
 
 	this.drawShips(islandsSim)
+
+	if(chartData){
+	    this.drawChart(chartData)
+	}
+    },
+
+    drawChart: function(data){
+	if(!this.plot){
+	    this.plot = this.createChart()
+	}
+
+	this.plot.setData([{label: "problems solved", data: data}])
+	this.plot.setupGrid()
+	this.plot.draw()
+    },
+
+    createChart: function(){
+	var options = {}
+	var plot = $.plot($('#chart'), [], options)
+	return plot
     },
 
     drawBackgroundImage: function(islandsSim) {

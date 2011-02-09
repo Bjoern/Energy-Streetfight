@@ -3,6 +3,8 @@
     <head>
 	<script src="scripts/jquery-1.5.min.js" type="application/javascript"></script>
 	<script src="scripts/underscore-min.js" type="application/javascript"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="scripts/flot/jquery.flot.js"></script>
 	<!--script src="scripts/energyislands.js" type="application/javascript"></script-->
 	<script src="scripts/IslandsSim.js" type="application/javascript"></script>
 	<script src="scripts/IslandsSimView.js" type="application/javascript"></script>
@@ -33,5 +35,6 @@
 	<canvas id="worldmap" width="600" height="400">
 	    Sorry, this application depends on the HTML canvas element, which is only implemented in modern browsers (Firefox, Google Chrome, Safari, recent IE).
 	</canvas>
+	<div id="chart" style="width:600px;height:300px;"></div>
     </body>
 </html>
