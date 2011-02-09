@@ -31,6 +31,7 @@ function IslandsSim(
 
     this.maxResources = numberOfProblemTypes*resourceTypesPerProblem
     this.turn = 0
+    this.problemsSolved = 0
 
     this.initIslands()
     this.initProblems()
@@ -121,31 +122,36 @@ IslandsSim.prototype = {
 
     loadResource: function(ship, island, resource){
 	if(this.isShipOnIsland(ship, island) && ship.cargo.length < this.shipCapacity && _.indexOf(island.items, resource) >= 0){
-	    console.log("before loading resource %s: "+ship.cargo.join(", "), resource)
+	  //  console.log("before loading resource %s: "+ship.cargo.join(", "), resource)
 	    ship.cargo.push(resource)
-	    console.log("loaded: "+ ship.cargo.join(", "))
+	    //console.log("loaded: "+ ship.cargo.join(", "))
 	} else {
 	    throw "can't load resource, ship not on island or resource not available"
 	}
     },
 
     unloadResource: function(ship, island, resource){
-	console.log("problem before unload: "+island.problem.join(", "))
-	console.log("cargo before unload: "+ship.cargo.join(", ")+", resource: %s", resource)
+	if(!island.problem){
+	    console.log("WARNING: unloadResource called with illegal state, island has no problem")
+	} else {
+	    //console.log("problem before unload: "+island.problem.join(", "))
+	}
+	//console.log("cargo before unload: "+ship.cargo.join(", ")+", resource: %s", resource)
 	var index = _.indexOf(ship.cargo, resource)
-	console.log("cargo index: %i", index)
+	//console.log("cargo index: %i", index)
 	if(index >= 0 && this.isShipOnIsland(ship, island)){
 	    ship.cargo.splice(index, 1)
 	    if(island.problem){
 	       	var problemIndex = _.indexOf(island.problem, resource)
-		console.log("problem index: %i", problemIndex)
+	//	console.log("problem index: %i", problemIndex)
 	       if(problemIndex >= 0){
 		    island.problem.splice(problemIndex, 1)
 		    if(island.problem.length == 1){//problem solved
 			var problem = island.problem[0]
 			island.problem = null
+			this.problemsSolved++
 			//respawn problem
-			console.log("**** spawn new problem")
+	//		console.log("**** spawn new problem")
 			var nextIsland = this.placeProblem(problem, false) //TODO delayed reappearance
 			
 			return {problem: problem, island: nextIsland} //TODO should fire event instead, too lazy atm
@@ -154,8 +160,8 @@ IslandsSim.prototype = {
 	   }
 	}
 
-	console.log("problem after unload "+(island.problem ? null : island.problem.join(", ")))
-	console.log("cargo after unlaod: "+ ship.cargo.join(", "))
+	//console.log("problem after unload "+(island.problem ? null : island.problem.join(", ")))
+	//console.log("cargo after unlaod: "+ ship.cargo.join(", "))
     },
 
     setDestination: function(ship, island){
