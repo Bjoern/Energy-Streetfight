@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ship: 
+  password: MyString
+  salt: MyString
+
+two:
+  ship: 
+  password: MyString
+  salt: MyString

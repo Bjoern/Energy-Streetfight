@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ship: 
+  turn: 1
+  user: 
+  destination: 
+  action: MyString
+  resource: 
+
+two:
+  ship: 
+  turn: 1
+  user: 
+  destination: 
+  action: MyString
+  resource: 

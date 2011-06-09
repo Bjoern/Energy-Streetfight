@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ship: 
+  turn: 1
+  reading: 1
+
+two:
+  ship: 
+  turn: 1
+  reading: 1

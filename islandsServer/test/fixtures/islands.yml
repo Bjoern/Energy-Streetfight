@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+haiti:
+  name: Haiti 
+  description: Haiti
+  x: 100
+  y: 100
+  diameter: 20
+
+haiti:
+  name: Malta
+  description: Malta
+  x: 50
+  y: 50
+  diameter: 20
