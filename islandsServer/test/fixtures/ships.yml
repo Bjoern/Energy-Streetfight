@@ -1,13 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  house_number: MyString
-  game: 
+
+
+
+
+hope:
+  house_number: 1
+  game: stargader 
   destination: 
   speed: 1.5
 
-two:
-  house_number: MyString
-  game: 
+freedom:
+  house_number: 2
+  game: stargader
   destination: 
   speed: 1.5

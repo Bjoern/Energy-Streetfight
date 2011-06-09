@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20110526134523) do
   create_table "problem_types", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

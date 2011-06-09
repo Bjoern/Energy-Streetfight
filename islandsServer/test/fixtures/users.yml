@@ -1,11 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  ship: 
+
+
+brian:
+  ship: freedom 
   password: MyString
   salt: MyString
 
-two:
-  ship: 
+george:
+  ship: hope
   password: MyString
   salt: MyString

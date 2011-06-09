@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+apples:
+  name: Apples
   description: MyText
-  ProblemType: 
+  problem_type: hunger 
 
-two:
-  name: MyString
+water:
+  name: Water
   description: MyText
-  ProblemType: 
+  problem_type: hunger 

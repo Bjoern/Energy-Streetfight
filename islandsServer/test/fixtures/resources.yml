@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  problem: 
-  island: 
+apples1:
+  problem: hunger1 
+  island: malta
   ship: 
-  resourceType: 
+  resource_type: apples 
 
-two:
-  problem: 
-  island: 
+water1:
+  problem: drought1 
+  island: haiti
   ship: 
-  resourceType: 
+  resource_type: water 

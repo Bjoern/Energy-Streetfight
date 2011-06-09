@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  ship: 
+  user: george 
   turn: 1
   reading: 1
 
 two:
-  ship: 
+  user: brian
   turn: 1
   reading: 1
