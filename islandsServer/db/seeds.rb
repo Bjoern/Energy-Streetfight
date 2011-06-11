@@ -5,3 +5,31 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+require 'active_record/fixtures'
+
+#fixture loading code adapted from http://derekdevries.com/2009/04/13/rails-seed-data/
+
+def table_empty?(table_name)
+    quoted = connection.quote_table_name(table_name)
+    connection.select_value("SELECT COUNT(*) FROM #{quoted}").to_i.zero?
+end
+
+def truncate_table(table_name)
+    quoted = connection.quote_table_name(table_name)
+    connection.execute("DELETE FROM #{quoted}")
+end
+
+def connection
+    ActiveRecord::Base.connection
+end
+
+Dir.glob(File.join(RAILS_ROOT, 'db', 'seeds', '*.csv')).each do |fixture_file|
+    table_name = File.basename(fixture_file, '.csv')
+
+    if table_empty?(table_name) || always
+	truncate_table(table_name)
+	Fixtures.create_fixtures(File.join('db/', 'seeds'), table_name)
+    end
+end
+
