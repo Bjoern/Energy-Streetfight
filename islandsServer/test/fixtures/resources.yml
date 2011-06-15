@@ -11,3 +11,9 @@ water1:
   island: haiti
   ship: 
   resource_type: water 
+
+water2:
+  problem: drought1 
+  island: 
+  ship: hope 
+  resource_type: water 

@@ -55,4 +55,14 @@ IslandsServer::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+
+    resources :ships, :only => [:index, :show]
+    resources :resources, :only => [:index]
+    resources :islands, :only => [:index]
+    resources :problem_types, :only => [:index]
+    resources :problems, :only => [:index]
+    resources :resource_types, :only => [:index]
+    resources :users
+    resource :votes, :only => [:index, :create, :show, :update, :destroy]
+    resource :meter_readings, :only => [:index, :create, :show, :update, :destroy]
 end
