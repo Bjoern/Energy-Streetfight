@@ -24,15 +24,19 @@ def connection
     ActiveRecord::Base.connection
 end
 
-Dir.glob(File.join(RAILS_ROOT, 'db', 'seeds', '*.csv')).each do |fixture_file|
-    table_name = File.basename(fixture_file, '.csv')
+def read_csv_fixtures
+    Dir.glob(File.join(RAILS_ROOT, 'db', 'seeds', '*.csv')).each do |fixture_file|
+	table_name = File.basename(fixture_file, '.csv')
 
-    if table_empty?(table_name)
-	truncate_table(table_name)
-	Fixtures.create_fixtures(File.join('db/', 'seeds'), table_name)
+	if table_empty?(table_name)
+	    truncate_table(table_name)
+	    Fixtures.create_fixtures(File.join('db/', 'seeds'), table_name)
+	end
     end
 end
 
 puts "now for the user"
 
 User.new({:name => "Gandalf", :password => "lullaby", :ship_id => 1}).save
+
+

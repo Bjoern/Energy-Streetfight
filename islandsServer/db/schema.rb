@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110615202851) do
+ActiveRecord::Schema.define(:version => 20110616182747) do
 
   create_table "games", :force => true do |t|
     t.text     "description"
@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(:version => 20110615202851) do
   end
 
   create_table "votes", :force => true do |t|
-    t.integer  "ship_id"
     t.integer  "turn"
     t.integer  "user_id"
     t.integer  "destination_id"
