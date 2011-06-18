@@ -35,8 +35,73 @@ def read_csv_fixtures
     end
 end
 
-puts "now for the user"
+puts "now for the users"
 
-User.new({:name => "Gandalf", :password => "lullaby", :ship_id => 1}).save
+def import_users
+    File.open("db/seeds/users.csv") do |file|
+	file.each_line do |line|
+	    data = line.strip.split(";")
+	    id = data[0]
+	    code = data[-1]
+	    ship_id = code[0..-6]
 
+	    puts "data: #{data},  id: #{id}, code: #{code} ship_id: #{ship_id}"
 
+	    user = User.new(:password => "esf")
+	    user.code = code
+	    user.ship_id = ship_id
+	    user.id = id.to_i
+	    #user.save
+
+	    puts "user saved: #{user.save}"
+	end
+    end
+end
+
+#User.new({:name => "Gandalf", :password => "lullaby", :ship_id => 1}).save
+def import_map
+    File.open("db/seeds/map.csv") do |file|
+	file.gets #skip header
+
+	file.each_line do |line|
+	    cells = line.split(",",-1)
+	    cells.each_with_index do |cell, column|
+		cell.strip!
+		if cell.size > 0 
+		    #puts "#{column}, #{file.lineno}, |#{cell}|, size: #{cell.size}" 
+		    cell = cell[1..-2]
+		    data = cell.split("/")
+		    type = data[0]
+		    if type[0] == "i"
+			#island
+			id = type [1..-1].to_i
+			problem = data[1]
+
+			if islands.find(id)
+			    raise "error, duplicate island id #{id}"
+			end
+
+			island = Island.new(:x => column, :y => file.lineno)
+			island.id = id
+
+			problem_type = ProblemType.find_or_create_by_name(problem)
+
+			island.problem = Problem.new(:problem_type => problem_type)
+
+			if data[2]
+			    #resource
+			    island.resource = Resource.find_by_name(data[2])
+
+			end
+
+			island.save
+		    else
+			raise "error: unknown map tile type: #{type}"
+		    end
+		end
+	    end
+	end
+    end
+end
+
+import_users

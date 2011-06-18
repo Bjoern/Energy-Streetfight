@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616182747) do
+ActiveRecord::Schema.define(:version => 20110618214343) do
 
   create_table "games", :force => true do |t|
     t.text     "description"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20110616182747) do
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "resource_id"
   end
 
   create_table "meter_readings", :force => true do |t|
@@ -52,19 +53,8 @@ ActiveRecord::Schema.define(:version => 20110616182747) do
     t.datetime "updated_at"
   end
 
-  create_table "resource_types", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "problem_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "resources", :force => true do |t|
-    t.integer  "problem_id"
-    t.integer  "island_id"
-    t.integer  "ship_id"
-    t.integer  "resource_type_id"
+    t.integer  "problem_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,15 +69,17 @@ ActiveRecord::Schema.define(:version => 20110616182747) do
     t.integer  "x"
     t.integer  "y"
     t.string   "name"
+    t.integer  "resource_id"
   end
 
   create_table "users", :force => true do |t|
     t.integer  "ship_id"
     t.string   "password"
-    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "code"
+    t.string   "email"
   end
 
   create_table "votes", :force => true do |t|
