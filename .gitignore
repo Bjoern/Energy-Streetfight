@@ -17,5 +17,7 @@ bin/
 bin/*
 gen/
 gen/*
-islandsServer/doc/guides/*
-islandsServer/doc/api/*
+doc/guides/*
+doc/api
+db/seeds/users.csv
+
