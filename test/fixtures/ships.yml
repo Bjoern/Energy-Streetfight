@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+hope:
+  name: hope
+  house_number: 1
+  game: stargader 
+  destination: 
+  speed: 1.5
+
+freedom:
+  name: freedom
+  house_number: 2
+  game: stargader
+  destination: 
+  speed: 1.5

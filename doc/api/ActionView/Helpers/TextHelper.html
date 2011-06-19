@@ -1,0 +1,2167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActionView::Helpers::TextHelper</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/lib/action_view/helpers/text_helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="/Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb">/Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="TextHelper/Cycle.html">ActionView::Helpers::TextHelper::Cycle</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-auto_link">#auto_link</a></li>
+					
+					<li><a href="#method-i-auto_link_email_addresses">#auto_link_email_addresses</a></li>
+					
+					<li><a href="#method-i-auto_link_urls">#auto_link_urls</a></li>
+					
+					<li><a href="#method-i-auto_linked%3F">#auto_linked?</a></li>
+					
+					<li><a href="#method-i-concat">#concat</a></li>
+					
+					<li><a href="#method-i-current_cycle">#current_cycle</a></li>
+					
+					<li><a href="#method-i-cycle">#cycle</a></li>
+					
+					<li><a href="#method-i-excerpt">#excerpt</a></li>
+					
+					<li><a href="#method-i-get_cycle">#get_cycle</a></li>
+					
+					<li><a href="#method-i-highlight">#highlight</a></li>
+					
+					<li><a href="#method-i-pluralize">#pluralize</a></li>
+					
+					<li><a href="#method-i-reset_cycle">#reset_cycle</a></li>
+					
+					<li><a href="#method-i-safe_concat">#safe_concat</a></li>
+					
+					<li><a href="#method-i-set_cycle">#set_cycle</a></li>
+					
+					<li><a href="#method-i-simple_format">#simple_format</a></li>
+					
+					<li><a href="#method-i-truncate">#truncate</a></li>
+					
+					<li><a href="#method-i-word_wrap">#word_wrap</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">SanitizeHelper</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activeresource-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activeresource-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activesupport-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activesupport-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/railties-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/railties-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../../README.html">README</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../ActiveSupport/Autoload.html">ActiveSupport::Autoload</a></li>
+				
+					<li><a href="../../ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a></li>
+				
+					<li><a href="../../ActiveSupport/Base64.html">ActiveSupport::Base64</a></li>
+				
+					<li><a href="../../ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a></li>
+				
+					<li><a href="../../ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache.html">ActiveSupport::Cache</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/CompressedMemCacheStore.html">ActiveSupport::Cache::CompressedMemCacheStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/SynchronizedMemoryStore.html">ActiveSupport::Cache::SynchronizedMemoryStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/Callback.html">ActiveSupport::Callbacks::Callback</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/CallbackChain.html">ActiveSupport::Callbacks::CallbackChain</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Concern.html">ActiveSupport::Concern</a></li>
+				
+					<li><a href="../../ActiveSupport/Configurable.html">ActiveSupport::Configurable</a></li>
+				
+					<li><a href="../../ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Dependencies/Reference.html">ActiveSupport::Dependencies::Reference</a></li>
+				
+					<li><a href="../../ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a></li>
+				
+					<li><a href="../../ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a></li>
+				
+					<li><a href="../../ActiveSupport/Duration.html">ActiveSupport::Duration</a></li>
+				
+					<li><a href="../../ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a></li>
+				
+					<li><a href="../../ActiveSupport/Gzip.html">ActiveSupport::Gzip</a></li>
+				
+					<li><a href="../../ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a></li>
+				
+					<li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../../ActiveSupport/Inflector.html">ActiveSupport::Inflector</a></li>
+				
+					<li><a href="../../ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a></li>
+				
+					<li><a href="../../ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON.html">ActiveSupport::JSON</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends.html">ActiveSupport::JSON::Backends</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/JSONGem.html">ActiveSupport::JSON::Backends::JSONGem</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/Yajl.html">ActiveSupport::JSON::Backends::Yajl</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/Yaml.html">ActiveSupport::JSON::Backends::Yaml</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a></li>
+				
+					<li><a href="../../ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a></li>
+				
+					<li><a href="../../ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications.html">ActiveSupport::Notifications</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a></li>
+				
+					<li><a href="../../ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a></li>
+				
+					<li><a href="../../ActiveSupport/Railtie.html">ActiveSupport::Railtie</a></li>
+				
+					<li><a href="../../ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a></li>
+				
+					<li><a href="../../ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a></li>
+				
+					<li><a href="../../ActiveSupport/SecureRandom.html">ActiveSupport::SecureRandom</a></li>
+				
+					<li><a href="../../ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a></li>
+				
+					<li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing.html">ActiveSupport::Testing</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a></li>
+				
+					<li><a href="../../ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
+				
+					<li><a href="../../ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a></li>
+				
+					<li><a href="../../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+				
+					<li><a href="../../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/AttributeMethods/ClassMethods/AttributeMethodMatcher.html">ActiveModel::AttributeMethods::ClassMethods::AttributeMethodMatcher</a></li>
+				
+					<li><a href="../../ActiveModel/BlockValidator.html">ActiveModel::BlockValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+				
+					<li><a href="../../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+				
+					<li><a href="../../ActiveModel/DeprecatedErrorMethods.html">ActiveModel::DeprecatedErrorMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+				
+					<li><a href="../../ActiveModel/EachValidator.html">ActiveModel::EachValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+				
+					<li><a href="../../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+				
+					<li><a href="../../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity.html">ActiveModel::MassAssignmentSecurity</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/BlackList.html">ActiveModel::MassAssignmentSecurity::BlackList</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/ClassMethods.html">ActiveModel::MassAssignmentSecurity::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/PermissionSet.html">ActiveModel::MassAssignmentSecurity::PermissionSet</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/Sanitizer.html">ActiveModel::MassAssignmentSecurity::Sanitizer</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/WhiteList.html">ActiveModel::MassAssignmentSecurity::WhiteList</a></li>
+				
+					<li><a href="../../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+				
+					<li><a href="../../ActiveModel/Name.html">ActiveModel::Name</a></li>
+				
+					<li><a href="../../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+				
+					<li><a href="../../ActiveModel/Observer.html">ActiveModel::Observer</a></li>
+				
+					<li><a href="../../ActiveModel/Observing.html">ActiveModel::Observing</a></li>
+				
+					<li><a href="../../ActiveModel/Observing/ClassMethods.html">ActiveModel::Observing::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+				
+					<li><a href="../../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+				
+					<li><a href="../../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+				
+					<li><a href="../../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+				
+					<li><a href="../../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+				
+					<li><a href="../../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/AcceptanceValidator.html">ActiveModel::Validations::AcceptanceValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/ConfirmationValidator.html">ActiveModel::Validations::ConfirmationValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/ExclusionValidator.html">ActiveModel::Validations::ExclusionValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/FormatValidator.html">ActiveModel::Validations::FormatValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/InclusionValidator.html">ActiveModel::Validations::InclusionValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/LengthValidator.html">ActiveModel::Validations::LengthValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/NumericalityValidator.html">ActiveModel::Validations::NumericalityValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/PresenceValidator.html">ActiveModel::Validations::PresenceValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+				
+					<li><a href="../../ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+				
+					<li><a href="../../ActiveResource/Base.html">ActiveResource::Base</a></li>
+				
+					<li><a href="../../ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+				
+					<li><a href="../../ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+				
+					<li><a href="../../ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+				
+					<li><a href="../../ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+				
+					<li><a href="../../ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+				
+					<li><a href="../../ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+				
+					<li><a href="../../ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+				
+					<li><a href="../../ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+				
+					<li><a href="../../ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+				
+					<li><a href="../../ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+				
+					<li><a href="../../ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+				
+					<li><a href="../../ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+				
+					<li><a href="../../ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+				
+					<li><a href="../../ActiveResource/Request.html">ActiveResource::Request</a></li>
+				
+					<li><a href="../../ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+				
+					<li><a href="../../ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+				
+					<li><a href="../../ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+				
+					<li><a href="../../ActiveResource/Response.html">ActiveResource::Response</a></li>
+				
+					<li><a href="../../ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+				
+					<li><a href="../../ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+				
+					<li><a href="../../ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+				
+					<li><a href="../../ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+				
+					<li><a href="../../ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+				
+					<li><a href="../../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../../Test.html">Test</a></li>
+				
+					<li><a href="../../Test/Unit.html">Test::Unit</a></li>
+				
+					<li><a href="../../Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+				
+					<li><a href="../../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+				
+					<li><a href="../../ActionMailer/Base.html">ActionMailer::Base</a></li>
+				
+					<li><a href="../../ActionMailer/Base/DeprecatedHeaderProxy.html">ActionMailer::Base::DeprecatedHeaderProxy</a></li>
+				
+					<li><a href="../../ActionMailer/Base/DeprecatedUrlOptions.html">ActionMailer::Base::DeprecatedUrlOptions</a></li>
+				
+					<li><a href="../../I18n.html">I18n</a></li>
+				
+					<li><a href="../../I18n/ExceptionHandler.html">I18n::ExceptionHandler</a></li>
+				
+					<li><a href="../../I18n/Railtie.html">I18n::Railtie</a></li>
+				
+					<li><a href="../../ERB.html">ERB</a></li>
+				
+					<li><a href="../../ERB/Util.html">ERB::Util</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../../Logger/SimpleFormatter.html">Logger::SimpleFormatter</a></li>
+				
+					<li><a href="../../Benchmark.html">Benchmark</a></li>
+				
+					<li><a href="../../BigDecimal.html">BigDecimal</a></li>
+				
+					<li><a href="../../DateTime.html">DateTime</a></li>
+				
+					<li><a href="../../Enumerable.html">Enumerable</a></li>
+				
+					<li><a href="../../File.html">File</a></li>
+				
+					<li><a href="../../Fixnum.html">Fixnum</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+					<li><a href="../../Float.html">Float</a></li>
+				
+					<li><a href="../../Integer.html">Integer</a></li>
+				
+					<li><a href="../../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../../NameError.html">NameError</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+					<li><a href="../../Process.html">Process</a></li>
+				
+					<li><a href="../../Rails.html">Rails</a></li>
+				
+					<li><a href="../../Time.html">Time</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActionView::Helpers::TextHelper</h1>
+
+		<div id="description">
+			<p>
+The <a href="TextHelper.html">TextHelper</a> module provides a set of
+methods for filtering, formatting and transforming strings, which can
+reduce the amount of inline Ruby code in your views. These helper methods
+extend Action View making them callable within your template files.
+</p>
+<h4>Sanitization</h4>
+<p>
+Most text helpers by default sanitize the given content, but do not escape
+it. This means HTML tags will appear in the page but all malicious code
+will be removed. Let&#8217;s look at some examples using the <tt><a
+href="TextHelper.html#method-i-simple_format">simple_format</a></tt>
+method:
+</p>
+<pre>
+  simple_format('&lt;a href=&quot;http://example.com/&quot;&gt;Example&lt;/a&gt;')
+  # =&gt; &quot;&lt;p&gt;&lt;a href=\&quot;http://example.com/\&quot;&gt;Example&lt;/a&gt;&lt;/p&gt;&quot;
+
+  simple_format('&lt;a href=&quot;javascript:alert('no!')&quot;&gt;Example&lt;/a&gt;')
+  # =&gt; &quot;&lt;p&gt;&lt;a&gt;Example&lt;/a&gt;&lt;/p&gt;&quot;
+</pre>
+<p>
+If you want to escape all content, you should invoke the <tt>h</tt> method
+before calling the text helper.
+</p>
+<pre>
+  simple_format h('&lt;a href=&quot;http://example.com/&quot;&gt;Example&lt;/a&gt;')
+  # =&gt; &quot;&lt;p&gt;&amp;lt;a href=\&quot;http://example.com/\&quot;&amp;gt;Example&amp;lt;/a&amp;gt;&lt;/p&gt;&quot;</pre>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="AUTO_LINK_RE">AUTO_LINK_RE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="AUTO_LINK_CRE">AUTO_LINK_CRE</a></dt>
+				
+				<dd class="description"><p>
+regexps for determining context, used high-volume
+</p></dd>
+				
+			
+				<dt><a name="AUTO_EMAIL_RE">AUTO_EMAIL_RE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="BRACKETS">BRACKETS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="auto-link-method" class="method-detail ">
+				<a name="method-i-auto_link"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">auto_link</span><span
+						class="method-args">(text, *args, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Turns all URLs and e-mail addresses into clickable links. The
+<tt>:link</tt> option will limit what should be linked. You can add HTML
+attributes to the links using <tt>:html</tt>. Possible values for
+<tt>:link</tt> are <tt>:all</tt> (default), <tt>:email_addresses</tt>, and
+<tt>:urls</tt>. If a block is given, each URL and e-mail address is yielded
+and the result is used as the link text.
+</p>
+<h4>Examples</h4>
+<pre>
+  auto_link(&quot;Go to http://www.rubyonrails.org and say hello to david@loudthinking.com&quot;)
+  # =&gt; &quot;Go to &lt;a href=\&quot;http://www.rubyonrails.org\&quot;&gt;http://www.rubyonrails.org&lt;/a&gt; and
+  #     say hello to &lt;a href=\&quot;mailto:david@loudthinking.com\&quot;&gt;david@loudthinking.com&lt;/a&gt;&quot;
+
+  auto_link(&quot;Visit http://www.loudthinking.com/ or e-mail david@loudthinking.com&quot;, :link =&gt; :urls)
+  # =&gt; &quot;Visit &lt;a href=\&quot;http://www.loudthinking.com/\&quot;&gt;http://www.loudthinking.com/&lt;/a&gt;
+  #     or e-mail david@loudthinking.com&quot;
+
+  auto_link(&quot;Visit http://www.loudthinking.com/ or e-mail david@loudthinking.com&quot;, :link =&gt; :email_addresses)
+  # =&gt; &quot;Visit http://www.loudthinking.com/ or e-mail &lt;a href=\&quot;mailto:david@loudthinking.com\&quot;&gt;david@loudthinking.com&lt;/a&gt;&quot;
+
+  post_body = &quot;Welcome to my new blog at http://www.myblog.com/.  Please e-mail me at me@email.com.&quot;
+  auto_link(post_body, :html =&gt; { :target =&gt; '_blank' }) do |text|
+    truncate(text, 15)
+  end
+  # =&gt; &quot;Welcome to my new blog at &lt;a href=\&quot;http://www.myblog.com/\&quot; target=\&quot;_blank\&quot;&gt;http://www.m...&lt;/a&gt;.
+        Please e-mail me at &lt;a href=\&quot;mailto:me@email.com\&quot;&gt;me@email.com&lt;/a&gt;.&quot;
+</pre>
+<p>
+You can still use <tt><a
+href="TextHelper.html#method-i-auto_link">auto_link</a></tt> with the old
+API that accepts the <tt>link</tt> as its optional second parameter and the
+<tt>html_options</tt> hash as its optional third parameter:
+</p>
+<pre>
+  post_body = &quot;Welcome to my new blog at http://www.myblog.com/. Please e-mail me at me@email.com.&quot;
+  auto_link(post_body, :urls)     # =&gt; Once upon\na time
+  # =&gt; &quot;Welcome to my new blog at &lt;a href=\&quot;http://www.myblog.com/\&quot;&gt;http://www.myblog.com&lt;/a&gt;.
+        Please e-mail me at me@email.com.&quot;
+
+  auto_link(post_body, :all, :target =&gt; &quot;_blank&quot;)     # =&gt; Once upon\na time
+  # =&gt; &quot;Welcome to my new blog at &lt;a href=\&quot;http://www.myblog.com/\&quot; target=\&quot;_blank\&quot;&gt;http://www.myblog.com&lt;/a&gt;.
+        Please e-mail me at &lt;a href=\&quot;mailto:me@email.com\&quot;&gt;me@email.com&lt;/a&gt;.&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="auto-link-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 301</span>
+301:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auto_link</span>(<span class="ruby-identifier">text</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)<span class="ruby-comment cmt">#link = :all, html = {}, &amp;block)</span>
+302:         <span class="ruby-keyword kw">return</span> <span class="ruby-value str">''</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">blank?</span>
+303: 
+304:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> <span class="ruby-operator">?</span> {} <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span> <span class="ruby-comment cmt"># this is necessary because the old auto_link API has a Hash as its last parameter</span>
+305:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+306:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:link</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:all</span>
+307:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:html</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">||</span> {}
+308:         <span class="ruby-keyword kw">end</span>
+309:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-value">:link</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:all</span>, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> {})
+310: 
+311:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:link</span>].<span class="ruby-identifier">to_sym</span>
+312:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:all</span>                         <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">auto_link_email_addresses</span>(<span class="ruby-identifier">auto_link_urls</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:html</span>], <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>), <span class="ruby-identifier">options</span>[<span class="ruby-value">:html</span>], &amp;<span class="ruby-identifier">block</span>)
+313:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:email_addresses</span>             <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">auto_link_email_addresses</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:html</span>], &amp;<span class="ruby-identifier">block</span>)
+314:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:urls</span>                        <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">auto_link_urls</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:html</span>], <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+315:         <span class="ruby-keyword kw">end</span>
+316:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="concat-method" class="method-detail ">
+				<a name="method-i-concat"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">concat</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The preferred method of outputting text in your views is to use the <%=
+&#8220;text&#8221; %> eRuby syntax. The regular <em>puts</em> and
+<em>print</em> methods do not operate as expected in an eRuby code block.
+If you absolutely must output text within a non-output code block (i.e., <%
+%>), you can use the concat method.
+</p>
+<h4>Examples</h4>
+<pre>
+  &lt;%
+      concat &quot;hello&quot;
+      # is the equivalent of &lt;%= &quot;hello&quot; %&gt;
+
+      if logged_in
+        concat &quot;Logged in!&quot;
+      else
+        concat link_to('login', :action =&gt; login)
+      end
+      # will either display &quot;Logged in!&quot; or a login link
+  %&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="concat-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 51</span>
+51:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">concat</span>(<span class="ruby-identifier">string</span>)
+52:         <span class="ruby-identifier">output_buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">string</span>
+53:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="current-cycle-method" class="method-detail ">
+				<a name="method-i-current_cycle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">current_cycle</span><span
+						class="method-args">(name = "default")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the current cycle string after a cycle has been started. Useful for
+complex table highlighting or any other design need which requires the
+current cycle string in more than one place.
+</p>
+<h4>Example</h4>
+<pre>
+  # Alternate background colors
+  @items = [1,2,3,4]
+  &lt;% @items.each do |item| %&gt;
+    &lt;div style=&quot;background-color:&lt;%= cycle(&quot;red&quot;,&quot;white&quot;,&quot;blue&quot;) %&gt;&quot;&gt;
+      &lt;span style=&quot;background-color:&lt;%= current_cycle %&gt;&quot;&gt;&lt;%= item %&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;% end %&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="current-cycle-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 384</span>
+384:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_cycle</span>(<span class="ruby-identifier">name</span> = <span class="ruby-value str">&quot;default&quot;</span>)
+385:         <span class="ruby-identifier">cycle</span> = <span class="ruby-identifier">get_cycle</span>(<span class="ruby-identifier">name</span>)
+386:         <span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">current_value</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">nil?</span>
+387:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cycle-method" class="method-detail ">
+				<a name="method-i-cycle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cycle</span><span
+						class="method-args">(first_value, *values)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates a Cycle object whose <em>to_s</em> method cycles through elements
+of an array every time it is called. This can be used for example, to
+alternate classes for table rows.  You can use named cycles to allow
+nesting in loops. Passing a Hash as the last parameter with a
+<tt>:name</tt> key will create a named cycle. The default name for a cycle
+without a <tt>:name</tt> key is <tt>&quot;default&quot;</tt>. You can
+manually reset a cycle by calling <a
+href="TextHelper.html#method-i-reset_cycle">reset_cycle</a> and passing the
+name of the cycle. The current cycle string can be obtained anytime using
+the <a href="TextHelper.html#method-i-current_cycle">current_cycle</a>
+method.
+</p>
+<h4>Examples</h4>
+<pre>
+  # Alternate CSS classes for even and odd numbers...
+  @items = [1,2,3,4]
+  &lt;table&gt;
+  &lt;% @items.each do |item| %&gt;
+    &lt;tr class=&quot;&lt;%= cycle(&quot;even&quot;, &quot;odd&quot;) -%&gt;&quot;&gt;
+      &lt;td&gt;item&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;% end %&gt;
+  &lt;/table&gt;
+
+  # Cycle CSS classes for rows, and text colors for values within each row
+  @items = x = [{:first =&gt; 'Robert', :middle =&gt; 'Daniel', :last =&gt; 'James'},
+               {:first =&gt; 'Emily', :middle =&gt; 'Shannon', :maiden =&gt; 'Pike', :last =&gt; 'Hicks'},
+              {:first =&gt; 'June', :middle =&gt; 'Dae', :last =&gt; 'Jones'}]
+  &lt;% @items.each do |item| %&gt;
+    &lt;tr class=&quot;&lt;%= cycle(&quot;odd&quot;, &quot;even&quot;, :name =&gt; &quot;row_class&quot;) -%&gt;&quot;&gt;
+      &lt;td&gt;
+        &lt;% item.values.each do |value| %&gt;
+          &lt;%# Create a named cycle &quot;colors&quot; %&gt;
+          &lt;span style=&quot;color:&lt;%= cycle(&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, :name =&gt; &quot;colors&quot;) -%&gt;&quot;&gt;
+            &lt;%= value %&gt;
+          &lt;/span&gt;
+        &lt;% end %&gt;
+        &lt;% reset_cycle(&quot;colors&quot;) %&gt;
+      &lt;/td&gt;
+   &lt;/tr&gt;
+ &lt;% end %&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="cycle-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 356</span>
+356:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cycle</span>(<span class="ruby-identifier">first_value</span>, *<span class="ruby-identifier">values</span>)
+357:         <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">values</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Hash</span>)
+358:           <span class="ruby-identifier">params</span> = <span class="ruby-identifier">values</span>.<span class="ruby-identifier">pop</span>
+359:           <span class="ruby-identifier">name</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:name</span>]
+360:         <span class="ruby-keyword kw">else</span>
+361:           <span class="ruby-identifier">name</span> = <span class="ruby-value str">&quot;default&quot;</span>
+362:         <span class="ruby-keyword kw">end</span>
+363:         <span class="ruby-identifier">values</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">first_value</span>)
+364: 
+365:         <span class="ruby-identifier">cycle</span> = <span class="ruby-identifier">get_cycle</span>(<span class="ruby-identifier">name</span>)
+366:         <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">values</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">values</span>)
+367:           <span class="ruby-identifier">cycle</span> = <span class="ruby-identifier">set_cycle</span>(<span class="ruby-identifier">name</span>, <span class="ruby-constant">Cycle</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">values</span>))
+368:         <span class="ruby-keyword kw">end</span>
+369:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">to_s</span>
+370:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="excerpt-method" class="method-detail ">
+				<a name="method-i-excerpt"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">excerpt</span><span
+						class="method-args">(text, phrase, *args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Extracts an excerpt from <tt>text</tt> that matches the first instance of
+<tt>phrase</tt>. The <tt>:radius</tt> option expands the excerpt on each
+side of the first occurrence of <tt>phrase</tt> by the number of characters
+defined in <tt>:radius</tt> (which defaults to 100). If the excerpt radius
+overflows the beginning or end of the <tt>text</tt>, then the
+<tt>:omission</tt> option (which defaults to &#8220;&#8230;&#8221;) will be
+prepended/appended accordingly. The resulting string will be stripped in
+any case. If the <tt>phrase</tt> isn&#8217;t found, nil is returned.
+</p>
+<h4>Examples</h4>
+<pre>
+  excerpt('This is an example', 'an', :radius =&gt; 5)
+  # =&gt; ...s is an exam...
+
+  excerpt('This is an example', 'is', :radius =&gt; 5)
+  # =&gt; This is a...
+
+  excerpt('This is an example', 'is')
+  # =&gt; This is an example
+
+  excerpt('This next thing is an example', 'ex', :radius =&gt; 2)
+  # =&gt; ...next...
+
+  excerpt('This is also an example', 'an', :radius =&gt; 8, :omission =&gt; '&lt;chop&gt; ')
+  # =&gt; &lt;chop&gt; is also an example
+</pre>
+<p>
+You can still use <tt>excerpt</tt> with the old API that accepts the
+<tt>radius</tt> as its optional third and the <tt>ellipsis</tt> as its
+optional forth parameter:
+</p>
+<pre>
+  excerpt('This is an example', 'an', 5)                   # =&gt; ...s is an exam...
+  excerpt('This is also an example', 'an', 8, '&lt;chop&gt; ')   # =&gt; &lt;chop&gt; is also an example</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="excerpt-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 154</span>
+154:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">excerpt</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">phrase</span>, *<span class="ruby-identifier">args</span>)
+155:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+156:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+157:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:radius</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">100</span>
+158:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:omission</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;...&quot;</span>
+159:         <span class="ruby-keyword kw">end</span>
+160:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-value">:radius</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-value">:omission</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;...&quot;</span>)
+161: 
+162:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">phrase</span>
+163:           <span class="ruby-identifier">phrase</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">phrase</span>)
+164: 
+165:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">found_pos</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">mb_chars</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/(#{phrase})/</span>
+166:             <span class="ruby-identifier">start_pos</span> = [ <span class="ruby-identifier">found_pos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:radius</span>], <span class="ruby-value">0</span> ].<span class="ruby-identifier">max</span>
+167:             <span class="ruby-identifier">end_pos</span>   = [ [ <span class="ruby-identifier">found_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">phrase</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:radius</span>] <span class="ruby-operator">-</span> <span class="ruby-value">1</span>, <span class="ruby-value">0</span>].<span class="ruby-identifier">max</span>, <span class="ruby-identifier">text</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">length</span> ].<span class="ruby-identifier">min</span>
+168: 
+169:             <span class="ruby-identifier">prefix</span>  = <span class="ruby-identifier">start_pos</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:omission</span>] <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>
+170:             <span class="ruby-identifier">postfix</span> = <span class="ruby-identifier">end_pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:omission</span>] <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>
+171: 
+172:             <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">mb_chars</span>[<span class="ruby-identifier">start_pos</span><span class="ruby-operator">..</span><span class="ruby-identifier">end_pos</span>].<span class="ruby-identifier">strip</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">postfix</span>
+173:           <span class="ruby-keyword kw">else</span>
+174:             <span class="ruby-keyword kw">nil</span>
+175:           <span class="ruby-keyword kw">end</span>
+176:         <span class="ruby-keyword kw">end</span>
+177:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="highlight-method" class="method-detail ">
+				<a name="method-i-highlight"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">highlight</span><span
+						class="method-args">(text, phrases, *args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Highlights one or more <tt>phrases</tt> everywhere in <tt>text</tt> by
+inserting it into a <tt>:highlighter</tt> string. The highlighter can be
+specialized by passing <tt>:highlighter</tt> as a single-quoted string with
+1 where the phrase is to be inserted (defaults to &#8217;<strong
+class=&#8220;highlight&#8221;>1</strong>&#8217;)
+</p>
+<h4>Examples</h4>
+<pre>
+  highlight('You searched for: rails', 'rails')
+  # =&gt; You searched for: &lt;strong class=&quot;highlight&quot;&gt;rails&lt;/strong&gt;
+
+  highlight('You searched for: ruby, rails, dhh', 'actionpack')
+  # =&gt; You searched for: ruby, rails, dhh
+
+  highlight('You searched for: rails', ['for', 'rails'], :highlighter =&gt; '&lt;em&gt;\1&lt;/em&gt;')
+  # =&gt; You searched &lt;em&gt;for&lt;/em&gt;: &lt;em&gt;rails&lt;/em&gt;
+
+  highlight('You searched for: rails', 'rails', :highlighter =&gt; '&lt;a href=&quot;search?q=\1&quot;&gt;\1&lt;/a&gt;')
+  # =&gt; You searched for: &lt;a href=&quot;search?q=rails&quot;&gt;rails&lt;/a&gt;
+</pre>
+<p>
+You can still use <tt>highlight</tt> with the old API that accepts the
+<tt>highlighter</tt> as its optional third parameter:
+</p>
+<pre>
+  highlight('You searched for: rails', 'rails', '&lt;a href=&quot;search?q=\1&quot;&gt;\1&lt;/a&gt;')     # =&gt; You searched for: &lt;a href=&quot;search?q=rails&quot;&gt;rails&lt;/a&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="highlight-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 111</span>
+111:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">phrases</span>, *<span class="ruby-identifier">args</span>)
+112:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+113:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+114:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:highlighter</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'&lt;strong class=&quot;highlight&quot;&gt;\1&lt;/strong&gt;'</span>
+115:         <span class="ruby-keyword kw">end</span>
+116:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-value">:highlighter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'&lt;strong class=&quot;highlight&quot;&gt;\1&lt;/strong&gt;'</span>)
+117: 
+118:         <span class="ruby-identifier">text</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:sanitize</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>
+119:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">phrases</span>.<span class="ruby-identifier">blank?</span>
+120:           <span class="ruby-identifier">text</span>
+121:         <span class="ruby-keyword kw">else</span>
+122:           <span class="ruby-identifier">match</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">phrases</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">p</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'|'</span>)
+123:           <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/(#{match})(?!(?:[^&lt;]*?)(?:[&quot;'])[^&lt;&gt;]*&gt;)/</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:highlighter</span>])
+124:         <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">html_safe</span>
+125:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="pluralize-method" class="method-detail ">
+				<a name="method-i-pluralize"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">pluralize</span><span
+						class="method-args">(count, singular, plural = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Attempts to pluralize the <tt>singular</tt> word unless <tt>count</tt> is
+1. If <tt>plural</tt> is supplied, it will use that when count is > 1,
+otherwise it will use the Inflector to determine the plural form
+</p>
+<h4>Examples</h4>
+<pre>
+  pluralize(1, 'person')
+  # =&gt; 1 person
+
+  pluralize(2, 'person')
+  # =&gt; 2 people
+
+  pluralize(3, 'person', 'users')
+  # =&gt; 3 users
+
+  pluralize(0, 'person')
+  # =&gt; 0 people</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="pluralize-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 195</span>
+195:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pluralize</span>(<span class="ruby-identifier">count</span>, <span class="ruby-identifier">singular</span>, <span class="ruby-identifier">plural</span> = <span class="ruby-keyword kw">nil</span>)
+196:         <span class="ruby-node">&quot;#{count || 0} &quot;</span> <span class="ruby-operator">+</span> ((<span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^1(\.0+)?$/</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">singular</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">plural</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">singular</span>.<span class="ruby-identifier">pluralize</span>))
+197:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reset-cycle-method" class="method-detail ">
+				<a name="method-i-reset_cycle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset_cycle</span><span
+						class="method-args">(name = "default")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Resets a cycle so that it starts from the first element the next time it is
+called. Pass in <tt>name</tt> to reset a named cycle.
+</p>
+<h4>Example</h4>
+<pre>
+  # Alternate CSS classes for even and odd numbers...
+  @items = [[1,2,3,4], [5,6,3], [3,4,5,6,7,4]]
+  &lt;table&gt;
+  &lt;% @items.each do |item| %&gt;
+    &lt;tr class=&quot;&lt;%= cycle(&quot;even&quot;, &quot;odd&quot;) -%&gt;&quot;&gt;
+        &lt;% item.each do |value| %&gt;
+          &lt;span style=&quot;color:&lt;%= cycle(&quot;#333&quot;, &quot;#666&quot;, &quot;#999&quot;, :name =&gt; &quot;colors&quot;) -%&gt;&quot;&gt;
+            &lt;%= value %&gt;
+          &lt;/span&gt;
+        &lt;% end %&gt;
+
+        &lt;% reset_cycle(&quot;colors&quot;) %&gt;
+    &lt;/tr&gt;
+  &lt;% end %&gt;
+  &lt;/table&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="reset-cycle-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 408</span>
+408:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset_cycle</span>(<span class="ruby-identifier">name</span> = <span class="ruby-value str">&quot;default&quot;</span>)
+409:         <span class="ruby-identifier">cycle</span> = <span class="ruby-identifier">get_cycle</span>(<span class="ruby-identifier">name</span>)
+410:         <span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">reset</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">cycle</span>.<span class="ruby-identifier">nil?</span>
+411:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="safe-concat-method" class="method-detail ">
+				<a name="method-i-safe_concat"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">safe_concat</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="safe-concat-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 55</span>
+55:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">safe_concat</span>(<span class="ruby-identifier">string</span>)
+56:         <span class="ruby-identifier">output_buffer</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:safe_concat</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">output_buffer</span>.<span class="ruby-identifier">safe_concat</span>(<span class="ruby-identifier">string</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">concat</span>(<span class="ruby-identifier">string</span>)
+57:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="simple-format-method" class="method-detail ">
+				<a name="method-i-simple_format"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">simple_format</span><span
+						class="method-args">(text, html_options={}, options={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns <tt>text</tt> transformed into HTML using simple formatting rules.
+Two or more consecutive newlines(<tt>n\n</tt>) are considered as a
+paragraph and wrapped in <tt>&lt;p&gt;</tt> tags. One newline (<tt>n</tt>)
+is considered as a linebreak and a <tt>&lt;br /&gt;</tt> tag is appended.
+This method does not remove the newlines from the <tt>text</tt>.
+</p>
+<p>
+You can pass any HTML attributes into <tt>html_options</tt>.  These will be
+added to all created paragraphs.
+</p>
+<h4>Examples</h4>
+<pre>
+  my_text = &quot;Here is some basic text...\n...with a line break.&quot;
+
+  simple_format(my_text)
+  # =&gt; &quot;&lt;p&gt;Here is some basic text...\n&lt;br /&gt;...with a line break.&lt;/p&gt;&quot;
+
+  more_text = &quot;We want to put a paragraph...\n\n...right there.&quot;
+
+  simple_format(more_text)
+  # =&gt; &quot;&lt;p&gt;We want to put a paragraph...&lt;/p&gt;\n\n&lt;p&gt;...right there.&lt;/p&gt;&quot;
+
+  simple_format(&quot;Look ma! A class!&quot;, :class =&gt; 'description')
+  # =&gt; &quot;&lt;p class='description'&gt;Look ma! A class!&lt;/p&gt;&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="simple-format-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 253</span>
+253:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">simple_format</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">html_options</span>={}, <span class="ruby-identifier">options</span>={})
+254:         <span class="ruby-identifier">text</span> = <span class="ruby-value str">''</span>.<span class="ruby-identifier">html_safe</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">nil?</span>
+255:         <span class="ruby-identifier">start_tag</span> = <span class="ruby-identifier">tag</span>(<span class="ruby-value str">'p'</span>, <span class="ruby-identifier">html_options</span>, <span class="ruby-keyword kw">true</span>)
+256:         <span class="ruby-identifier">text</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:sanitize</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>
+257:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\r\n?/</span>, <span class="ruby-value str">&quot;\n&quot;</span>)                    <span class="ruby-comment cmt"># \r\n and \r -&gt; \n</span>
+258:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\n\n+/</span>, <span class="ruby-node">&quot;&lt;/p&gt;\n\n#{start_tag}&quot;</span>)  <span class="ruby-comment cmt"># 2+ newline  -&gt; paragraph</span>
+259:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/([^\n]\n)(?=[^\n])/</span>, <span class="ruby-value str">'\1&lt;br /&gt;'</span>) <span class="ruby-comment cmt"># 1 newline   -&gt; br</span>
+260:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">insert</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">start_tag</span>
+261:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">html_safe</span>.<span class="ruby-identifier">safe_concat</span>(<span class="ruby-value str">&quot;&lt;/p&gt;&quot;</span>)
+262:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="truncate-method" class="method-detail ">
+				<a name="method-i-truncate"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">truncate</span><span
+						class="method-args">(text, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Truncates a given <tt>text</tt> after a given <tt>:length</tt> if
+<tt>text</tt> is longer than <tt>:length</tt> (defaults to 30). The last
+characters will be replaced with the <tt>:omission</tt> (defaults to
+&#8220;&#8230;&#8221;) for a total length not exceeding <tt>:length</tt>.
+</p>
+<p>
+Pass a <tt>:separator</tt> to truncate <tt>text</tt> at a natural break.
+</p>
+<p>
+The result is not marked as HTML-safe, so will be subject to the default
+escaping when used in views, unless wrapped by <tt>raw()</tt>. Care should
+be taken if <tt>text</tt> contains HTML tags or entities, because
+truncation may produce invalid HTML (such as unbalanced or incomplete
+tags).
+</p>
+<h4>Examples</h4>
+<pre>
+  truncate(&quot;Once upon a time in a world far far away&quot;)
+  # =&gt; &quot;Once upon a time in a world...&quot;
+
+  truncate(&quot;Once upon a time in a world far far away&quot;, :length =&gt; 17)
+  # =&gt; &quot;Once upon a ti...&quot;
+
+  truncate(&quot;Once upon a time in a world far far away&quot;, :length =&gt; 17, :separator =&gt; ' ')
+  # =&gt; &quot;Once upon a...&quot;
+
+  truncate(&quot;And they found that many people were sleeping better.&quot;, :length =&gt; 25, :omission =&gt; '... (continued)')
+  # =&gt; &quot;And they f... (continued)&quot;
+
+  truncate(&quot;&lt;p&gt;Once upon a time in a world far far away&lt;/p&gt;&quot;)
+  # =&gt; &quot;&lt;p&gt;Once upon a time in a wo...&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="truncate-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 85</span>
+85:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">options</span> = {})
+86:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-value">:length</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>)
+87:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:length</span>), <span class="ruby-identifier">options</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span>
+88:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="word-wrap-method" class="method-detail ">
+				<a name="method-i-word_wrap"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">word_wrap</span><span
+						class="method-args">(text, *args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Wraps the <tt>text</tt> into lines no longer than <tt>line_width</tt>
+width. This method breaks on the first whitespace character that does not
+exceed <tt>line_width</tt> (which is 80 by default).
+</p>
+<h4>Examples</h4>
+<pre>
+  word_wrap('Once upon a time')
+  # =&gt; Once upon a time
+
+  word_wrap('Once upon a time, in a kingdom called Far Far Away, a king fell ill, and finding a successor to the throne turned out to be more trouble than anyone could have imagined...')
+  # =&gt; Once upon a time, in a kingdom called Far Far Away, a king fell ill, and finding\n a successor to the throne turned out to be more trouble than anyone could have\n imagined...
+
+  word_wrap('Once upon a time', :line_width =&gt; 8)
+  # =&gt; Once upon\na time
+
+  word_wrap('Once upon a time', :line_width =&gt; 1)
+  # =&gt; Once\nupon\na\ntime
+</pre>
+<p>
+You can still use <tt><a
+href="TextHelper.html#method-i-word_wrap">word_wrap</a></tt> with the old
+API that accepts the <tt>line_width</tt> as its optional second parameter:
+</p>
+<pre>
+  word_wrap('Once upon a time', 8)     # =&gt; Once upon\na time</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="word-wrap-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 220</span>
+220:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">word_wrap</span>(<span class="ruby-identifier">text</span>, *<span class="ruby-identifier">args</span>)
+221:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+222:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+223:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:line_width</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">80</span>
+224:         <span class="ruby-keyword kw">end</span>
+225:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge!</span>(<span class="ruby-value">:line_width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">80</span>)
+226: 
+227:         <span class="ruby-identifier">text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+228:           <span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:line_width</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/(.{1,#{options[:line_width]}})(\s+|$)/</span>, <span class="ruby-value str">&quot;\\1\n&quot;</span>).<span class="ruby-identifier">strip</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">line</span>
+229:         <span class="ruby-keyword kw">end</span> * <span class="ruby-value str">&quot;\n&quot;</span>
+230:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="auto-link-email-addresses-method" class="method-detail ">
+				<a name="method-i-auto_link_email_addresses"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">auto_link_email_addresses</span><span
+						class="method-args">(text, html_options = {}, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Turns all email addresses into clickable links.  If a block is given, each
+email is yielded and the result is used as the link text.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="auto-link-email-addresses-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 511</span>
+511:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auto_link_email_addresses</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">html_options</span> = {}, <span class="ruby-identifier">options</span> = {})
+512:           <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">AUTO_EMAIL_RE</span>) <span class="ruby-keyword kw">do</span>
+513:             <span class="ruby-identifier">text</span> = <span class="ruby-node">$&amp;</span>
+514: 
+515:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">auto_linked?</span>(<span class="ruby-node">$`</span>, <span class="ruby-node">$'</span>)
+516:               <span class="ruby-identifier">text</span>.<span class="ruby-identifier">html_safe</span>
+517:             <span class="ruby-keyword kw">else</span>
+518:               <span class="ruby-identifier">display_text</span> = (<span class="ruby-identifier">block_given?</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">text</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">text</span>
+519: 
+520:               <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:sanitize</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>
+521:                 <span class="ruby-identifier">text</span>         = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">text</span>)
+522:                 <span class="ruby-identifier">display_text</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">display_text</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">display_text</span>
+523:               <span class="ruby-keyword kw">end</span>
+524:               <span class="ruby-identifier">mail_to</span> <span class="ruby-identifier">text</span>, <span class="ruby-identifier">display_text</span>, <span class="ruby-identifier">html_options</span>
+525:             <span class="ruby-keyword kw">end</span>
+526:           <span class="ruby-keyword kw">end</span>
+527:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="auto-link-urls-method" class="method-detail ">
+				<a name="method-i-auto_link_urls"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">auto_link_urls</span><span
+						class="method-args">(text, html_options = {}, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Turns all urls into clickable links.  If a block is given, each url is
+yielded and the result is used as the link text.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="auto-link-urls-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 478</span>
+478:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auto_link_urls</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">html_options</span> = {}, <span class="ruby-identifier">options</span> = {})
+479:           <span class="ruby-identifier">link_attributes</span> = <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">stringify_keys</span>
+480:           <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">AUTO_LINK_RE</span>) <span class="ruby-keyword kw">do</span>
+481:             <span class="ruby-identifier">scheme</span>, <span class="ruby-identifier">href</span> = <span class="ruby-node">$1</span>, <span class="ruby-node">$&amp;</span>
+482:             <span class="ruby-identifier">punctuation</span> = []
+483: 
+484:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">auto_linked?</span>(<span class="ruby-node">$`</span>, <span class="ruby-node">$'</span>)
+485:               <span class="ruby-comment cmt"># do not change string; URL is already linked</span>
+486:               <span class="ruby-identifier">href</span>
+487:             <span class="ruby-keyword kw">else</span>
+488:               <span class="ruby-comment cmt"># don't include trailing punctuation character as part of the URL</span>
+489:               <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">href</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/[^\w\/-]$/</span>, <span class="ruby-value str">''</span>)
+490:                 <span class="ruby-identifier">punctuation</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">$&amp;</span>
+491:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opening</span> = <span class="ruby-constant">BRACKETS</span>[<span class="ruby-identifier">punctuation</span>.<span class="ruby-identifier">last</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">href</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">opening</span>).<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">href</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">punctuation</span>.<span class="ruby-identifier">last</span>).<span class="ruby-identifier">size</span>
+492:                   <span class="ruby-identifier">href</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">punctuation</span>.<span class="ruby-identifier">pop</span>
+493:                   <span class="ruby-keyword kw">break</span>
+494:                 <span class="ruby-keyword kw">end</span>
+495:               <span class="ruby-keyword kw">end</span>
+496: 
+497:               <span class="ruby-identifier">link_text</span> = <span class="ruby-identifier">block_given?</span><span class="ruby-operator">?</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">href</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">href</span>
+498:               <span class="ruby-identifier">href</span> = <span class="ruby-value str">'http://'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">href</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">scheme</span>
+499: 
+500:               <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:sanitize</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword kw">false</span>
+501:                 <span class="ruby-identifier">link_text</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">link_text</span>)
+502:                 <span class="ruby-identifier">href</span>      = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">href</span>)
+503:               <span class="ruby-keyword kw">end</span>
+504:               <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:a</span>, <span class="ruby-identifier">link_text</span>, <span class="ruby-identifier">link_attributes</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value str">'href'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">href</span>), <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">options</span>[<span class="ruby-value">:sanitize</span>]) <span class="ruby-operator">+</span> <span class="ruby-identifier">punctuation</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">''</span>)
+505:             <span class="ruby-keyword kw">end</span>
+506:           <span class="ruby-keyword kw">end</span>
+507:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="auto-linked--method" class="method-detail ">
+				<a name="method-i-auto_linked%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">auto_linked?</span><span
+						class="method-args">(left, right)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Detects already linked context or position in the middle of a tag
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="auto-linked--source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 530</span>
+530:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auto_linked?</span>(<span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>)
+531:           (<span class="ruby-identifier">left</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">AUTO_LINK_CRE</span>[<span class="ruby-value">0</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">AUTO_LINK_CRE</span>[<span class="ruby-value">1</span>]) <span class="ruby-keyword kw">or</span>
+532:             (<span class="ruby-identifier">left</span>.<span class="ruby-identifier">rindex</span>(<span class="ruby-constant">AUTO_LINK_CRE</span>[<span class="ruby-value">2</span>]) <span class="ruby-keyword kw">and</span> <span class="ruby-node">$'</span> <span class="ruby-operator">!~</span> <span class="ruby-constant">AUTO_LINK_CRE</span>[<span class="ruby-value">3</span>])
+533:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-cycle-method" class="method-detail ">
+				<a name="method-i-get_cycle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_cycle</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The cycle helpers need to store the cycles in a place that is guaranteed to
+be reset every time a page is rendered, so it uses an instance variable of
+<a href="../Base.html">ActionView::Base</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-cycle-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 454</span>
+454:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_cycle</span>(<span class="ruby-identifier">name</span>)
+455:           <span class="ruby-ivar">@_cycles</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@_cycles</span>)
+456:           <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@_cycles</span>[<span class="ruby-identifier">name</span>]
+457:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-cycle-method" class="method-detail ">
+				<a name="method-i-set_cycle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">set_cycle</span><span
+						class="method-args">(name, cycle_object)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="set-cycle-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_view/helpers/text_helper.rb, line 459</span>
+459:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_cycle</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">cycle_object</span>)
+460:           <span class="ruby-ivar">@_cycles</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@_cycles</span>)
+461:           <span class="ruby-ivar">@_cycles</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">cycle_object</span>
+462:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

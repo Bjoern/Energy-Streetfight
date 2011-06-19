@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+hunger:
+    name: Hunger
+    description: MyText
+    game: stargader
+
+drought:
+    name: Drought
+    description: MyText
+    game: stargader

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+apples1:
+  problem: hunger1 
+  island: malta
+  ship: 
+  resource_type: apples 
+
+water1:
+  problem: drought1 
+  island: haiti
+  ship: 
+  resource_type: water 
+
+water2:
+  problem: drought1 
+  island: 
+  ship: hope 
+  resource_type: water 

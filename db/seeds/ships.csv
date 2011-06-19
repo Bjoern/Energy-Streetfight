@@ -1,0 +1,3 @@
+"id","name","house_number","game_id","destination_id","speed","x","y"
+1,"hope",1,1,1,1.5,30,30
+2,"freedom",2,1,1,1.5,40,40
