@@ -24,14 +24,18 @@ def connection
     ActiveRecord::Base.connection
 end
 
+def read_csv_fixture(fixture_file)
+    table_name = File.basename(fixture_file, '.csv')
+
+    if table_empty?(table_name)
+	truncate_table(table_name)
+	Fixtures.create_fixtures(File.join('db/', 'seeds'), table_name)
+    end
+end
+
 def read_csv_fixtures
     Dir.glob(File.join(RAILS_ROOT, 'db', 'seeds', '*.csv')).each do |fixture_file|
-	table_name = File.basename(fixture_file, '.csv')
-
-	if table_empty?(table_name)
-	    truncate_table(table_name)
-	    Fixtures.create_fixtures(File.join('db/', 'seeds'), table_name)
-	end
+	read_csv_fixture(fixture_file)
     end
 end
 
