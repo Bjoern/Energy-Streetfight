@@ -19,5 +19,4 @@ gen/
 gen/*
 doc/guides/*
 doc/api
-db/seeds/users.csv
 
