@@ -1,0 +1,2516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActiveRecord::QueryMethods</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/lib/active_record/relation/query_methods_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="/Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb">/Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-apply_modules">#apply_modules</a></li>
+					
+					<li><a href="#method-i-arel">#arel</a></li>
+					
+					<li><a href="#method-i-array_of_strings%3F">#array_of_strings?</a></li>
+					
+					<li><a href="#method-i-build_arel">#build_arel</a></li>
+					
+					<li><a href="#method-i-build_joins">#build_joins</a></li>
+					
+					<li><a href="#method-i-build_select">#build_select</a></li>
+					
+					<li><a href="#method-i-build_where">#build_where</a></li>
+					
+					<li><a href="#method-i-collapse_wheres">#collapse_wheres</a></li>
+					
+					<li><a href="#method-i-create_with">#create_with</a></li>
+					
+					<li><a href="#method-i-custom_join_sql">#custom_join_sql</a></li>
+					
+					<li><a href="#method-i-eager_load">#eager_load</a></li>
+					
+					<li><a href="#method-i-extending">#extending</a></li>
+					
+					<li><a href="#method-i-from">#from</a></li>
+					
+					<li><a href="#method-i-group">#group</a></li>
+					
+					<li><a href="#method-i-having">#having</a></li>
+					
+					<li><a href="#method-i-includes">#includes</a></li>
+					
+					<li><a href="#method-i-joins">#joins</a></li>
+					
+					<li><a href="#method-i-limit">#limit</a></li>
+					
+					<li><a href="#method-i-lock">#lock</a></li>
+					
+					<li><a href="#method-i-offset">#offset</a></li>
+					
+					<li><a href="#method-i-order">#order</a></li>
+					
+					<li><a href="#method-i-preload">#preload</a></li>
+					
+					<li><a href="#method-i-readonly">#readonly</a></li>
+					
+					<li><a href="#method-i-reorder">#reorder</a></li>
+					
+					<li><a href="#method-i-reverse_order">#reverse_order</a></li>
+					
+					<li><a href="#method-i-reverse_sql_order">#reverse_sql_order</a></li>
+					
+					<li><a href="#method-i-select">#select</a></li>
+					
+					<li><a href="#method-i-where">#where</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activeresource-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activeresource-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activesupport-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activesupport-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/railties-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/railties-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../ActiveSupport/Autoload.html">ActiveSupport::Autoload</a></li>
+				
+					<li><a href="../ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a></li>
+				
+					<li><a href="../ActiveSupport/Base64.html">ActiveSupport::Base64</a></li>
+				
+					<li><a href="../ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a></li>
+				
+					<li><a href="../ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a></li>
+				
+					<li><a href="../ActiveSupport/Cache.html">ActiveSupport::Cache</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/CompressedMemCacheStore.html">ActiveSupport::Cache::CompressedMemCacheStore</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a></li>
+				
+					<li><a href="../ActiveSupport/Cache/SynchronizedMemoryStore.html">ActiveSupport::Cache::SynchronizedMemoryStore</a></li>
+				
+					<li><a href="../ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a></li>
+				
+					<li><a href="../ActiveSupport/Callbacks/Callback.html">ActiveSupport::Callbacks::Callback</a></li>
+				
+					<li><a href="../ActiveSupport/Callbacks/CallbackChain.html">ActiveSupport::Callbacks::CallbackChain</a></li>
+				
+					<li><a href="../ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveSupport/Concern.html">ActiveSupport::Concern</a></li>
+				
+					<li><a href="../ActiveSupport/Configurable.html">ActiveSupport::Configurable</a></li>
+				
+					<li><a href="../ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a></li>
+				
+					<li><a href="../ActiveSupport/Dependencies/Reference.html">ActiveSupport::Dependencies::Reference</a></li>
+				
+					<li><a href="../ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a></li>
+				
+					<li><a href="../ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a></li>
+				
+					<li><a href="../ActiveSupport/Duration.html">ActiveSupport::Duration</a></li>
+				
+					<li><a href="../ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a></li>
+				
+					<li><a href="../ActiveSupport/Gzip.html">ActiveSupport::Gzip</a></li>
+				
+					<li><a href="../ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a></li>
+				
+					<li><a href="../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../ActiveSupport/Inflector.html">ActiveSupport::Inflector</a></li>
+				
+					<li><a href="../ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a></li>
+				
+					<li><a href="../ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a></li>
+				
+					<li><a href="../ActiveSupport/JSON.html">ActiveSupport::JSON</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Backends.html">ActiveSupport::JSON::Backends</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Backends/JSONGem.html">ActiveSupport::JSON::Backends::JSONGem</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Backends/Yajl.html">ActiveSupport::JSON::Backends::Yajl</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Backends/Yaml.html">ActiveSupport::JSON::Backends::Yaml</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a></li>
+				
+					<li><a href="../ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a></li>
+				
+					<li><a href="../ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a></li>
+				
+					<li><a href="../ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a></li>
+				
+					<li><a href="../ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a></li>
+				
+					<li><a href="../ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a></li>
+				
+					<li><a href="../ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a></li>
+				
+					<li><a href="../ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a></li>
+				
+					<li><a href="../ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a></li>
+				
+					<li><a href="../ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a></li>
+				
+					<li><a href="../ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a></li>
+				
+					<li><a href="../ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a></li>
+				
+					<li><a href="../ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a></li>
+				
+					<li><a href="../ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a></li>
+				
+					<li><a href="../ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a></li>
+				
+					<li><a href="../ActiveSupport/Notifications.html">ActiveSupport::Notifications</a></li>
+				
+					<li><a href="../ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a></li>
+				
+					<li><a href="../ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a></li>
+				
+					<li><a href="../ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a></li>
+				
+					<li><a href="../ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a></li>
+				
+					<li><a href="../ActiveSupport/Railtie.html">ActiveSupport::Railtie</a></li>
+				
+					<li><a href="../ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a></li>
+				
+					<li><a href="../ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a></li>
+				
+					<li><a href="../ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a></li>
+				
+					<li><a href="../ActiveSupport/SecureRandom.html">ActiveSupport::SecureRandom</a></li>
+				
+					<li><a href="../ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a></li>
+				
+					<li><a href="../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+				
+					<li><a href="../ActiveSupport/Testing.html">ActiveSupport::Testing</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a></li>
+				
+					<li><a href="../ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a></li>
+				
+					<li><a href="../ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
+				
+					<li><a href="../ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
+				
+					<li><a href="../ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a></li>
+				
+					<li><a href="../ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a></li>
+				
+					<li><a href="../ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a></li>
+				
+					<li><a href="../ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a></li>
+				
+					<li><a href="../ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a></li>
+				
+					<li><a href="../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+				
+					<li><a href="../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveModel/AttributeMethods/ClassMethods/AttributeMethodMatcher.html">ActiveModel::AttributeMethods::ClassMethods::AttributeMethodMatcher</a></li>
+				
+					<li><a href="../ActiveModel/BlockValidator.html">ActiveModel::BlockValidator</a></li>
+				
+					<li><a href="../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+				
+					<li><a href="../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+				
+					<li><a href="../ActiveModel/DeprecatedErrorMethods.html">ActiveModel::DeprecatedErrorMethods</a></li>
+				
+					<li><a href="../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+				
+					<li><a href="../ActiveModel/EachValidator.html">ActiveModel::EachValidator</a></li>
+				
+					<li><a href="../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+				
+					<li><a href="../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+				
+					<li><a href="../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+				
+					<li><a href="../ActiveModel/MassAssignmentSecurity.html">ActiveModel::MassAssignmentSecurity</a></li>
+				
+					<li><a href="../ActiveModel/MassAssignmentSecurity/BlackList.html">ActiveModel::MassAssignmentSecurity::BlackList</a></li>
+				
+					<li><a href="../ActiveModel/MassAssignmentSecurity/ClassMethods.html">ActiveModel::MassAssignmentSecurity::ClassMethods</a></li>
+				
+					<li><a href="../ActiveModel/MassAssignmentSecurity/PermissionSet.html">ActiveModel::MassAssignmentSecurity::PermissionSet</a></li>
+				
+					<li><a href="../ActiveModel/MassAssignmentSecurity/Sanitizer.html">ActiveModel::MassAssignmentSecurity::Sanitizer</a></li>
+				
+					<li><a href="../ActiveModel/MassAssignmentSecurity/WhiteList.html">ActiveModel::MassAssignmentSecurity::WhiteList</a></li>
+				
+					<li><a href="../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+				
+					<li><a href="../ActiveModel/Name.html">ActiveModel::Name</a></li>
+				
+					<li><a href="../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+				
+					<li><a href="../ActiveModel/Observer.html">ActiveModel::Observer</a></li>
+				
+					<li><a href="../ActiveModel/Observing.html">ActiveModel::Observing</a></li>
+				
+					<li><a href="../ActiveModel/Observing/ClassMethods.html">ActiveModel::Observing::ClassMethods</a></li>
+				
+					<li><a href="../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+				
+					<li><a href="../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+				
+					<li><a href="../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+				
+					<li><a href="../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+				
+					<li><a href="../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+				
+					<li><a href="../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+				
+					<li><a href="../ActiveModel/Validations/AcceptanceValidator.html">ActiveModel::Validations::AcceptanceValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+				
+					<li><a href="../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+				
+					<li><a href="../ActiveModel/Validations/ConfirmationValidator.html">ActiveModel::Validations::ConfirmationValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/ExclusionValidator.html">ActiveModel::Validations::ExclusionValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/FormatValidator.html">ActiveModel::Validations::FormatValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+				
+					<li><a href="../ActiveModel/Validations/InclusionValidator.html">ActiveModel::Validations::InclusionValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/LengthValidator.html">ActiveModel::Validations::LengthValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/NumericalityValidator.html">ActiveModel::Validations::NumericalityValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validations/PresenceValidator.html">ActiveModel::Validations::PresenceValidator</a></li>
+				
+					<li><a href="../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+				
+					<li><a href="../ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+				
+					<li><a href="../ActiveResource/Base.html">ActiveResource::Base</a></li>
+				
+					<li><a href="../ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+				
+					<li><a href="../ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+				
+					<li><a href="../ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+				
+					<li><a href="../ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+				
+					<li><a href="../ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+				
+					<li><a href="../ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+				
+					<li><a href="../ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+				
+					<li><a href="../ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+				
+					<li><a href="../ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+				
+					<li><a href="../ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+				
+					<li><a href="../ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+				
+					<li><a href="../ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+				
+					<li><a href="../ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+				
+					<li><a href="../ActiveResource/Request.html">ActiveResource::Request</a></li>
+				
+					<li><a href="../ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+				
+					<li><a href="../ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+				
+					<li><a href="../ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+				
+					<li><a href="../ActiveResource/Response.html">ActiveResource::Response</a></li>
+				
+					<li><a href="../ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+				
+					<li><a href="../ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+				
+					<li><a href="../ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+				
+					<li><a href="../ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+				
+					<li><a href="../ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+				
+					<li><a href="../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../Test.html">Test</a></li>
+				
+					<li><a href="../Test/Unit.html">Test::Unit</a></li>
+				
+					<li><a href="../Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+				
+					<li><a href="../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+				
+					<li><a href="../ActionMailer/Base.html">ActionMailer::Base</a></li>
+				
+					<li><a href="../ActionMailer/Base/DeprecatedHeaderProxy.html">ActionMailer::Base::DeprecatedHeaderProxy</a></li>
+				
+					<li><a href="../ActionMailer/Base/DeprecatedUrlOptions.html">ActionMailer::Base::DeprecatedUrlOptions</a></li>
+				
+					<li><a href="../I18n.html">I18n</a></li>
+				
+					<li><a href="../I18n/ExceptionHandler.html">I18n::ExceptionHandler</a></li>
+				
+					<li><a href="../I18n/Railtie.html">I18n::Railtie</a></li>
+				
+					<li><a href="../ERB.html">ERB</a></li>
+				
+					<li><a href="../ERB/Util.html">ERB::Util</a></li>
+				
+					<li><a href="../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../Logger/SimpleFormatter.html">Logger::SimpleFormatter</a></li>
+				
+					<li><a href="../Benchmark.html">Benchmark</a></li>
+				
+					<li><a href="../BigDecimal.html">BigDecimal</a></li>
+				
+					<li><a href="../DateTime.html">DateTime</a></li>
+				
+					<li><a href="../Enumerable.html">Enumerable</a></li>
+				
+					<li><a href="../File.html">File</a></li>
+				
+					<li><a href="../Fixnum.html">Fixnum</a></li>
+				
+					<li><a href="../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+					<li><a href="../Float.html">Float</a></li>
+				
+					<li><a href="../Integer.html">Integer</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../NameError.html">NameError</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../Process.html">Process</a></li>
+				
+					<li><a href="../Rails.html">Rails</a></li>
+				
+					<li><a href="../Time.html">Time</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActiveRecord::QueryMethods</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="includes-values-attribute-method" class="method-detail">
+				<a name="includes_values"></a>
+				
+				<a name="includes_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">includes_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="eager-load-values-attribute-method" class="method-detail">
+				<a name="eager_load_values"></a>
+				
+				<a name="eager_load_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">eager_load_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="preload-values-attribute-method" class="method-detail">
+				<a name="preload_values"></a>
+				
+				<a name="preload_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">preload_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="select-values-attribute-method" class="method-detail">
+				<a name="select_values"></a>
+				
+				<a name="select_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">select_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="group-values-attribute-method" class="method-detail">
+				<a name="group_values"></a>
+				
+				<a name="group_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">group_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="order-values-attribute-method" class="method-detail">
+				<a name="order_values"></a>
+				
+				<a name="order_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">order_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="reorder-flag-attribute-method" class="method-detail">
+				<a name="reorder_flag"></a>
+				
+				<a name="reorder_flag="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">reorder_flag</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="joins-values-attribute-method" class="method-detail">
+				<a name="joins_values"></a>
+				
+				<a name="joins_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">joins_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="where-values-attribute-method" class="method-detail">
+				<a name="where_values"></a>
+				
+				<a name="where_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">where_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="having-values-attribute-method" class="method-detail">
+				<a name="having_values"></a>
+				
+				<a name="having_values="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">having_values</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="limit-value-attribute-method" class="method-detail">
+				<a name="limit_value"></a>
+				
+				<a name="limit_value="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">limit_value</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="offset-value-attribute-method" class="method-detail">
+				<a name="offset_value"></a>
+				
+				<a name="offset_value="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">offset_value</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="lock-value-attribute-method" class="method-detail">
+				<a name="lock_value"></a>
+				
+				<a name="lock_value="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">lock_value</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="readonly-value-attribute-method" class="method-detail">
+				<a name="readonly_value"></a>
+				
+				<a name="readonly_value="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">readonly_value</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="create-with-value-attribute-method" class="method-detail">
+				<a name="create_with_value"></a>
+				
+				<a name="create_with_value="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">create_with_value</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="from-value-attribute-method" class="method-detail">
+				<a name="from_value"></a>
+				
+				<a name="from_value="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">from_value</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="arel-method" class="method-detail ">
+				<a name="method-i-arel"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">arel</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="arel-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">arel</span>
+149:       <span class="ruby-ivar">@arel</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">build_arel</span>
+150:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-arel-method" class="method-detail ">
+				<a name="method-i-build_arel"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_arel</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-arel-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 173</span>
+173:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_arel</span>
+174:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">table</span>
+175: 
+176:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">build_joins</span>(<span class="ruby-identifier">arel</span>, <span class="ruby-ivar">@joins_values</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@joins_values</span>.<span class="ruby-identifier">empty?</span>
+177: 
+178:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">collapse_wheres</span>(<span class="ruby-identifier">arel</span>, (<span class="ruby-ivar">@where_values</span> <span class="ruby-operator">-</span> [<span class="ruby-value str">''</span>]).<span class="ruby-identifier">uniq</span>)
+179: 
+180:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">having</span>(*<span class="ruby-ivar">@having_values</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">reject</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">blank?</span>}) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@having_values</span>.<span class="ruby-identifier">empty?</span>
+181: 
+182:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">take</span>(<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">sanitize_limit</span>(<span class="ruby-ivar">@limit_value</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@limit_value</span>
+183:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">skip</span>(<span class="ruby-ivar">@offset_value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@offset_value</span>
+184: 
+185:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">group</span>(*<span class="ruby-ivar">@group_values</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">reject</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">blank?</span>}) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@group_values</span>.<span class="ruby-identifier">empty?</span>
+186: 
+187:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">order</span>(*<span class="ruby-ivar">@order_values</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">reject</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">blank?</span>}) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@order_values</span>.<span class="ruby-identifier">empty?</span>
+188: 
+189:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">build_select</span>(<span class="ruby-identifier">arel</span>, <span class="ruby-ivar">@select_values</span>.<span class="ruby-identifier">uniq</span>)
+190: 
+191:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">from</span>(<span class="ruby-ivar">@from_value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@from_value</span>
+192:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">lock</span>(<span class="ruby-ivar">@lock_value</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@lock_value</span>
+193: 
+194:       <span class="ruby-identifier">arel</span>
+195:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-with-method" class="method-detail ">
+				<a name="method-i-create_with"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create_with</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-with-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 117</span>
+117:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_with</span>(<span class="ruby-identifier">value</span>)
+118:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+119:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">create_with_value</span> = <span class="ruby-identifier">value</span>
+120:       <span class="ruby-identifier">relation</span>
+121:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="custom-join-sql-method" class="method-detail ">
+				<a name="method-i-custom_join_sql"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">custom_join_sql</span><span
+						class="method-args">(*joins)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="custom-join-sql-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 152</span>
+152:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">custom_join_sql</span>(*<span class="ruby-identifier">joins</span>)
+153:       <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">select_manager</span>
+154: 
+155:       <span class="ruby-identifier">joins</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">join</span><span class="ruby-operator">|</span>
+156:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">join</span>.<span class="ruby-identifier">blank?</span>
+157: 
+158:         <span class="ruby-ivar">@implicit_readonly</span> = <span class="ruby-keyword kw">true</span>
+159: 
+160:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">join</span>
+161:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+162:           <span class="ruby-identifier">join</span> = <span class="ruby-constant">Arel</span>.<span class="ruby-identifier">sql</span>(<span class="ruby-identifier">join</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">array_of_strings?</span>(<span class="ruby-identifier">join</span>)
+163:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+164:           <span class="ruby-identifier">join</span> = <span class="ruby-constant">Arel</span>.<span class="ruby-identifier">sql</span>(<span class="ruby-identifier">join</span>)
+165:         <span class="ruby-keyword kw">end</span>
+166: 
+167:         <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">join</span>)
+168:       <span class="ruby-keyword kw">end</span>
+169: 
+170:       <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">join_sql</span>
+171:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="eager-load-method" class="method-detail ">
+				<a name="method-i-eager_load"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eager_load</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="eager-load-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 22</span>
+22:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eager_load</span>(*<span class="ruby-identifier">args</span>)
+23:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+24:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">eager_load_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">args</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+25:       <span class="ruby-identifier">relation</span>
+26:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extending-method" class="method-detail ">
+				<a name="method-i-extending"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extending</span><span
+						class="method-args">(*modules, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extending-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 129</span>
+129:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extending</span>(*<span class="ruby-identifier">modules</span>, &amp;<span class="ruby-identifier">block</span>)
+130:       <span class="ruby-identifier">modules</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Module</span>.<span class="ruby-identifier">new</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+131: 
+132:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+133:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:apply_modules</span>, <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">flatten</span>)
+134:       <span class="ruby-identifier">relation</span>
+135:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="from-method" class="method-detail ">
+				<a name="method-i-from"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">from</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="from-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 123</span>
+123:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from</span>(<span class="ruby-identifier">value</span>)
+124:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+125:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">from_value</span> = <span class="ruby-identifier">value</span>
+126:       <span class="ruby-identifier">relation</span>
+127:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="group-method" class="method-detail ">
+				<a name="method-i-group"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">group</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="group-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 44</span>
+44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">group</span>(*<span class="ruby-identifier">args</span>)
+45:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+46:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">group_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+47:       <span class="ruby-identifier">relation</span>
+48:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="having-method" class="method-detail ">
+				<a name="method-i-having"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">having</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="having-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 80</span>
+80:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">having</span>(*<span class="ruby-identifier">args</span>)
+81:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+82:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">having_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">build_where</span>(*<span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+83:       <span class="ruby-identifier">relation</span>
+84:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="includes-method" class="method-detail ">
+				<a name="method-i-includes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">includes</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="includes-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 12</span>
+12:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">includes</span>(*<span class="ruby-identifier">args</span>)
+13:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">reject!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">blank?</span> }
+14: 
+15:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">clone</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+16: 
+17:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+18:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">includes_values</span> = (<span class="ruby-identifier">relation</span>.<span class="ruby-identifier">includes_values</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">args</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+19:       <span class="ruby-identifier">relation</span>
+20:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="joins-method" class="method-detail ">
+				<a name="method-i-joins"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">joins</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="joins-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 65</span>
+65:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">joins</span>(*<span class="ruby-identifier">args</span>)
+66:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+67: 
+68:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten!</span>
+69:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">joins_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">args</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+70: 
+71:       <span class="ruby-identifier">relation</span>
+72:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="limit-method" class="method-detail ">
+				<a name="method-i-limit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">limit</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="limit-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 86</span>
+86:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">limit</span>(<span class="ruby-identifier">value</span>)
+87:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+88:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">limit_value</span> = <span class="ruby-identifier">value</span>
+89:       <span class="ruby-identifier">relation</span>
+90:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lock-method" class="method-detail ">
+				<a name="method-i-lock"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lock</span><span
+						class="method-args">(locks = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lock-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 98</span>
+ 98:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lock</span>(<span class="ruby-identifier">locks</span> = <span class="ruby-keyword kw">true</span>)
+ 99:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+100: 
+101:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">locks</span>
+102:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">TrueClass</span>, <span class="ruby-constant">NilClass</span>
+103:         <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">lock_value</span> = <span class="ruby-identifier">locks</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">true</span>
+104:       <span class="ruby-keyword kw">else</span>
+105:         <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">lock_value</span> = <span class="ruby-keyword kw">false</span>
+106:       <span class="ruby-keyword kw">end</span>
+107: 
+108:       <span class="ruby-identifier">relation</span>
+109:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="offset-method" class="method-detail ">
+				<a name="method-i-offset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">offset</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="offset-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 92</span>
+92:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">offset</span>(<span class="ruby-identifier">value</span>)
+93:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+94:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">offset_value</span> = <span class="ruby-identifier">value</span>
+95:       <span class="ruby-identifier">relation</span>
+96:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="order-method" class="method-detail ">
+				<a name="method-i-order"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">order</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="order-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 50</span>
+50:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">order</span>(*<span class="ruby-identifier">args</span>)
+51:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+52:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">order_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+53:       <span class="ruby-identifier">relation</span>
+54:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="preload-method" class="method-detail ">
+				<a name="method-i-preload"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">preload</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="preload-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 28</span>
+28:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">preload</span>(*<span class="ruby-identifier">args</span>)
+29:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+30:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">preload_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">args</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+31:       <span class="ruby-identifier">relation</span>
+32:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="readonly-method" class="method-detail ">
+				<a name="method-i-readonly"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">readonly</span><span
+						class="method-args">(value = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="readonly-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 111</span>
+111:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">readonly</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">true</span>)
+112:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+113:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">readonly_value</span> = <span class="ruby-identifier">value</span>
+114:       <span class="ruby-identifier">relation</span>
+115:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reorder-method" class="method-detail ">
+				<a name="method-i-reorder"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reorder</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="reorder-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 56</span>
+56:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reorder</span>(*<span class="ruby-identifier">args</span>)
+57:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+58:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+59:         <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">order_values</span> = <span class="ruby-identifier">args</span>
+60:         <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">reorder_flag</span> = <span class="ruby-keyword kw">true</span>
+61:       <span class="ruby-keyword kw">end</span>
+62:       <span class="ruby-identifier">relation</span>
+63:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reverse-order-method" class="method-detail ">
+				<a name="method-i-reverse_order"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reverse_order</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="reverse-order-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 137</span>
+137:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reverse_order</span>
+138:       <span class="ruby-identifier">order_clause</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">order_clauses</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">', '</span>)
+139:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">except</span>(<span class="ruby-value">:order</span>)
+140: 
+141:       <span class="ruby-identifier">order</span> = <span class="ruby-identifier">order_clause</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">?</span>
+142:         <span class="ruby-node">&quot;#{@klass.table_name}.#{@klass.primary_key} DESC&quot;</span> <span class="ruby-operator">:</span>
+143:         <span class="ruby-identifier">reverse_sql_order</span>(<span class="ruby-identifier">order_clause</span>)
+144: 
+145:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">order</span>(<span class="ruby-constant">Arel</span>.<span class="ruby-identifier">sql</span>(<span class="ruby-identifier">order</span>))
+146:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="select-method" class="method-detail ">
+				<a name="method-i-select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">select</span><span
+						class="method-args">(value = Proc.new)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="select-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 34</span>
+34:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select</span>(<span class="ruby-identifier">value</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span>)
+35:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+36:         <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span>*<span class="ruby-identifier">block_args</span><span class="ruby-operator">|</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">call</span>(*<span class="ruby-identifier">block_args</span>) }
+37:       <span class="ruby-keyword kw">else</span>
+38:         <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+39:         <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">select_values</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">value</span>)
+40:         <span class="ruby-identifier">relation</span>
+41:       <span class="ruby-keyword kw">end</span>
+42:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="where-method" class="method-detail ">
+				<a name="method-i-where"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">where</span><span
+						class="method-args">(opts, *rest)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="where-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">where</span>(<span class="ruby-identifier">opts</span>, *<span class="ruby-identifier">rest</span>)
+75:       <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">clone</span>
+76:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">where_values</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">build_where</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">rest</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">blank?</span>
+77:       <span class="ruby-identifier">relation</span>
+78:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="apply-modules-method" class="method-detail ">
+				<a name="method-i-apply_modules"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">apply_modules</span><span
+						class="method-args">(modules)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="apply-modules-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 279</span>
+279:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apply_modules</span>(<span class="ruby-identifier">modules</span>)
+280:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">empty?</span>
+281:         <span class="ruby-ivar">@extensions</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">modules</span>
+282:         <span class="ruby-identifier">modules</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">extension</span><span class="ruby-operator">|</span> <span class="ruby-identifier">extend</span>(<span class="ruby-identifier">extension</span>) }
+283:       <span class="ruby-keyword kw">end</span>
+284:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="array-of-strings--method" class="method-detail ">
+				<a name="method-i-array_of_strings%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">array_of_strings?</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="array-of-strings--source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 298</span>
+298:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">array_of_strings?</span>(<span class="ruby-identifier">o</span>)
+299:       <span class="ruby-identifier">o</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">all?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)}
+300:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-joins-method" class="method-detail ">
+				<a name="method-i-build_joins"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_joins</span><span
+						class="method-args">(relation, joins)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-joins-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 232</span>
+232:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_joins</span>(<span class="ruby-identifier">relation</span>, <span class="ruby-identifier">joins</span>)
+233:       <span class="ruby-identifier">association_joins</span> = []
+234: 
+235:       <span class="ruby-identifier">joins</span> = <span class="ruby-ivar">@joins_values</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:strip</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">j</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">j</span>}.<span class="ruby-identifier">uniq</span>
+236: 
+237:       <span class="ruby-identifier">joins</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">join</span><span class="ruby-operator">|</span>
+238:         <span class="ruby-identifier">association_joins</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">join</span> <span class="ruby-keyword kw">if</span> [<span class="ruby-constant">Hash</span>, <span class="ruby-constant">Array</span>, <span class="ruby-constant">Symbol</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">join</span>.<span class="ruby-identifier">class</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">array_of_strings?</span>(<span class="ruby-identifier">join</span>)
+239:       <span class="ruby-keyword kw">end</span>
+240: 
+241:       <span class="ruby-identifier">stashed_association_joins</span> = <span class="ruby-identifier">joins</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassMethods</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinDependency</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinAssociation</span>)
+242: 
+243:       <span class="ruby-identifier">non_association_joins</span> = (<span class="ruby-identifier">joins</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">association_joins</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">stashed_association_joins</span>)
+244:       <span class="ruby-identifier">custom_joins</span> = <span class="ruby-identifier">custom_join_sql</span>(*<span class="ruby-identifier">non_association_joins</span>)
+245: 
+246:       <span class="ruby-identifier">join_dependency</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassMethods</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinDependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>, <span class="ruby-identifier">association_joins</span>, <span class="ruby-identifier">custom_joins</span>)
+247: 
+248:       <span class="ruby-identifier">join_dependency</span>.<span class="ruby-identifier">graft</span>(*<span class="ruby-identifier">stashed_association_joins</span>)
+249: 
+250:       <span class="ruby-ivar">@implicit_readonly</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association_joins</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">stashed_association_joins</span>.<span class="ruby-identifier">empty?</span>
+251: 
+252:       <span class="ruby-identifier">to_join</span> = []
+253: 
+254:       <span class="ruby-identifier">join_dependency</span>.<span class="ruby-identifier">join_associations</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">association</span><span class="ruby-operator">|</span>
+255:         <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">association_relation</span> = <span class="ruby-identifier">association</span>.<span class="ruby-identifier">relation</span>).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+256:           <span class="ruby-identifier">to_join</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">association_relation</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">join_type</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">association_join</span>.<span class="ruby-identifier">first</span>]
+257:           <span class="ruby-identifier">to_join</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">association_relation</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">join_type</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">association_join</span>.<span class="ruby-identifier">last</span>]
+258:         <span class="ruby-keyword kw">else</span>
+259:           <span class="ruby-identifier">to_join</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">association_relation</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">join_type</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">association_join</span>]
+260:         <span class="ruby-keyword kw">end</span>
+261:       <span class="ruby-keyword kw">end</span>
+262: 
+263:       <span class="ruby-identifier">to_join</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">left</span>, <span class="ruby-identifier">join_type</span>, <span class="ruby-identifier">right</span><span class="ruby-operator">|</span>
+264:         <span class="ruby-identifier">relation</span> = <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">left</span>, <span class="ruby-identifier">join_type</span>).<span class="ruby-identifier">on</span>(*<span class="ruby-identifier">right</span>)
+265:       <span class="ruby-keyword kw">end</span>
+266: 
+267:       <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">custom_joins</span>)
+268:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-select-method" class="method-detail ">
+				<a name="method-i-build_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_select</span><span
+						class="method-args">(arel, selects)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 270</span>
+270:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_select</span>(<span class="ruby-identifier">arel</span>, <span class="ruby-identifier">selects</span>)
+271:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">selects</span>.<span class="ruby-identifier">empty?</span>
+272:         <span class="ruby-ivar">@implicit_readonly</span> = <span class="ruby-keyword kw">false</span>
+273:         <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">project</span>(*<span class="ruby-identifier">selects</span>)
+274:       <span class="ruby-keyword kw">else</span>
+275:         <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">project</span>(<span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">quoted_table_name</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'.*'</span>))
+276:       <span class="ruby-keyword kw">end</span>
+277:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-where-method" class="method-detail ">
+				<a name="method-i-build_where"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_where</span><span
+						class="method-args">(opts, other = [])</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-where-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 220</span>
+220:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_where</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">other</span> = [])
+221:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">opts</span>
+222:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">Array</span>
+223:         [<span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:sanitize_sql</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">opts</span> <span class="ruby-operator">:</span> ([<span class="ruby-identifier">opts</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>))]
+224:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Hash</span>
+225:         <span class="ruby-identifier">attributes</span> = <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:expand_hash_conditions_for_aggregates</span>, <span class="ruby-identifier">opts</span>)
+226:         <span class="ruby-constant">PredicateBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">table</span>.<span class="ruby-identifier">engine</span>).<span class="ruby-identifier">build_from_hash</span>(<span class="ruby-identifier">attributes</span>, <span class="ruby-identifier">table</span>)
+227:       <span class="ruby-keyword kw">else</span>
+228:         [<span class="ruby-identifier">opts</span>]
+229:       <span class="ruby-keyword kw">end</span>
+230:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="collapse-wheres-method" class="method-detail ">
+				<a name="method-i-collapse_wheres"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">collapse_wheres</span><span
+						class="method-args">(arel, wheres)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="collapse-wheres-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 199</span>
+199:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collapse_wheres</span>(<span class="ruby-identifier">arel</span>, <span class="ruby-identifier">wheres</span>)
+200:       <span class="ruby-identifier">equalities</span> = <span class="ruby-identifier">wheres</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Equality</span>)
+201: 
+202:       <span class="ruby-identifier">groups</span> = <span class="ruby-identifier">equalities</span>.<span class="ruby-identifier">group_by</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">equality</span><span class="ruby-operator">|</span>
+203:         <span class="ruby-identifier">equality</span>.<span class="ruby-identifier">left</span>
+204:       <span class="ruby-keyword kw">end</span>
+205: 
+206:       <span class="ruby-identifier">groups</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">eqls</span><span class="ruby-operator">|</span>
+207:         <span class="ruby-identifier">test</span> = <span class="ruby-identifier">eqls</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">eqls</span>.<span class="ruby-identifier">shift</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">memo</span>, <span class="ruby-identifier">expr</span><span class="ruby-operator">|</span>
+208:           <span class="ruby-identifier">memo</span>.<span class="ruby-identifier">and</span>(<span class="ruby-identifier">expr</span>)
+209:         <span class="ruby-keyword kw">end</span>
+210:         <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">test</span>)
+211:       <span class="ruby-keyword kw">end</span>
+212: 
+213:       (<span class="ruby-identifier">wheres</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">equalities</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">where</span><span class="ruby-operator">|</span>
+214:         <span class="ruby-identifier">where</span> = <span class="ruby-constant">Arel</span>.<span class="ruby-identifier">sql</span>(<span class="ruby-identifier">where</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">where</span>
+215:         <span class="ruby-identifier">arel</span> = <span class="ruby-identifier">arel</span>.<span class="ruby-identifier">where</span>(<span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Grouping</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">where</span>))
+216:       <span class="ruby-keyword kw">end</span>
+217:       <span class="ruby-identifier">arel</span>
+218:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reverse-sql-order-method" class="method-detail ">
+				<a name="method-i-reverse_sql_order"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reverse_sql_order</span><span
+						class="method-args">(order_query)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="reverse-sql-order-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/relation/query_methods.rb, line 286</span>
+286:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reverse_sql_order</span>(<span class="ruby-identifier">order_query</span>)
+287:       <span class="ruby-identifier">order_query</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,/</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+288:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/\s(asc|ASC)$/</span>)
+289:           <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\s(asc|ASC)$/</span>, <span class="ruby-value str">' DESC'</span>)
+290:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/\s(desc|DESC)$/</span>)
+291:           <span class="ruby-identifier">s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\s(desc|DESC)$/</span>, <span class="ruby-value str">' ASC'</span>)
+292:         <span class="ruby-keyword kw">else</span>
+293:           <span class="ruby-identifier">s</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-value str">' DESC'</span>)
+294:         <span class="ruby-keyword kw">end</span>
+295:       }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">','</span>)
+296:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

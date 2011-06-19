@@ -1,0 +1,1827 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Ruby on Rails Guides: Action View Overview</title>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+<link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shCore.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/syntaxhighlighter/shThemeRailsGuides.css" />
+</head>
+<body class="guide">
+  <div id="topNav">
+    <div class="wrapper">
+      <strong>More at <a href="http://rubyonrails.org/">rubyonrails.org:</a> </strong>
+      <a href="http://rubyonrails.org/">Overview</a> |
+      <a href="http://rubyonrails.org/download">Download</a> |
+      <a href="http://rubyonrails.org/deploy">Deploy</a> |
+      <a href="http://rails.lighthouseapp.com/projects/8994-ruby-on-rails/overview">Code</a> |
+      <a href="http://rubyonrails.org/screencasts">Screencasts</a> |
+      <a href="http://rubyonrails.org/documentation">Documentation</a> |
+      <a href="http://rubyonrails.org/ecosystem">Ecosystem</a> |
+      <a href="http://rubyonrails.org/community">Community</a> |
+      <a href="http://weblog.rubyonrails.org/">Blog</a>
+    </div>
+  </div>
+  <div id="header">
+    <div class="wrapper clearfix">
+      <h1><a href="index.html" title="Return to home page">Guides.rubyonrails.org</a></h1>
+      <p class="hide"><a href="#mainCol">Skip navigation</a>.</p>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="index"><a href="index.html" onclick="guideMenu(); return false;" id="guidesMenu">Guides Index</a>
+          <div id="guides" class="clearfix" style="display: none;">
+            <hr />
+            <dl class="L">
+              <dt>Start Here</dt>
+              <dd><a href="getting_started.html">Getting Started with Rails</a></dd>
+              <dt>Models</dt>
+              <dd><a href="migrations.html">Rails Database Migrations</a></dd>
+              <dd><a href="active_record_validations_callbacks.html">Active Record Validations and Callbacks</a></dd>
+              <dd><a href="association_basics.html">Active Record Associations</a></dd>
+              <dd><a href="active_record_querying.html">Active Record Query Interface</a></dd>
+              <dt>Views</dt>
+              <dd><a href="layouts_and_rendering.html">Layouts and Rendering in Rails</a></dd>
+              <dd><a href="form_helpers.html">Action View Form Helpers</a></dd>
+              <dt>Controllers</dt>
+              <dd><a href="action_controller_overview.html">Action Controller Overview</a></dd>
+              <dd><a href="routing.html">Rails Routing from the Outside In</a></dd>
+            </dl>
+            <dl class="R">
+              <dt>Digging Deeper</dt>
+              <dd><a href="active_support_core_extensions.html">Active Support Core Extensions</a></dd>
+              <dd><a href="i18n.html">Rails Internationalization API</a></dd>
+              <dd><a href="action_mailer_basics.html">Action Mailer Basics</a></dd>
+              <dd><a href="testing.html">Testing Rails Applications</a></dd>
+              <dd><a href="security.html">Securing Rails Applications</a></dd>
+              <dd><a href="debugging_rails_applications.html">Debugging Rails Applications</a></dd>
+              <dd><a href="performance_testing.html">Performance Testing Rails Applications</a></dd>
+              <dd><a href="configuring.html">Configuring Rails Applications</a></dd>
+              <dd><a href="command_line.html">Rails Command Line Tools and Rake Tasks</a></dd>
+              <dd><a href="caching_with_rails.html">Caching with Rails</a></dd>
+
+              <dt>Extending Rails</dt>
+              <dd><a href="plugins.html">The Basics of Creating Rails Plugins</a></dd>
+              <dd><a href="rails_on_rack.html">Rails on Rack</a></dd>
+              <dd><a href="generators.html">Creating and Customizing Rails Generators</a></dd>
+
+              <dt>Contributing to Ruby on Rails</dt>
+              <dd><a href="contributing_to_ruby_on_rails.html">Contributing to Ruby on Rails</a></dd>
+              <dd><a href="api_documentation_guidelines.html">API Documentation Guidelines</a></dd>
+              <dd><a href="ruby_on_rails_guides_guidelines.html">Ruby on Rails Guides Guidelines</a></dd>
+
+              <dt>Release Notes</dt>
+              <dd><a href="3_0_release_notes.html">Ruby on Rails 3.0 Release Notes</a></dd>
+              <dd><a href="2_3_release_notes.html">Ruby on Rails 2.3 Release Notes</a></dd>
+              <dd><a href="2_2_release_notes.html">Ruby on Rails 2.2 Release Notes</a></dd>
+            </dl>
+          </div>
+        </li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="credits.html">Credits</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="hide" />
+
+  <div id="feature">
+    <div class="wrapper">
+      <h2>Action View Overview</h2>
+<p>In this guide you will learn:</p>
+<ul>
+	<li>What Action View is, and how to use it with Rails</li>
+	<li>How to use Action View outside of Rails</li>
+	<li>How best to use templates, partials, and layouts</li>
+	<li>What helpers are provided by Action View, and how to make your own</li>
+	<li>How to use localized views</li>
+</ul>
+
+            <div id="subCol">
+        <h3 class="chapter"><img src="images/chapters_icon.gif" alt="" />Chapters</h3>
+        <ol class="chapters">
+<li><a href="#what-is-action-view">What is Action View?</a></li><li><a href="#using-action-view-with-rails">Using Action View with Rails</a></li><li><a href="#using-action-view-outside-of-rails">Using Action View outside of Rails</a></li><li><a href="#templates-partials-and-layouts">Templates, Partials and Layouts</a></li><li><a href="#using-templates-partials-and-layouts-in-the-rails-way">Using Templates, Partials and Layouts in &#8220;The Rails Way&#8221;</a></li><li><a href="#partial-layouts">Partial Layouts</a></li><li><a href="#view-paths">View Paths</a></li><li><a href="#overview-of-all-the-helpers-provided-by-action-view">Overview of all the helpers provided by Action View</a><ul><li><a href="#activerecordhelper">ActiveRecordHelper</a></li> <li><a href="#assettaghelper">AssetTagHelper</a></li> <li><a href="#atomfeedhelper">AtomFeedHelper</a></li> <li><a href="#benchmarkhelper">BenchmarkHelper</a></li> <li><a href="#cachehelper">CacheHelper</a></li> <li><a href="#capturehelper">CaptureHelper</a></li> <li><a href="#datehelper">DateHelper</a></li> <li><a href="#debughelper">DebugHelper</a></li> <li><a href="#formhelper">FormHelper</a></li> <li><a href="#formoptionshelper">FormOptionsHelper</a></li> <li><a href="#formtaghelper">FormTagHelper</a></li> <li><a href="#javascripthelper">JavaScriptHelper</a></li> <li><a href="#numberhelper">NumberHelper</a></li> <li><a href="#prototypehelper">PrototypeHelper</a></li> <li><a href="#prototypehelper-javascriptgenerator-generatormethods">PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li></ul></li><li><a href="#localized-views">Localized Views</a></li><li><a href="#changelog">Changelog</a></li></ol></div>
+    </div>
+  </div>
+
+  <div id="container">
+    <div class="wrapper">
+      <div id="mainCol">
+        <h3 id="what-is-action-view">1 What is Action View?</h3>
+<p>Action View and Action Controller are the two major components of Action Pack. In Rails, web requests are handled by Action Pack, which splits the work into a controller part (performing the logic) and a view part (rendering a template). Typically, Action Controller will be concerned with communicating with the database and performing <span class="caps">CRUD</span> actions where necessary. Action View is then responsible for compiling the response.</p>
+<p>Action View templates are written using embedded Ruby in tags mingled with <span class="caps">HTML</span>. To avoid cluttering the templates with boilerplate code, a number of helper classes provide common behavior for forms, dates, and strings. It&#8217;s also easy to add new helpers to your application as it evolves.</p>
+<p>Note: Some features of Action View are tied to Active Record, but that doesn&#8217;t mean that Action View depends on Active Record. Action View is an independent package that can be used with any sort of backend.</p>
+<h3 id="using-action-view-with-rails">2 Using Action View with Rails</h3>
+<p><span class="caps">TODO</span>&#8230;</p>
+<h3 id="using-action-view-outside-of-rails">3 Using Action View outside of Rails</h3>
+<p>Action View works well with Action Record, but it can also be used with other Ruby tools. We can demonstrate this by creating a small <a href="http://rack.rubyforge.org/">Rack</a> application that includes Action View functionality. This may be useful, for example, if you&#8217;d like access to Action View&#8217;s helpers in a Rack application.</p>
+<p>Let&#8217;s start by ensuring that you have the Action Pack and Rack gems installed:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: plain; gutter: false; toolbar: false">
+gem install actionpack
+gem install rack
+</pre>
+</div>
+</notextile>
+
+<p>Now we&#8217;ll create a simple &#8220;Hello World&#8221; application that uses the <tt>titleize</tt> method provided by Active Support.</p>
+<p><strong>hello_world.rb:</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+require 'rubygems'
+require 'active_support/core_ext/string/inflections'
+require 'rack'
+
+def hello_world(env)
+  [200, {&quot;Content-Type&quot; =&gt; &quot;text/html&quot;}, &quot;hello world&quot;.titleize]
+end
+
+Rack::Handler::Mongrel.run method(:hello_world), :Port =&gt; 4567
+</pre>
+</div>
+</notextile>
+
+<p>We can see this all come together by starting up the application and then visiting <tt>http://localhost:4567/</tt></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: plain; gutter: false; toolbar: false">
+ruby hello_world.rb
+</pre>
+</div>
+</notextile>
+
+<p><span class="caps">TODO</span> needs a screenshot? I have one &#8211; not sure where to put it.</p>
+<p>Notice how &#8216;hello world&#8217; has been converted into &#8216;Hello World&#8217; by the <tt>titleize</tt> helper method.</p>
+<p>Action View can also be used with <a href="http://www.sinatrarb.com/">Sinatra</a> in the same way.</p>
+<p>Let&#8217;s start by ensuring that you have the Action Pack and Sinatra gems installed:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: plain; gutter: false; toolbar: false">
+gem install actionpack
+gem install sinatra
+</pre>
+</div>
+</notextile>
+
+<p>Now we&#8217;ll create the same &#8220;Hello World&#8221; application in Sinatra.</p>
+<p><strong>hello_world.rb:</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+require 'rubygems'
+require 'action_view'
+require 'sinatra'
+
+get '/' do
+  erb 'hello world'.titleize
+end
+</pre>
+</div>
+</notextile>
+
+<p>Then, we can run the application:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: plain; gutter: false; toolbar: false">
+ruby hello_world.rb
+</pre>
+</div>
+</notextile>
+
+<p>Once the application is running, you can see Sinatra and Action View working together by visiting <tt>http://localhost:4567/</tt></p>
+<p><span class="caps">TODO</span> needs a screenshot? I have one &#8211; not sure where to put it.</p>
+<h3 id="templates-partials-and-layouts">4 Templates, Partials and Layouts</h3>
+<p><span class="caps">TODO</span>&#8230;</p>
+<p><span class="caps">TODO</span> see http://guides.rubyonrails.org/layouts_and_rendering.html</p>
+<h3 id="using-templates-partials-and-layouts-in-the-rails-way">5 Using Templates, Partials and Layouts in &#8220;The Rails Way&#8221;</h3>
+<p><span class="caps">TODO</span>&#8230;</p>
+<h3 id="partial-layouts">6 Partial Layouts</h3>
+<p>Partials can have their own layouts applied to them. These layouts are different than the ones that are specified globally for the entire action, but they work in a similar fashion.</p>
+<p>Let&#8217;s say we&#8217;re displaying a post on a page where it should be wrapped in a <tt>div</tt> for display purposes. First, we&#8217;ll create a new <tt>Post</tt>:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+Post.create(:body =&gt; 'Partial Layouts are cool!')
+</pre>
+</div>
+</notextile>
+
+<p>In the <tt>show</tt> template, we&#8217;ll render the <tt>post</tt> partial wrapped in the <tt>box</tt> layout:</p>
+<p><strong>posts/show.html.erb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= render :partial =&gt; 'post', :layout =&gt; 'box', :locals =&gt; {:post =&gt; @post} %&gt;
+</pre>
+</div>
+</notextile>
+
+<p>The <tt>box</tt> layout simply wraps the <tt>post</tt> partial in a <tt>div</tt>:</p>
+<p><strong>posts/_box.html.erb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;div class='box'&gt;
+  &lt;%= yield %&gt;
+&lt;/div&gt;
+</pre>
+</div>
+</notextile>
+
+<p>The <tt>post</tt> partial wraps the post&#8217;s <tt>body</tt> in a <tt>div</tt> with the <tt>id</tt> of the post using the <tt>div_for</tt> helper:</p>
+<p><strong>posts/_post.html.erb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= div_for(post) do %&gt;
+  &lt;p&gt;&lt;%= post.body %&gt;&lt;/p&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<p>This example would output the following:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;div class='box'&gt;
+  &lt;div id='post_1'&gt;
+    &lt;p&gt;Partial Layouts are cool!&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>
+</notextile>
+
+<p>Note that the partial layout has access to the local <tt>post</tt> variable that was passed into the <tt>render</tt> call. However, unlike application-wide layouts, partial layouts still have the underscore prefix.</p>
+<p>You can also render a block of code within a partial layout instead of calling <tt>yield</tt>. For example, if we didn&#8217;t have the <tt>post</tt> partial, we could do this instead:</p>
+<p><strong>posts/show.html.erb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;% render(:layout =&gt; 'box', :locals =&gt; {:post =&gt; @post}) do %&gt;
+  &lt;%= div_for(post) do %&gt;
+    &lt;p&gt;&lt;%= post.body %&gt;&lt;/p&gt;
+  &lt;% end %&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<p>If we&#8217;re using the same <tt>box</tt> partial from above, his would produce the same output as the previous example.</p>
+<h3 id="view-paths">7 View Paths</h3>
+<p><span class="caps">TODO</span>&#8230;</p>
+<h3 id="overview-of-all-the-helpers-provided-by-action-view">8 Overview of all the helpers provided by Action View</h3>
+<p>The following is only a brief overview summary of the helpers available in Action View. It&#8217;s recommended that you review the <span class="caps">API</span> Documentation, which covers all of the helpers in more detail, but this should serve as a good starting point.</p>
+<h4 id="activerecordhelper">8.1 ActiveRecordHelper</h4>
+<p>The Active Record Helper makes it easier to create forms for records kept in instance variables. You may also want to review the <a href="form_helpers.html">Rails Form helpers guide</a>.</p>
+<h5 id="error_message_on">8.1.1 error_message_on</h5>
+<p>Returns a string containing the error message attached to the method on the object if one exists.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+error_message_on &quot;post&quot;, &quot;title&quot;
+</pre>
+</div>
+</notextile>
+
+<h5 id="error_messages_for">8.1.2 error_messages_for</h5>
+<p>Returns a string with a <span class="caps">DIV</span> containing all of the error messages for the objects located as instance variables by the names given.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+error_messages_for &quot;post&quot;
+</pre>
+</div>
+</notextile>
+
+<h5 id="form">8.1.3 form</h5>
+<p>Returns a form with inputs for all attributes of the specified Active Record object. For example, let&#8217;s say we have a <tt>@post</tt> with attributes named <tt>title</tt> of type <tt>String</tt> and <tt>body</tt> of type <tt>Text</tt>. Calling <tt>form</tt> would produce a form to creating a new post with inputs for those attributes.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+form(&quot;post&quot;)
+</pre>
+</div>
+</notextile>
+
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;form action='/posts/create' method='post'&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;post_title&quot;&gt;Title&lt;/label&gt;&lt;br /&gt;
+    &lt;input id=&quot;post_title&quot; name=&quot;post[title]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;label for=&quot;post_body&quot;&gt;Body&lt;/label&gt;&lt;br /&gt;
+    &lt;textarea cols=&quot;40&quot; id=&quot;post_body&quot; name=&quot;post[body]&quot; rows=&quot;20&quot;&gt;&lt;/textarea&gt;
+  &lt;/p&gt;
+  &lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Create&quot; /&gt;
+&lt;/form&gt;
+</pre>
+</div>
+</notextile>
+
+<p>Typically, <tt>form_for</tt> is used instead of <tt>form</tt> because it doesn&#8217;t automatically include all of the model&#8217;s attributes.</p>
+<h5 id="input">8.1.4 input</h5>
+<p>Returns a default input tag for the type of object returned by the method.</p>
+<p>For example, if <tt>@post</tt> has an attribute <tt>title</tt> mapped to a <tt>String</tt> column that holds &#8220;Hello World&#8221;:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+input(&quot;post&quot;, &quot;title&quot;) # =&gt;
+  &lt;input id=&quot;post_title&quot; name=&quot;post[title]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="assettaghelper">8.2 AssetTagHelper</h4>
+<p>This module provides methods for generating <span class="caps">HTML</span> that links views to assets such as images, javascripts, stylesheets, and feeds.</p>
+<p>By default, Rails links to these assets on the current host in the public folder, but you can direct Rails to link to assets from a dedicated assets server by setting <tt>ActionController::Base.asset_host</tt> in the application configuration, typically in <tt>config/environments/production.rb</tt>. For example, let&#8217;s say your asset host is <tt>assets.example.com</tt>:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+ActionController::Base.asset_host = &quot;assets.example.com&quot;
+image_tag(&quot;rails.png&quot;) # =&gt; &lt;img src=&quot;http://assets.example.com/images/rails.png&quot; alt=&quot;Rails&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="register_javascript_expansion">8.2.1 register_javascript_expansion</h5>
+<p>Register one or more javascript files to be included when symbol is passed to javascript_include_tag. This method is typically intended to be called from plugin initialization to register javascript files that the plugin installed in public/javascripts.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+ActionView::Helpers::AssetTagHelper.register_javascript_expansion :monkey =&gt; [&quot;head&quot;, &quot;body&quot;, &quot;tail&quot;]
+
+javascript_include_tag :monkey # =&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascripts/head.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascripts/body.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascripts/tail.js&quot;&gt;&lt;/script&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="register_javascript_include_default">8.2.2 register_javascript_include_default</h5>
+<p>Register one or more additional JavaScript files to be included when <tt>javascript_include_tag :defaults</tt> is called. This method is typically intended to be called from plugin initialization to register additional <tt>.js</tt> files that the plugin installed in <tt>public/javascripts</tt>.</p>
+<h5 id="register_stylesheet_expansion">8.2.3 register_stylesheet_expansion</h5>
+<p>Register one or more stylesheet files to be included when symbol is passed to <tt>stylesheet_link_tag</tt>. This method is typically intended to be called from plugin initialization to register stylesheet files that the plugin installed in <tt>public/stylesheets</tt>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+ActionView::Helpers::AssetTagHelper.register_stylesheet_expansion :monkey =&gt; [&quot;head&quot;, &quot;body&quot;, &quot;tail&quot;]
+
+stylesheet_link_tag :monkey # =&gt;
+  &lt;link href=&quot;/stylesheets/head.css&quot;  media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+  &lt;link href=&quot;/stylesheets/body.css&quot;  media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+  &lt;link href=&quot;/stylesheets/tail.css&quot;  media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="auto_discovery_link_tag">8.2.4 auto_discovery_link_tag</h5>
+<p>Returns a link tag that browsers and news readers can use to auto-detect an <span class="caps">RSS</span> or <span class="caps">ATOM</span> feed.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+auto_discovery_link_tag(:rss, &quot;http://www.example.com/feed.rss&quot;, {:title =&gt; &quot;RSS Feed&quot;}) # =&gt;
+  &lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS Feed&quot; href=&quot;http://www.example.com/feed&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="image_path">8.2.5 image_path</h5>
+<p>Computes the path to an image asset in the public images directory. Full paths from the document root will be passed through. Used internally by <tt>image_tag</tt> to build the image path.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+image_path(&quot;edit.png&quot;) # =&gt; /images/edit.png
+</pre>
+</div>
+</notextile>
+
+<h5 id="image_tag">8.2.6 image_tag</h5>
+<p>Returns an html image tag for the source. The source can be a full path or a file that exists in your public images directory.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+image_tag(&quot;icon.png&quot;) # =&gt; &lt;img src=&quot;/images/icon.png&quot; alt=&quot;Icon&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="javascript_include_tag">8.2.7 javascript_include_tag</h5>
+<p>Returns an html script tag for each of the sources provided. You can pass in the filename (<tt>.js</tt> extension is optional) of javascript files that exist in your <tt>public/javascripts</tt> directory for inclusion into the current page or you can pass the full path relative to your document root.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_include_tag &quot;common&quot; # =&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascripts/common.js&quot;&gt;&lt;/script&gt;
+</pre>
+</div>
+</notextile>
+
+<p>To include the Prototype and Scriptaculous javascript libraries in your application, pass <tt>:defaults</tt> as the source. When using <tt>:defaults</tt>, if an <tt>application.js</tt> file exists in your <tt>public/javascripts</tt> directory, it will be included as well.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_include_tag :defaults
+</pre>
+</div>
+</notextile>
+
+<p>You can also include all javascripts in the javascripts directory using <tt>:all</tt> as the source.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_include_tag :all
+</pre>
+</div>
+</notextile>
+
+<p>You can also cache multiple javascripts into one file, which requires less <span class="caps">HTTP</span> connections to download and can better be compressed by gzip (leading to faster transfers). Caching will only happen if <tt>ActionController::Base.perform_caching</tt> is set to true (which is the case by default for the Rails production environment, but not for the development environment).</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_include_tag :all, :cache =&gt; true # =&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascripts/all.js&quot;&gt;&lt;/script&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="javascript_path">8.2.8 javascript_path</h5>
+<p>Computes the path to a javascript asset in the <tt>public/javascripts</tt> directory. If the source filename has no extension, <tt>.js</tt> will be appended. Full paths from the document root will be passed through. Used internally by <tt>javascript_include_tag</tt> to build the script path.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_path &quot;common&quot; # =&gt; /javascripts/common.js
+</pre>
+</div>
+</notextile>
+
+<h5 id="stylesheet_link_tag">8.2.9 stylesheet_link_tag</h5>
+<p>Returns a stylesheet link tag for the sources specified as arguments. If you don&#8217;t specify an extension, <tt>.css</tt> will be appended automatically.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+stylesheet_link_tag &quot;application&quot; # =&gt;
+  &lt;link href=&quot;/stylesheets/application.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<p>You can also include all styles in the stylesheet directory using :all as the source:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+stylesheet_link_tag :all
+</pre>
+</div>
+</notextile>
+
+<p>You can also cache multiple stylesheets into one file, which requires less <span class="caps">HTTP</span> connections and can better be compressed by gzip (leading to faster transfers). Caching will only happen if ActionController::Base.perform_caching is set to true (which is the case by default for the Rails production environment, but not for the development environment).</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+stylesheet_link_tag :all, :cache =&gt; true
+  &lt;link href=&quot;/stylesheets/all.css&quot;  media=&quot;screen&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="stylesheet_path">8.2.10 stylesheet_path</h5>
+<p>Computes the path to a stylesheet asset in the public stylesheets directory. If the source filename has no extension, .css will be appended. Full paths from the document root will be passed through. Used internally by stylesheet_link_tag to build the stylesheet path.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+stylesheet_path &quot;application&quot; # =&gt; /stylesheets/application.css
+</pre>
+</div>
+</notextile>
+
+<h4 id="atomfeedhelper">8.3 AtomFeedHelper</h4>
+<h5 id="atom_feed">8.3.1 atom_feed</h5>
+<p>This helper makes building an <span class="caps">ATOM</span> feed easy. Here&#8217;s a full usage example:</p>
+<p><strong>config/routes.rb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+map.resources :posts
+</pre>
+</div>
+</notextile>
+
+<p><strong>app/controllers/posts_controller.rb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+def index
+  @posts = Post.find(:all)
+
+  respond_to do |format|
+    format.html
+    format.atom
+  end
+end
+</pre>
+</div>
+</notextile>
+
+<p><strong>app/views/posts/index.atom.builder</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+atom_feed do |feed|
+  feed.title(&quot;Posts Index&quot;)
+  feed.updated((@posts.first.created_at))
+
+  for post in @posts
+    feed.entry(post) do |entry|
+      entry.title(post.title)
+      entry.content(post.body, :type =&gt; 'html')
+
+      entry.author do |author|
+        author.name(post.author_name)
+      end
+    end
+  end
+end
+</pre>
+</div>
+</notextile>
+
+<h4 id="benchmarkhelper">8.4 BenchmarkHelper</h4>
+<h5 id="benchmark">8.4.1 benchmark</h5>
+<p>Allows you to measure the execution time of a block in a template and records the result to the log. Wrap this block around expensive operations or possible bottlenecks to get a time reading for the operation.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;% benchmark &quot;Process data files&quot; do %&gt;
+  &lt;%= expensive_files_operation %&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<p>This would add something like &#8220;Process data files (0.34523)&#8221; to the log, which you can then use to compare timings when optimizing your code.</p>
+<h4 id="cachehelper">8.5 CacheHelper</h4>
+<h5 id="cache">8.5.1 cache</h5>
+<p>A method for caching fragments of a view rather than an entire action or page. This technique is useful caching pieces like menus, lists of news topics, static <span class="caps">HTML</span> fragments, and so on. This method takes a block that contains the content you wish to cache. See <tt>ActionController::Caching::Fragments</tt> for more information.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;% cache do %&gt;
+  &lt;%= render :partial =&gt; &quot;shared/footer&quot; %&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="capturehelper">8.6 CaptureHelper</h4>
+<h5 id="capture">8.6.1 capture</h5>
+<p>The <tt>capture</tt> method allows you to extract part of a template into a variable. You can then use this variable anywhere in your templates or layout.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;% @greeting = capture do %&gt;
+  &lt;p&gt;Welcome! The date and time is &lt;%= Time.now %&gt;&lt;/p&gt;
+&lt;% end %&gt;
+&lt;ruby&gt;
+
+The captured variable can then be used anywhere else.
+
+&lt;ruby&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;%= @greeting %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="content_for">8.6.2 content_for</h5>
+<p>Calling <tt>content_for</tt> stores a block of markup in an identifier for later use. You can make subsequent calls to the stored content in other templates or the layout by passing the identifier as an argument to <tt>yield</tt>.</p>
+<p>For example, let&#8217;s say we have a standard application layout, but also a special page that requires certain Javascript that the rest of the site doesn&#8217;t need. We can use <tt>content_for</tt> to include this Javascript on our special page without fattening up the rest of the site.</p>
+<p><strong>app/views/layouts/application.html.erb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome!&lt;/title&gt;
+    &lt;%= yield :special_script %&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Welcome! The date and time is &lt;%= Time.now %&gt;&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</notextile>
+
+<p><strong>app/views/posts/special.html.erb</strong></p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;p&gt;This is a special page.&lt;/p&gt;
+
+&lt;% content_for :special_script do %&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;alert('Hello!')&lt;/script&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="datehelper">8.7 DateHelper</h4>
+<h5 id="date_select">8.7.1 date_select</h5>
+<p>Returns a set of select tags (one for year, month, and day) pre-selected for accessing a specified date-based attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+date_select(&quot;post&quot;, &quot;published_on&quot;)
+</pre>
+</div>
+</notextile>
+
+<h5 id="datetime_select">8.7.2 datetime_select</h5>
+<p>Returns a set of select tags (one for year, month, day, hour, and minute) pre-selected for accessing a specified datetime-based attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+datetime_select(&quot;post&quot;, &quot;published_on&quot;)
+</pre>
+</div>
+</notextile>
+
+<h5 id="distance_of_time_in_words">8.7.3 distance_of_time_in_words</h5>
+<p>Reports the approximate distance in time between two Time or Date objects or integers as seconds. Set <tt>include_seconds</tt> to true if you want more detailed approximations.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+distance_of_time_in_words(Time.now, Time.now + 15.seconds)        # =&gt; less than a minute
+distance_of_time_in_words(Time.now, Time.now + 15.seconds, true)  # =&gt; less than 20 seconds
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_date">8.7.4 select_date</h5>
+<p>Returns a set of html select-tags (one for year, month, and day) pre-selected with the <tt>date</tt> provided.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a date select that defaults to the date provided (six days after today)
+select_date(Time.today + 6.days)
+
+# Generates a date select that defaults to today (no specified date)
+select_date()
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_datetime">8.7.5 select_datetime</h5>
+<p>Returns a set of html select-tags (one for year, month, day, hour, and minute) pre-selected with the <tt>datetime</tt> provided.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a datetime select that defaults to the datetime provided (four days after today)
+select_datetime(Time.now + 4.days)
+
+# Generates a datetime select that defaults to today (no specified datetime)
+select_datetime()
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_day">8.7.6 select_day</h5>
+<p>Returns a select tag with options for each of the days 1 through 31 with the current day selected.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a select field for days that defaults to the day for the date provided
+select_day(Time.today + 2.days)
+
+# Generates a select field for days that defaults to the number given
+select_day(5)
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_hour">8.7.7 select_hour</h5>
+<p>Returns a select tag with options for each of the hours 0 through 23 with the current hour selected.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a select field for minutes that defaults to the minutes for the time provided
+select_minute(Time.now + 6.hours)
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_minute">8.7.8 select_minute</h5>
+<p>Returns a select tag with options for each of the minutes 0 through 59 with the current minute selected.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a select field for minutes that defaults to the minutes for the time provided.
+select_minute(Time.now + 6.hours)
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_month">8.7.9 select_month</h5>
+<p>Returns a select tag with options for each of the months January through December with the current month selected.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a select field for months that defaults to the current month
+select_month(Date.today)
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_second">8.7.10 select_second</h5>
+<p>Returns a select tag with options for each of the seconds 0 through 59 with the current second selected.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a select field for seconds that defaults to the seconds for the time provided
+select_second(Time.now + 16.minutes)
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_time">8.7.11 select_time</h5>
+<p>Returns a set of html select-tags (one for hour and minute).</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a time select that defaults to the time provided
+select_time(Time.now)
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_year">8.7.12 select_year</h5>
+<p>Returns a select tag with options for each of the five years on each side of the current, which is selected. The five year radius can be changed using the <tt>:start_year</tt> and <tt>:end_year</tt> keys in the <tt>options</tt>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Generates a select field for five years on either side of +Date.today+ that defaults to the current year
+select_year(Date.today)
+
+# Generates a select field from 1900 to 2009 that defaults to the current year
+select_year(Date.today, :start_year =&gt; 1900, :end_year =&gt; 2009)
+</pre>
+</div>
+</notextile>
+
+<h5 id="time_ago_in_words">8.7.13 time_ago_in_words</h5>
+<p>Like <tt>distance_of_time_in_words</tt>, but where <tt>to_time</tt> is fixed to <tt>Time.now</tt>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+time_ago_in_words(3.minutes.from_now)       # =&gt; 3 minutes
+</pre>
+</div>
+</notextile>
+
+<h5 id="time_select">8.7.14 time_select</h5>
+<p>Returns a set of select tags (one for hour, minute and optionally second) pre-selected for accessing a specified time-based attribute. The selects are prepared for multi-parameter assignment to an Active Record object.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Creates a time select tag that, when POSTed, will be stored in the order variable in the submitted attribute
+time_select(&quot;order&quot;, &quot;submitted&quot;)
+</pre>
+</div>
+</notextile>
+
+<h4 id="debughelper">8.8 DebugHelper</h4>
+<p>Returns a <tt>pre</tt> tag that has object dumped by <span class="caps">YAML</span>. This creates a very readable way to inspect an object.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+my_hash = {'first' =&gt; 1, 'second' =&gt; 'two', 'third' =&gt; [1,2,3]}
+debug(my_hash)
+</pre>
+</div>
+</notextile>
+
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;pre class='debug_dump'&gt;---
+first: 1
+second: two
+third:
+- 1
+- 2
+- 3
+&lt;/pre&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="formhelper">8.9 FormHelper</h4>
+<p>Form helpers are designed to make working with models much easier compared to using just standard <span class="caps">HTML</span> elements by providing a set of methods for creating forms based on your models. This helper generates the <span class="caps">HTML</span> for forms, providing a method for each sort of input (e.g., text, password, select, and so on). When the form is submitted (i.e., when the user hits the submit button or form.submit is called via JavaScript), the form inputs will be bundled into the params object and passed back to the controller.</p>
+<p>There are two types of form helpers: those that specifically work with model attributes and those that don&#8217;t. This helper deals with those that work with model attributes; to see an example of form helpers that don‘t work with model attributes, check the ActionView::Helpers::FormTagHelper documentation.</p>
+<p>The core method of this helper, form_for, gives you the ability to create a form for a model instance; for example, let&#8217;s say that you have a model Person and want to create a new instance of it:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Note: a @person variable will have been created in the controller (e.g. @person = Person.new)
+&lt;%= form_for :person, @person, :url =&gt; { :action =&gt; &quot;create&quot; } do |f| %&gt;
+  &lt;%= f.text_field :first_name %&gt;
+  &lt;%= f.text_field :last_name %&gt;
+  &lt;%= submit_tag 'Create' %&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<p>The <span class="caps">HTML</span> generated for this would be:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;form action=&quot;/persons/create&quot; method=&quot;post&quot;&gt;
+  &lt;input id=&quot;person_first_name&quot; name=&quot;person[first_name]&quot; size=&quot;30&quot; type=&quot;text&quot; /&gt;
+  &lt;input id=&quot;person_last_name&quot; name=&quot;person[last_name]&quot; size=&quot;30&quot; type=&quot;text&quot; /&gt;
+  &lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Create&quot; /&gt;
+&lt;/form&gt;
+</pre>
+</div>
+</notextile>
+
+<p>The params object created when this form is submitted would look like:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+{&quot;action&quot;=&gt;&quot;create&quot;, &quot;controller&quot;=&gt;&quot;persons&quot;, &quot;person&quot;=&gt;{&quot;first_name&quot;=&gt;&quot;William&quot;, &quot;last_name&quot;=&gt;&quot;Smith&quot;}}
+</pre>
+</div>
+</notextile>
+
+<p>The params hash has a nested person value, which can therefore be accessed with params[:person] in the controller.</p>
+<h5 id="check_box">8.9.1 check_box</h5>
+<p>Returns a checkbox tag tailored for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Let's say that @post.validated? is 1:
+check_box(&quot;post&quot;, &quot;validated&quot;)
+# =&gt; &lt;input type=&quot;checkbox&quot; id=&quot;post_validated&quot; name=&quot;post[validated]&quot; value=&quot;1&quot; /&gt;
+#    &lt;input name=&quot;post[validated]&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="fields_for">8.9.2 fields_for</h5>
+<p>Creates a scope around a specific model object like form_for, but doesn‘t create the form tags themselves. This makes fields_for suitable for specifying additional model objects in the same form:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= form_for @person, :url =&gt; { :action =&gt; &quot;update&quot; } do |person_form| %&gt;
+  First name: &lt;%= person_form.text_field :first_name %&gt;
+  Last name : &lt;%= person_form.text_field :last_name %&gt;
+
+  &lt;%= fields_for @person.permission do |permission_fields| %&gt;
+    Admin?  : &lt;%= permission_fields.check_box :admin %&gt;
+  &lt;% end %&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="file_field">8.9.3 file_field</h5>
+<p>Returns an file upload input tag tailored for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+file_field(:user, :avatar)
+# =&gt; &lt;input type=&quot;file&quot; id=&quot;user_avatar&quot; name=&quot;user[avatar]&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="form_for">8.9.4 form_for</h5>
+<p>Creates a form and a scope around a specific model object that is used as a base for questioning about values for the fields.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= form_for @post do |f| %&gt;
+  &lt;%= f.label :title, 'Title' %&gt;:
+  &lt;%= f.text_field :title %&gt;&lt;br /&gt;
+  &lt;%= f.label :body, 'Body' %&gt;:
+  &lt;%= f.text_area :body %&gt;&lt;br /&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="hidden_field">8.9.5 hidden_field</h5>
+<p>Returns a hidden input tag tailored for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+hidden_field(:user, :token)
+# =&gt; &lt;input type=&quot;hidden&quot; id=&quot;user_token&quot; name=&quot;user[token]&quot; value=&quot;#{@user.token}&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="label">8.9.6 label</h5>
+<p>Returns a label tag tailored for labelling an input field for a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+label(:post, :title)
+# =&gt; &lt;label for=&quot;post_title&quot;&gt;Title&lt;/label&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="password_field">8.9.7 password_field</h5>
+<p>Returns an input tag of the &#8220;password&#8221; type tailored for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+password_field(:login, :pass)
+# =&gt; &lt;input type=&quot;text&quot; id=&quot;login_pass&quot; name=&quot;login[pass]&quot; value=&quot;#{@login.pass}&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="radio_button">8.9.8 radio_button</h5>
+<p>Returns a radio button tag for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# Let's say that @post.category returns &quot;rails&quot;:
+radio_button(&quot;post&quot;, &quot;category&quot;, &quot;rails&quot;)
+radio_button(&quot;post&quot;, &quot;category&quot;, &quot;java&quot;)
+# =&gt; &lt;input type=&quot;radio&quot; id=&quot;post_category_rails&quot; name=&quot;post[category]&quot; value=&quot;rails&quot; checked=&quot;checked&quot; /&gt;
+#    &lt;input type=&quot;radio&quot; id=&quot;post_category_java&quot; name=&quot;post[category]&quot; value=&quot;java&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="text_area">8.9.9 text_area</h5>
+<p>Returns a textarea opening and closing tag set tailored for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+text_area(:comment, :text, :size =&gt; &quot;20x30&quot;)
+# =&gt; &lt;textarea cols=&quot;20&quot; rows=&quot;30&quot; id=&quot;comment_text&quot; name=&quot;comment[text]&quot;&gt;
+#      #{@comment.text}
+#    &lt;/textarea&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="text_field">8.9.10 text_field</h5>
+<p>Returns an input tag of the &#8220;text&#8221; type tailored for accessing a specified attribute.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+text_field(:post, :title)
+# =&gt; &lt;input type=&quot;text&quot; id=&quot;post_title&quot; name=&quot;post[title]&quot; value=&quot;#{@post.title}&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="formoptionshelper">8.10 FormOptionsHelper</h4>
+<p>Provides a number of methods for turning different kinds of containers into a set of option tags.</p>
+<h5 id="collection_select">8.10.1 collection_select</h5>
+<p>Returns <tt>select</tt> and <tt>option</tt> tags for the collection of existing return values of <tt>method</tt> for <tt>object</tt>&#8217;s class.</p>
+<p>Example object structure for use with this method:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+class Post &lt; ActiveRecord::Base
+  belongs_to :author
+end
+
+class Author &lt; ActiveRecord::Base
+  has_many :posts
+  def name_with_initial
+    &quot;#{first_name.first}. #{last_name}&quot;
+  end
+end
+</pre>
+</div>
+</notextile>
+
+<p>Sample usage (selecting the associated Author for an instance of Post, <tt>@post</tt>):</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+collection_select(:post, :author_id, Author.find(:all), :id, :name_with_initial, {:prompt =&gt; true})
+</pre>
+</div>
+</notextile>
+
+<p>If @post.author_id is already 1, this would return:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;select name=&quot;post[author_id]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;Please select&lt;/option&gt;
+  &lt;option value=&quot;1&quot; selected=&quot;selected&quot;&gt;D. Heinemeier Hansson&lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;D. Thomas&lt;/option&gt;
+  &lt;option value=&quot;3&quot;&gt;M. Clark&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="country_options_for_select">8.10.2 country_options_for_select</h5>
+<p>Returns a string of option tags for pretty much any country in the world.</p>
+<h5 id="country_select">8.10.3 country_select</h5>
+<p>Return select and option tags for the given object and method, using country_options_for_select to generate the list of option tags.</p>
+<h5 id="option_groups_from_collection_for_select">8.10.4 option_groups_from_collection_for_select</h5>
+<p>Returns a string of <tt>option</tt> tags, like <tt>options_from_collection_for_select</tt>, but groups them by <tt>optgroup</tt> tags based on the object relationships of the arguments.</p>
+<p>Example object structure for use with this method:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+class Continent &lt; ActiveRecord::Base
+  has_many :countries
+  # attribs: id, name
+end
+
+class Country &lt; ActiveRecord::Base
+  belongs_to :continent
+  # attribs: id, name, continent_id
+end
+</pre>
+</div>
+</notextile>
+
+<p>Sample usage:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+option_groups_from_collection_for_select(@continents, :countries, :name, :id, :name, 3)
+</pre>
+</div>
+</notextile>
+
+<p><span class="caps">TODO</span> check above textile output looks right</p>
+<p>Possible output:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;optgroup label=&quot;Africa&quot;&gt;
+  &lt;option value=&quot;1&quot;&gt;Egypt&lt;/option&gt;
+  &lt;option value=&quot;4&quot;&gt;Rwanda&lt;/option&gt;
+  ...
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Asia&quot;&gt;
+  &lt;option value=&quot;3&quot; selected=&quot;selected&quot;&gt;China&lt;/option&gt;
+  &lt;option value=&quot;12&quot;&gt;India&lt;/option&gt;
+  &lt;option value=&quot;5&quot;&gt;Japan&lt;/option&gt;
+  ...
+&lt;/optgroup&gt;
+</pre>
+</div>
+</notextile>
+
+<p>Note: Only the <tt>optgroup</tt> and <tt>option</tt> tags are returned, so you still have to wrap the output in an appropriate <tt>select</tt> tag.</p>
+<h5 id="options_for_select">8.10.5 options_for_select</h5>
+<p>Accepts a container (hash, array, enumerable, your type) and returns a string of option tags.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+options_for_select([ &quot;VISA&quot;, &quot;MasterCard&quot; ])
+# =&gt; &lt;option&gt;VISA&lt;/option&gt; &lt;option&gt;MasterCard&lt;/option&gt;
+</pre>
+</div>
+</notextile>
+
+<p>Note: Only the <tt>option</tt> tags are returned, you have to wrap this call in a regular <span class="caps">HTML</span> <tt>select</tt> tag.</p>
+<h5 id="options_from_collection_for_select">8.10.6 options_from_collection_for_select</h5>
+<p>Returns a string of option tags that have been compiled by iterating over the <tt>collection</tt> and assigning the the result of a call to the <tt>value_method</tt> as the option value and the <tt>text_method</tt> as the option text.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+# options_from_collection_for_select(collection, value_method, text_method, selected = nil)
+</pre>
+</div>
+</notextile>
+
+<p>For example, imagine a loop iterating over each person in @project.people to generate an input tag:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+options_from_collection_for_select(@project.people, &quot;id&quot;, &quot;name&quot;)
+# =&gt; &lt;option value=&quot;#{person.id}&quot;&gt;#{person.name}&lt;/option&gt;
+</pre>
+</div>
+</notextile>
+
+<p>Note: Only the <tt>option</tt> tags are returned, you have to wrap this call in a regular <span class="caps">HTML</span> <tt>select</tt> tag.</p>
+<h5 id="select">8.10.7 select</h5>
+<p>Create a select tag and a series of contained option tags for the provided object and method.</p>
+<p>Example with @post.person_id =&gt; 1:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+select(&quot;post&quot;, &quot;person_id&quot;, Person.find(:all).collect {|p| [ p.name, p.id ] }, { :include_blank =&gt; true })
+</pre>
+</div>
+</notextile>
+
+<p>could become:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;select name=&quot;post[person_id]&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+  &lt;option value=&quot;1&quot; selected=&quot;selected&quot;&gt;David&lt;/option&gt;
+  &lt;option value=&quot;2&quot;&gt;Sam&lt;/option&gt;
+  &lt;option value=&quot;3&quot;&gt;Tobias&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="time_zone_options_for_select">8.10.8 time_zone_options_for_select</h5>
+<p>Returns a string of option tags for pretty much any time zone in the world.</p>
+<h5 id="time_zone_select">8.10.9 time_zone_select</h5>
+<p>Return select and option tags for the given object and method, using <tt>time_zone_options_for_select</tt> to generate the list of option tags.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+time_zone_select( &quot;user&quot;, &quot;time_zone&quot;)
+</pre>
+</div>
+</notextile>
+
+<h4 id="formtaghelper">8.11 FormTagHelper</h4>
+<p>Provides a number of methods for creating form tags that doesn&#8217;t rely on an Active Record object assigned to the template like FormHelper does. Instead, you provide the names and values manually.</p>
+<h5 id="check_box_tag">8.11.1 check_box_tag</h5>
+<p>Creates a check box form input tag.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+check_box_tag 'accept'
+# =&gt; &lt;input id=&quot;accept&quot; name=&quot;accept&quot; type=&quot;checkbox&quot; value=&quot;1&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="field_set_tag">8.11.2 field_set_tag</h5>
+<p>Creates a field set for grouping <span class="caps">HTML</span> form elements.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= field_set_tag do %&gt;
+  &lt;p&gt;&lt;%= text_field_tag 'name' %&gt;&lt;/p&gt;
+&lt;% end %&gt;
+# =&gt; &lt;fieldset&gt;&lt;p&gt;&lt;input id=&quot;name&quot; name=&quot;name&quot; type=&quot;text&quot; /&gt;&lt;/p&gt;&lt;/fieldset&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="file_field_tag">8.11.3 file_field_tag</h5>
+<p>Creates a file upload field.</p>
+<p>If you are using file uploads then you will also need to set the multipart option for the form tag:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= form_tag { :action =&gt; &quot;post&quot; }, { :multipart =&gt; true } do %&gt;
+  &lt;label for=&quot;file&quot;&gt;File to Upload&lt;/label&gt; &lt;%= file_field_tag &quot;file&quot; %&gt;
+  &lt;%= submit_tag %&gt;
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<p>Example output:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+file_field_tag 'attachment'
+# =&gt; &lt;input id=&quot;attachment&quot; name=&quot;attachment&quot; type=&quot;file&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="form_tag">8.11.4 form_tag</h5>
+<p>Starts a form tag that points the action to an url configured with <tt>url_for_options</tt> just like <tt>ActionController::Base#url_for</tt>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= form_tag '/posts' do %&gt;
+  &lt;div&gt;&lt;%= submit_tag 'Save' %&gt;&lt;/div&gt;
+&lt;% end %&gt;
+# =&gt; &lt;form action=&quot;/posts&quot; method=&quot;post&quot;&gt;&lt;div&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Save&quot; /&gt;&lt;/div&gt;&lt;/form&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="hidden_field_tag">8.11.5 hidden_field_tag</h5>
+<p>Creates a hidden form input field used to transmit data that would be lost due to HTTP&#8217;s statelessness or data that should be hidden from the user.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+hidden_field_tag 'token', 'VUBJKB23UIVI1UU1VOBVI@'
+# =&gt; &lt;input id=&quot;token&quot; name=&quot;token&quot; type=&quot;hidden&quot; value=&quot;VUBJKB23UIVI1UU1VOBVI@&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="image_submit_tag">8.11.6 image_submit_tag</h5>
+<p>Displays an image which when clicked will submit the form.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+image_submit_tag(&quot;login.png&quot;)
+# =&gt; &lt;input src=&quot;/images/login.png&quot; type=&quot;image&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="label_tag">8.11.7 label_tag</h5>
+<p>Creates a label field.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+label_tag 'name'
+# =&gt; &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="password_field_tag">8.11.8 password_field_tag</h5>
+<p>Creates a password field, a masked text field that will hide the users input behind a mask character.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+password_field_tag 'pass'
+# =&gt; &lt;input id=&quot;pass&quot; name=&quot;pass&quot; type=&quot;password&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="radio_button_tag">8.11.9 radio_button_tag</h5>
+<p>Creates a radio button; use groups of radio buttons named the same to allow users to select from a group of options.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+radio_button_tag 'gender', 'male'
+# =&gt; &lt;input id=&quot;gender_male&quot; name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;male&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="select_tag">8.11.10 select_tag</h5>
+<p>Creates a dropdown selection box.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+select_tag &quot;people&quot;, &quot;&lt;option&gt;David&lt;/option&gt;&quot;
+# =&gt; &lt;select id=&quot;people&quot; name=&quot;people&quot;&gt;&lt;option&gt;David&lt;/option&gt;&lt;/select&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="submit_tag">8.11.11 submit_tag</h5>
+<p>Creates a submit button with the text provided as the caption.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+submit_tag &quot;Publish this post&quot;
+# =&gt; &lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Publish this post&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="text_area_tag">8.11.12 text_area_tag</h5>
+<p>Creates a text input area; use a textarea for longer text inputs such as blog posts or descriptions.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+text_area_tag 'post'
+# =&gt; &lt;textarea id=&quot;post&quot; name=&quot;post&quot;&gt;&lt;/textarea&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="text_field_tag">8.11.13 text_field_tag</h5>
+<p>Creates a standard text field; use these text fields to input smaller chunks of text like a username or a search query.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+text_field_tag 'name'
+# =&gt; &lt;input id=&quot;name&quot; name=&quot;name&quot; type=&quot;text&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="javascripthelper">8.12 JavaScriptHelper</h4>
+<p>Provides functionality for working with JavaScript in your views.</p>
+<p>Rails includes the Prototype JavaScript framework and the Scriptaculous JavaScript controls and visual effects library. If you wish to use these libraries and their helpers, make sure <tt>&lt;%= javascript_include_tag :defaults, :cache => true %&gt;</tt> is in the <span class="caps">HEAD</span> section of your page. This function will include the necessary JavaScript files Rails generated in the public/javascripts directory.</p>
+<h5 id="button_to_function">8.12.1 button_to_function</h5>
+<p>Returns a button that&#8217;ll trigger a JavaScript function using the onclick handler. Examples:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+button_to_function &quot;Greeting&quot;, &quot;alert('Hello world!')&quot;
+button_to_function &quot;Delete&quot;, &quot;if (confirm('Really?')) do_delete()&quot;
+button_to_function &quot;Details&quot; do |page|
+  page[:details].visual_effect :toggle_slide
+end
+</pre>
+</div>
+</notextile>
+
+<h5 id="define_javascript_functions">8.12.2 define_javascript_functions</h5>
+<p>Includes the Action Pack JavaScript libraries inside a single <tt>script</tt> tag.</p>
+<h5 id="escape_javascript">8.12.3 escape_javascript</h5>
+<p>Escape carrier returns and single and double quotes for JavaScript segments.</p>
+<h5 id="javascript_tag">8.12.4 javascript_tag</h5>
+<p>Returns a JavaScript tag wrapping the provided code.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_tag &quot;alert('All is good')&quot;
+</pre>
+</div>
+</notextile>
+
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;script type=&quot;text/javascript&quot;&gt;
+//&lt;![CDATA[
+alert('All is good')
+//]]&gt;
+&lt;/script&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="link_to_function">8.12.5 link_to_function</h5>
+<p>Returns a link that will trigger a JavaScript function using the onclick handler and return false after the fact.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+link_to_function &quot;Greeting&quot;, &quot;alert('Hello world!')&quot;
+# =&gt; &lt;a onclick=&quot;alert('Hello world!'); return false;&quot; href=&quot;#&quot;&gt;Greeting&lt;/a&gt;
+</pre>
+</div>
+</notextile>
+
+<h4 id="numberhelper">8.13 NumberHelper</h4>
+<p>Provides methods for converting numbers into formatted strings. Methods are provided for phone numbers, currency, percentage, precision, positional notation, and file size.</p>
+<h5 id="number_to_currency">8.13.1 number_to_currency</h5>
+<p>Formats a number into a currency string (e.g., $13.65).</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+number_to_currency(1234567890.50) # =&gt; $1,234,567,890.50
+</pre>
+</div>
+</notextile>
+
+<h5 id="number_to_human_size">8.13.2 number_to_human_size</h5>
+<p>Formats the bytes in size into a more understandable representation; useful for reporting file sizes to users.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+number_to_human_size(1234)          # =&gt; 1.2 KB
+number_to_human_size(1234567)       # =&gt; 1.2 MB
+</pre>
+</div>
+</notextile>
+
+<h5 id="number_to_percentage">8.13.3 number_to_percentage</h5>
+<p>Formats a number as a percentage string.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+number_to_percentage(100, :precision =&gt; 0)        # =&gt; 100%
+</pre>
+</div>
+</notextile>
+
+<h5 id="number_to_phone">8.13.4 number_to_phone</h5>
+<p>Formats a number into a US phone number.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+number_to_phone(1235551234) # =&gt; 123-555-1234
+</pre>
+</div>
+</notextile>
+
+<h5 id="number_with_delimiter">8.13.5 number_with_delimiter</h5>
+<p>Formats a number with grouped thousands using a delimiter.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+number_with_delimiter(12345678) # =&gt; 12,345,678
+</pre>
+</div>
+</notextile>
+
+<h5 id="number_with_precision">8.13.6 number_with_precision</h5>
+<p>Formats a number with the specified level of <tt>precision</tt>, which defaults to 3.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+number_with_precision(111.2345)     # =&gt; 111.235
+number_with_precision(111.2345, 2)  # =&gt; 111.23
+</pre>
+</div>
+</notextile>
+
+<h4 id="prototypehelper">8.14 PrototypeHelper</h4>
+<p>Prototype is a JavaScript library that provides <span class="caps">DOM</span> manipulation, Ajax functionality, and more traditional object-oriented facilities for JavaScript. This module provides a set of helpers to make it more convenient to call functions from Prototype using Rails, including functionality to call remote Rails methods (that is, making a background request to a Rails action) using Ajax.</p>
+<p>To be able to use these helpers, you must first include the Prototype JavaScript framework in the <span class="caps">HEAD</span> of the pages with Prototype functions.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+javascript_include_tag 'prototype'
+</pre>
+</div>
+</notextile>
+
+<h5 id="evaluate_remote_response">8.14.1 evaluate_remote_response</h5>
+<p>Returns <tt>eval(request.responseText)</tt> which is the JavaScript function that form_remote_tag can call in <tt>:complete</tt> to evaluate a multiple update return document using <tt>update_element_function</tt> calls.</p>
+<h5 id="form_remote_tag">8.14.2 form_remote_tag</h5>
+<p>Returns a form tag that will submit using XMLHttpRequest in the background instead of the regular reloading <span class="caps">POST</span> arrangement. Even though it‘s using JavaScript to serialize the form elements, the form submission will work just like a regular submission as viewed by the receiving side.</p>
+<p>For example, this:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+form_remote_tag :html =&gt; { :action =&gt; url_for(:controller =&gt; &quot;some&quot;, :action =&gt; &quot;place&quot;) }
+</pre>
+</div>
+</notextile>
+
+<p>would generate the following:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;form action=&quot;/some/place&quot; method=&quot;post&quot; onsubmit=&quot;new Ajax.Request('',
+  {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;&quot;&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="link_to_remote">8.14.3 link_to_remote</h5>
+<p>Returns a link to a remote action that&#8217;s called in the background using XMLHttpRequest. You can generate a link that uses <span class="caps">AJAX</span> in the general case, while degrading gracefully to plain link behavior in the absence of JavaScript. For example:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+link_to_remote &quot;Delete this post&quot;,
+  { :update =&gt; &quot;posts&quot;, :url =&gt; { :action =&gt; &quot;destroy&quot;, :id =&gt; post.id } },
+  :href =&gt; url_for(:action =&gt; &quot;destroy&quot;, :id =&gt; post.id)
+</pre>
+</div>
+</notextile>
+
+<h5 id="observe_field">8.14.4 observe_field</h5>
+<p>Observes the field specified and calls a callback when its contents have changed.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+observe_field(&quot;my_field&quot;, :function =&gt; &quot;alert('Field changed')&quot;)
+</pre>
+</div>
+</notextile>
+
+<h5 id="observe_form">8.14.5 observe_form</h5>
+<p>Observes the form specified and calls a callback when its contents have changed. The options for observe_form are the same as the options for observe_field.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+observe_field(&quot;my_form&quot;, :function =&gt; &quot;alert('Form changed')&quot;)
+</pre>
+</div>
+</notextile>
+
+<h5 id="periodically_call_remote">8.14.6 periodically_call_remote</h5>
+<p>Periodically calls the specified url as often as specified. Usually used to update a specified div with the results of the remote call. The following example will call update every 20 seconds and update the news_block div:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+periodically_call_remote(:url =&gt; 'update', :frequency =&gt; '20', :update =&gt; 'news_block')
+# =&gt; PeriodicalExecuter(function() {new Ajax.Updater('news_block', 'update', {asynchronous:true, evalScripts:true})}, 20)
+</pre>
+</div>
+</notextile>
+
+<h5 id="remote_form_for">8.14.7 remote_form_for</h5>
+<p>Creates a form that will submit using XMLHttpRequest in the background instead of the regular reloading <span class="caps">POST</span> arrangement and a scope around a specific resource that is used as a base for questioning about values for the fields.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;%= remote_form_for(@post) do |f| %&gt;
+  ...
+&lt;% end %&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="remote_function">8.14.8 remote_function</h5>
+<p>Returns the JavaScript needed for a remote function. Takes the same arguments as <tt>link_to_remote</tt>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+&lt;select id=&quot;options&quot; onchange=&quot;&lt;%= remote_function(:update =&gt; &quot;options&quot;, :url =&gt; { :action =&gt; :update_options }) %&gt;&quot;&gt;
+  &lt;option value=&quot;0&quot;&gt;Hello&lt;/option&gt;
+  &lt;option value=&quot;1&quot;&gt;World&lt;/option&gt;
+&lt;/select&gt;
+# =&gt; &lt;select id=&quot;options&quot; onchange=&quot;new Ajax.Updater('options', '/testing/update_options', {asynchronous:true, evalScripts:true})&quot;&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="submit_to_remote">8.14.9 submit_to_remote</h5>
+<p>Returns a button input tag that will submit form using XMLHttpRequest in the background instead of a regular <span class="caps">POST</span> request that reloads the page.</p>
+<p>For example, the following:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+submit_to_remote 'create_btn', 'Create', :url =&gt; { :action =&gt; 'create' }
+</pre>
+</div>
+</notextile>
+
+<p>would generate:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: xml; gutter: false; toolbar: false">
+&lt;input name=&quot;create_btn&quot; onclick=&quot;new Ajax.Request('/testing/create',
+  {asynchronous:true, evalScripts:true, parameters:Form.serialize(this.form)});
+  return false;&quot; type=&quot;button&quot; value=&quot;Create&quot; /&gt;
+</pre>
+</div>
+</notextile>
+
+<h5 id="update_page">8.14.10 update_page</h5>
+<p>Yields a JavaScriptGenerator and returns the generated JavaScript code. Use this to update multiple elements on a page in an Ajax response.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+update_page do |page|
+  page.hide 'spinner'
+end
+</pre>
+</div>
+</notextile>
+
+<h5 id="update_page_tag">8.14.11 update_page_tag</h5>
+<p>Works like update_page but wraps the generated JavaScript in a <tt>script</tt> tag. Use this to include generated JavaScript in an ERb template.</p>
+<h4 id="prototypehelper-javascriptgenerator-generatormethods">8.15 PrototypeHelper::JavaScriptGenerator::GeneratorMethods</h4>
+<p>JavaScriptGenerator generates blocks of JavaScript code that allow you to change the content and presentation of multiple <span class="caps">DOM</span> elements. Use this in your Ajax response bodies, either in a <tt>script</tt> tag or as plain JavaScript sent with a Content-type of &#8220;text/javascript&#8221;.</p>
+<h5 id="push">8.15.1 &lt;&lt;</h5>
+<p>Writes raw JavaScript to the page.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page &lt;&lt; &quot;alert('JavaScript with Prototype.');&quot;
+</pre>
+</div>
+</notextile>
+
+<h5 id="at">8.15.2 []</h5>
+<p>Returns a element reference by finding it through it&#8217;s id in the <span class="caps">DOM</span>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page['blank_slate'].show # =&gt; $('blank_slate').show();
+</pre>
+</div>
+</notextile>
+
+<h5 id="alert">8.15.3 alert</h5>
+<p>Displays an alert dialog with the given message.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.alert('This message is from Rails!')
+</pre>
+</div>
+</notextile>
+
+<h5 id="assign">8.15.4 assign</h5>
+<p>Assigns the JavaScript variable the given value.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.assign 'tabulated_total', @total_from_cart
+</pre>
+</div>
+</notextile>
+
+<h5 id="call">8.15.5 call</h5>
+<p>Calls the JavaScript function, optionally with the given arguments.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.call 'Element.replace', 'my_element', &quot;My content to replace with.&quot;
+</pre>
+</div>
+</notextile>
+
+<h5 id="delay">8.15.6 delay</h5>
+<p>Executes the content of the block after a delay of the number of seconds provided.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.delay(20) do
+  page.visual_effect :fade, 'notice'
+end
+</pre>
+</div>
+</notextile>
+
+<h5 id="draggable">8.15.7 draggable</h5>
+<p>Creates a script.aculo.us draggable element. See ActionView::Helpers::ScriptaculousHelper for more information.</p>
+<h5 id="drop_receiving">8.15.8 drop_receiving</h5>
+<p>Creates a script.aculo.us drop receiving element. See ActionView::Helpers::ScriptaculousHelper for more information.</p>
+<h5 id="hide">8.15.9 hide</h5>
+<p>Hides the visible <span class="caps">DOM</span> elements with the given ids.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.hide 'person_29', 'person_9', 'person_0'
+</pre>
+</div>
+</notextile>
+
+<h5 id="insert_html">8.15.10 insert_html</h5>
+<p>Inserts <span class="caps">HTML</span> at the specified position relative to the <span class="caps">DOM</span> element identified by the given id.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.insert_html :bottom, 'my_list', '&lt;li&gt;Last item&lt;/li&gt;'
+</pre>
+</div>
+</notextile>
+
+<h5 id="literal">8.15.11 literal</h5>
+<p>Returns an object whose to_json evaluates to the code provided. Use this to pass a literal JavaScript expression as an argument to another JavaScriptGenerator method.</p>
+<h5 id="redirect_to">8.15.12 redirect_to</h5>
+<p>Redirects the browser to the given location using JavaScript, in the same form as <tt>url_for</tt>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.redirect_to(:controller =&gt; 'accounts', :action =&gt; 'new')
+</pre>
+</div>
+</notextile>
+
+<h5 id="remove">8.15.13 remove</h5>
+<p>Removes the <span class="caps">DOM</span> elements with the given ids from the page.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.remove 'person_23', 'person_9', 'person_2'
+</pre>
+</div>
+</notextile>
+
+<h5 id="replace">8.15.14 replace</h5>
+<p>Replaces the &#8220;outer <span class="caps">HTML</span>&#8221; (i.e., the entire element, not just its contents) of the <span class="caps">DOM</span> element with the given id.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.replace 'person-45', :partial =&gt; 'person', :object =&gt; @person
+</pre>
+</div>
+</notextile>
+
+<h5 id="replace_html">8.15.15 replace_html</h5>
+<p>Replaces the inner <span class="caps">HTML</span> of the <span class="caps">DOM</span> element with the given id.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.replace_html 'person-45', :partial =&gt; 'person', :object =&gt; @person
+</pre>
+</div>
+</notextile>
+
+<h5 id="prototype-select">8.15.16 select</h5>
+<p>Returns a collection reference by finding it through a <span class="caps">CSS</span> pattern in the <span class="caps">DOM</span>.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.select('p.welcome b').first.hide # =&gt; $$('p.welcome b').first().hide();
+</pre>
+</div>
+</notextile>
+
+<h5 id="show">8.15.17 show</h5>
+<p>Shows hidden <span class="caps">DOM</span> elements with the given ids.</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.show 'person_6', 'person_13', 'person_223'
+</pre>
+</div>
+</notextile>
+
+<h5 id="sortable">8.15.18 sortable</h5>
+<p>Creates a script.aculo.us sortable element. Useful to recreate sortable elements after items get added or deleted. See ActionView::Helpers::ScriptaculousHelper for more information.</p>
+<h5 id="toggle">8.15.19 toggle</h5>
+<p>Toggles the visibility of the <span class="caps">DOM</span> elements with the given ids. Example:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+page.toggle 'person_14', 'person_12', 'person_23'      # Hides the elements
+page.toggle 'person_14', 'person_12', 'person_23'      # Shows the previously hidden elements
+</pre>
+</div>
+</notextile>
+
+<h5 id="visual_effect">8.15.20 visual_effect</h5>
+<p>Starts a script.aculo.us visual effect. See ActionView::Helpers::ScriptaculousHelper for more information.</p>
+<p><span class="caps">TODO</span> start from RecordIdentificationHelper</p>
+<h3 id="localized-views">9 Localized Views</h3>
+<p>Action View has the ability render different templates depending on the current locale.</p>
+<p>For example, suppose you have a Posts controller with a show action. By default, calling this action will render <tt>app/views/posts/show.html.erb</tt>. But if you set <tt>I18n.locale = :de</tt>, then <tt>app/views/posts/show.de.html.erb</tt> will be rendered instead. If the localized template isn&#8217;t present, the undecorated version will be used. This means you&#8217;re not required to provide localized views for all cases, but they will be preferred and used if available.</p>
+<p>You can use the same technique to localize the rescue files in your public directory. For example, setting <tt>I18n.locale = :de</tt> and creating <tt>public/500.de.html</tt> and <tt>public/404.de.html</tt> would allow you to have localized rescue pages.</p>
+<p>Since Rails doesn&#8217;t restrict the symbols that you use to set I18n.locale, you can leverage this system to display different content depending on anything you like. For example, suppose you have some &#8220;expert&#8221; users that should see different pages from &#8220;normal&#8221; users. You could add the following to <tt>app/controllers/application.rb</tt>:</p>
+<notextile>
+<div class="code_container">
+<pre class="brush: ruby; gutter: false; toolbar: false">
+before_filter :set_expert_locale
+
+def set_expert_locale
+  I18n.locale = :expert if current_user.expert?
+end
+</pre>
+</div>
+</notextile>
+
+<p>Then you could create special views like <tt>app/views/posts/show.expert.html.erb</tt> that would only be displayed to expert users.</p>
+<p>You can read more about the Rails Internationalization (I18n) <span class="caps">API</span> <a href="i18n.html">here</a>.</p>
+<h3 id="changelog">10 Changelog</h3>
+<ul>
+	<li>September 3, 2009: Continuing work by Trevor Turk, leveraging the <a href="http://ap.rubyonrails.org/">Action Pack docs</a> and <a href="http://ryandaigle.com/articles/2007/8/3/what-s-new-in-edge-rails-partials-get-layouts">What&#8217;s new in Edge Rails</a></li>
+	<li>April 5, 2009: Starting work by Trevor Turk, leveraging Mike Gunderloy&#8217;s docs</li>
+</ul>
+        
+        <h3>Feedback</h3>
+        <p>
+          You're encouraged to help in keeping the quality of this guide.
+        </p>
+        <p>
+          If you see any typos or factual errors you are confident to
+          patch please clone <a href="https://github.com/lifo/docrails">docrails</a>
+          and push the change yourself. That branch of Rails has public write access.
+          Commits are still reviewed, but that happens after you've submitted your
+          contribution. <a href="https://github.com/lifo/docrails">docrails</a> is
+          cross-merged with master periodically.
+        </p>
+        <p>
+          You may also find incomplete content, or stuff that is not up to date.
+          Please do add any missing documentation for master. Check the
+          <a href="ruby_on_rails_guides_guidelines.html">Ruby on Rails Guides Guidelines</a>
+          guide for style and conventions.
+        </p>
+        <p>
+          Issues may also be reported <a href="https://github.com/lifo/docrails/issues">in Github</a>.
+        </p>
+        <p>And last but not least, any kind of discussion regarding Ruby on Rails
+          documentation is very welcome in the <a href="http://groups.google.com/group/rubyonrails-docs">rubyonrails-docs mailing list</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hide" />
+  <div id="footer">
+    <div class="wrapper">
+      <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> License</p>
+      <p>"Rails", "Ruby on Rails", and the Rails logo are trademarks of David Heinemeier Hansson. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="javascripts/guides.js"></script>
+  <script type="text/javascript" src="javascripts/syntaxhighlighter/shCore.js"></script>
+  <script type="text/javascript" src="javascripts/syntaxhighlighter/shBrushRuby.js"></script>
+  <script type="text/javascript" src="javascripts/syntaxhighlighter/shBrushXml.js"></script>
+  <script type="text/javascript" src="javascripts/syntaxhighlighter/shBrushSql.js"></script>
+  <script type="text/javascript" src="javascripts/syntaxhighlighter/shBrushPlain.js"></script>
+  <script type="text/javascript">
+    SyntaxHighlighter.all()
+  </script>
+</body>
+</html>

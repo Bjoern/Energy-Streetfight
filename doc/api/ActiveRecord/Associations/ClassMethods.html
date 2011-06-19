@@ -1,0 +1,3734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActiveRecord::Associations::ClassMethods</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/lib/active_record/associations_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="/Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb">/Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-add_counter_cache_callbacks">#add_counter_cache_callbacks</a></li>
+					
+					<li><a href="#method-i-add_touch_callbacks">#add_touch_callbacks</a></li>
+					
+					<li><a href="#method-i-association_accessor_methods">#association_accessor_methods</a></li>
+					
+					<li><a href="#method-i-association_constructor_method">#association_constructor_method</a></li>
+					
+					<li><a href="#method-i-belongs_to">#belongs_to</a></li>
+					
+					<li><a href="#method-i-collection_accessor_methods">#collection_accessor_methods</a></li>
+					
+					<li><a href="#method-i-collection_reader_method">#collection_reader_method</a></li>
+					
+					<li><a href="#method-i-configure_dependency_for_has_many">#configure_dependency_for_has_many</a></li>
+					
+					<li><a href="#method-i-has_and_belongs_to_many">#has_and_belongs_to_many</a></li>
+					
+					<li><a href="#method-i-has_many">#has_many</a></li>
+					
+					<li><a href="#method-i-has_one">#has_one</a></li>
+					
+					<li><a href="#method-i-join_table_name">#join_table_name</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionmailer-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/actionpack-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/MIT-LICENSE.html">MIT-LICENSE</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activemodel-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activerecord-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activeresource-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activeresource-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activesupport-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/activesupport-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/railties-3_0_7/CHANGELOG.html">CHANGELOG</a></li>
+				
+					<li class="file"><a href="../..//Users/bjoern/_rvm/gems/ruby-1_9_2-p180/gems/railties-3_0_7/README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../../README.html">README</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActiveRecord/ActiveRecordError.html">ActiveRecord::ActiveRecordError</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotFound.html">ActiveRecord::AdapterNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/AdapterNotSpecified.html">ActiveRecord::AdapterNotSpecified</a></li>
+				
+					<li><a href="../../ActiveRecord/Aggregations/ClassMethods.html">ActiveRecord::Aggregations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationPreload/ClassMethods.html">ActiveRecord::AssociationPreload::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AssociationTypeMismatch.html">ActiveRecord::AssociationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ClassMethods.html">ActiveRecord::Associations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/HasOneThroughAssociation.html">ActiveRecord::Associations::HasOneThroughAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/Associations/ThroughAssociationScope.html">ActiveRecord::Associations::ThroughAssociationScope</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeAssignmentError.html">ActiveRecord::AttributeAssignmentError</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/BeforeTypeCast.html">ActiveRecord::AttributeMethods::BeforeTypeCast</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/ClassMethods.html">ActiveRecord::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Dirty.html">ActiveRecord::AttributeMethods::Dirty</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey.html">ActiveRecord::AttributeMethods::PrimaryKey</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/PrimaryKey/ClassMethods.html">ActiveRecord::AttributeMethods::PrimaryKey::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Query.html">ActiveRecord::AttributeMethods::Query</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read.html">ActiveRecord::AttributeMethods::Read</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Read/ClassMethods.html">ActiveRecord::AttributeMethods::Read::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion.html">ActiveRecord::AttributeMethods::TimeZoneConversion</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/TimeZoneConversion/ClassMethods.html">ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write.html">ActiveRecord::AttributeMethods::Write</a></li>
+				
+					<li><a href="../../ActiveRecord/AttributeMethods/Write/ClassMethods.html">ActiveRecord::AttributeMethods::Write::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation.html">ActiveRecord::AutosaveAssociation</a></li>
+				
+					<li><a href="../../ActiveRecord/AutosaveAssociation/ClassMethods.html">ActiveRecord::AutosaveAssociation::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/Calculations.html">ActiveRecord::Calculations</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a></li>
+				
+					<li><a href="../../ActiveRecord/Callbacks/ClassMethods.html">ActiveRecord::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ConfigurationError.html">ActiveRecord::ConfigurationError</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column.html">ActiveRecord::ConnectionAdapters::Column</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Column/Format.html">ActiveRecord::ConnectionAdapters::Column::Format</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionHandler.html">ActiveRecord::ConnectionAdapters::ConnectionHandler</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionManagement.html">ActiveRecord::ConnectionAdapters::ConnectionManagement</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseLimits.html">ActiveRecord::ConnectionAdapters::DatabaseLimits</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/DatabaseStatements.html">ActiveRecord::ConnectionAdapters::DatabaseStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/MysqlAdapter.html">ActiveRecord::ConnectionAdapters::MysqlAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLAdapter.html">ActiveRecord::ConnectionAdapters::PostgreSQLAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/PostgreSQLColumn.html">ActiveRecord::ConnectionAdapters::PostgreSQLColumn</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/QueryCache.html">ActiveRecord::ConnectionAdapters::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Quoting.html">ActiveRecord::ConnectionAdapters::Quoting</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SQLiteAdapter/Version.html">ActiveRecord::ConnectionAdapters::SQLiteAdapter::Version</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionNotEstablished.html">ActiveRecord::ConnectionNotEstablished</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionTimeoutError.html">ActiveRecord::ConnectionTimeoutError</a></li>
+				
+					<li><a href="../../ActiveRecord/CounterCache.html">ActiveRecord::CounterCache</a></li>
+				
+					<li><a href="../../ActiveRecord/DangerousAttributeError.html">ActiveRecord::DangerousAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicFinderMatch.html">ActiveRecord::DynamicFinderMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/DynamicScopeMatch.html">ActiveRecord::DynamicScopeMatch</a></li>
+				
+					<li><a href="../../ActiveRecord/FinderMethods.html">ActiveRecord::FinderMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/InvalidForeignKey.html">ActiveRecord::InvalidForeignKey</a></li>
+				
+					<li><a href="../../ActiveRecord/IrreversibleMigration.html">ActiveRecord::IrreversibleMigration</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking.html">ActiveRecord::Locking</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic.html">ActiveRecord::Locking::Optimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Optimistic/ClassMethods.html">ActiveRecord::Locking::Optimistic::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Locking/Pessimistic.html">ActiveRecord::Locking::Pessimistic</a></li>
+				
+					<li><a href="../../ActiveRecord/LogSubscriber.html">ActiveRecord::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveRecord/Migration.html">ActiveRecord::Migration</a></li>
+				
+					<li><a href="../../ActiveRecord/MigrationProxy.html">ActiveRecord::MigrationProxy</a></li>
+				
+					<li><a href="../../ActiveRecord/MultiparameterAssignmentErrors.html">ActiveRecord::MultiparameterAssignmentErrors</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope.html">ActiveRecord::NamedScope</a></li>
+				
+					<li><a href="../../ActiveRecord/NamedScope/ClassMethods.html">ActiveRecord::NamedScope::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/ClassMethods.html">ActiveRecord::NestedAttributes::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/NestedAttributes/TooManyRecords.html">ActiveRecord::NestedAttributes::TooManyRecords</a></li>
+				
+					<li><a href="../../ActiveRecord/Observer.html">ActiveRecord::Observer</a></li>
+				
+					<li><a href="../../ActiveRecord/Persistence.html">ActiveRecord::Persistence</a></li>
+				
+					<li><a href="../../ActiveRecord/PredicateBuilder.html">ActiveRecord::PredicateBuilder</a></li>
+				
+					<li><a href="../../ActiveRecord/PreparedStatementInvalid.html">ActiveRecord::PreparedStatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache.html">ActiveRecord::QueryCache</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryCache/ClassMethods.html">ActiveRecord::QueryCache::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/QueryMethods.html">ActiveRecord::QueryMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Railtie.html">ActiveRecord::Railtie</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties.html">ActiveRecord::Railties</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime.html">ActiveRecord::Railties::ControllerRuntime</a></li>
+				
+					<li><a href="../../ActiveRecord/Railties/ControllerRuntime/ClassMethods.html">ActiveRecord::Railties::ControllerRuntime::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ReadOnlyRecord.html">ActiveRecord::ReadOnlyRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordInvalid.html">ActiveRecord::RecordInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotFound.html">ActiveRecord::RecordNotFound</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotSaved.html">ActiveRecord::RecordNotSaved</a></li>
+				
+					<li><a href="../../ActiveRecord/RecordNotUnique.html">ActiveRecord::RecordNotUnique</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/ClassMethods.html">ActiveRecord::Reflection::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Reflection/MacroReflection.html">ActiveRecord::Reflection::MacroReflection</a></li>
+				
+					<li><a href="../../ActiveRecord/Relation.html">ActiveRecord::Relation</a></li>
+				
+					<li><a href="../../ActiveRecord/Rollback.html">ActiveRecord::Rollback</a></li>
+				
+					<li><a href="../../ActiveRecord/Schema.html">ActiveRecord::Schema</a></li>
+				
+					<li><a href="../../ActiveRecord/Serialization.html">ActiveRecord::Serialization</a></li>
+				
+					<li><a href="../../ActiveRecord/SerializationTypeMismatch.html">ActiveRecord::SerializationTypeMismatch</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore.html">ActiveRecord::SessionStore</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/Session.html">ActiveRecord::SessionStore::Session</a></li>
+				
+					<li><a href="../../ActiveRecord/SessionStore/SqlBypass.html">ActiveRecord::SessionStore::SqlBypass</a></li>
+				
+					<li><a href="../../ActiveRecord/SpawnMethods.html">ActiveRecord::SpawnMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/StaleObjectError.html">ActiveRecord::StaleObjectError</a></li>
+				
+					<li><a href="../../ActiveRecord/StatementInvalid.html">ActiveRecord::StatementInvalid</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures.html">ActiveRecord::TestFixtures</a></li>
+				
+					<li><a href="../../ActiveRecord/TestFixtures/ClassMethods.html">ActiveRecord::TestFixtures::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/ThrowResult.html">ActiveRecord::ThrowResult</a></li>
+				
+					<li><a href="../../ActiveRecord/Timestamp.html">ActiveRecord::Timestamp</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions.html">ActiveRecord::Transactions</a></li>
+				
+					<li><a href="../../ActiveRecord/Transactions/ClassMethods.html">ActiveRecord::Transactions::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/UnknownAttributeError.html">ActiveRecord::UnknownAttributeError</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations.html">ActiveRecord::Validations</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/AssociatedValidator.html">ActiveRecord::Validations::AssociatedValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveRecord/Validations/UniquenessValidator.html">ActiveRecord::Validations::UniquenessValidator</a></li>
+				
+					<li><a href="../../ActiveRecord/WrappedDatabaseException.html">ActiveRecord::WrappedDatabaseException</a></li>
+				
+					<li><a href="../../ActiveSupport/Autoload.html">ActiveSupport::Autoload</a></li>
+				
+					<li><a href="../../ActiveSupport/BacktraceCleaner.html">ActiveSupport::BacktraceCleaner</a></li>
+				
+					<li><a href="../../ActiveSupport/Base64.html">ActiveSupport::Base64</a></li>
+				
+					<li><a href="../../ActiveSupport/BufferedLogger.html">ActiveSupport::BufferedLogger</a></li>
+				
+					<li><a href="../../ActiveSupport/BufferedLogger/Severity.html">ActiveSupport::BufferedLogger::Severity</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache.html">ActiveSupport::Cache</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/CompressedMemCacheStore.html">ActiveSupport::Cache::CompressedMemCacheStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Entry.html">ActiveSupport::Cache::Entry</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/FileStore.html">ActiveSupport::Cache::FileStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/MemCacheStore.html">ActiveSupport::Cache::MemCacheStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/MemoryStore.html">ActiveSupport::Cache::MemoryStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Store.html">ActiveSupport::Cache::Store</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy.html">ActiveSupport::Cache::Strategy</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy/LocalCache.html">ActiveSupport::Cache::Strategy::LocalCache</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/Strategy/LocalCache/LocalStore.html">ActiveSupport::Cache::Strategy::LocalCache::LocalStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Cache/SynchronizedMemoryStore.html">ActiveSupport::Cache::SynchronizedMemoryStore</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks.html">ActiveSupport::Callbacks</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/Callback.html">ActiveSupport::Callbacks::Callback</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/CallbackChain.html">ActiveSupport::Callbacks::CallbackChain</a></li>
+				
+					<li><a href="../../ActiveSupport/Callbacks/ClassMethods.html">ActiveSupport::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Concern.html">ActiveSupport::Concern</a></li>
+				
+					<li><a href="../../ActiveSupport/Configurable.html">ActiveSupport::Configurable</a></li>
+				
+					<li><a href="../../ActiveSupport/Configurable/ClassMethods.html">ActiveSupport::Configurable::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Dependencies/Reference.html">ActiveSupport::Dependencies::Reference</a></li>
+				
+					<li><a href="../../ActiveSupport/Dependencies/WatchStack.html">ActiveSupport::Dependencies::WatchStack</a></li>
+				
+					<li><a href="../../ActiveSupport/DescendantsTracker.html">ActiveSupport::DescendantsTracker</a></li>
+				
+					<li><a href="../../ActiveSupport/Duration.html">ActiveSupport::Duration</a></li>
+				
+					<li><a href="../../ActiveSupport/FileUpdateChecker.html">ActiveSupport::FileUpdateChecker</a></li>
+				
+					<li><a href="../../ActiveSupport/Gzip.html">ActiveSupport::Gzip</a></li>
+				
+					<li><a href="../../ActiveSupport/Gzip/Stream.html">ActiveSupport::Gzip::Stream</a></li>
+				
+					<li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../../ActiveSupport/HashWithIndifferentAccess.html">ActiveSupport::HashWithIndifferentAccess</a></li>
+				
+					<li><a href="../../ActiveSupport/Inflector.html">ActiveSupport::Inflector</a></li>
+				
+					<li><a href="../../ActiveSupport/Inflector/Inflections.html">ActiveSupport::Inflector::Inflections</a></li>
+				
+					<li><a href="../../ActiveSupport/InheritableOptions.html">ActiveSupport::InheritableOptions</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON.html">ActiveSupport::JSON</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends.html">ActiveSupport::JSON::Backends</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/JSONGem.html">ActiveSupport::JSON::Backends::JSONGem</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/Yajl.html">ActiveSupport::JSON::Backends::Yajl</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Backends/Yaml.html">ActiveSupport::JSON::Backends::Yaml</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Encoding/CircularReferenceError.html">ActiveSupport::JSON::Encoding::CircularReferenceError</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Encoding/Encoder.html">ActiveSupport::JSON::Encoding::Encoder</a></li>
+				
+					<li><a href="../../ActiveSupport/JSON/Variable.html">ActiveSupport::JSON::Variable</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber.html">ActiveSupport::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber/TestHelper.html">ActiveSupport::LogSubscriber::TestHelper</a></li>
+				
+					<li><a href="../../ActiveSupport/LogSubscriber/TestHelper/MockLogger.html">ActiveSupport::LogSubscriber::TestHelper::MockLogger</a></li>
+				
+					<li><a href="../../ActiveSupport/Memoizable.html">ActiveSupport::Memoizable</a></li>
+				
+					<li><a href="../../ActiveSupport/Memoizable/InstanceMethods.html">ActiveSupport::Memoizable::InstanceMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageEncryptor.html">ActiveSupport::MessageEncryptor</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageEncryptor/InvalidMessage.html">ActiveSupport::MessageEncryptor::InvalidMessage</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageVerifier.html">ActiveSupport::MessageVerifier</a></li>
+				
+					<li><a href="../../ActiveSupport/MessageVerifier/InvalidSignature.html">ActiveSupport::MessageVerifier::InvalidSignature</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/EncodingError.html">ActiveSupport::Multibyte::EncodingError</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode.html">ActiveSupport::Multibyte::Unicode</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode/Codepoint.html">ActiveSupport::Multibyte::Unicode::Codepoint</a></li>
+				
+					<li><a href="../../ActiveSupport/Multibyte/Unicode/UnicodeDatabase.html">ActiveSupport::Multibyte::Unicode::UnicodeDatabase</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications.html">ActiveSupport::Notifications</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Event.html">ActiveSupport::Notifications::Event</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Fanout.html">ActiveSupport::Notifications::Fanout</a></li>
+				
+					<li><a href="../../ActiveSupport/Notifications/Instrumenter.html">ActiveSupport::Notifications::Instrumenter</a></li>
+				
+					<li><a href="../../ActiveSupport/OrderedOptions.html">ActiveSupport::OrderedOptions</a></li>
+				
+					<li><a href="../../ActiveSupport/Railtie.html">ActiveSupport::Railtie</a></li>
+				
+					<li><a href="../../ActiveSupport/Rescuable.html">ActiveSupport::Rescuable</a></li>
+				
+					<li><a href="../../ActiveSupport/Rescuable/ClassMethods.html">ActiveSupport::Rescuable::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/SafeBuffer.html">ActiveSupport::SafeBuffer</a></li>
+				
+					<li><a href="../../ActiveSupport/SecureRandom.html">ActiveSupport::SecureRandom</a></li>
+				
+					<li><a href="../../ActiveSupport/StringInquirer.html">ActiveSupport::StringInquirer</a></li>
+				
+					<li><a href="../../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing.html">ActiveSupport::Testing</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Assertions.html">ActiveSupport::Testing::Assertions</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Declarative.html">ActiveSupport::Testing::Declarative</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation.html">ActiveSupport::Testing::Isolation</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/Forking.html">ActiveSupport::Testing::Isolation::Forking</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/MiniTest.html">ActiveSupport::Testing::Isolation::MiniTest</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/Subprocess.html">ActiveSupport::Testing::Isolation::Subprocess</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Isolation/TestUnit.html">ActiveSupport::Testing::Isolation::TestUnit</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Pending.html">ActiveSupport::Testing::Pending</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance.html">ActiveSupport::Testing::Performance</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Benchmarker.html">ActiveSupport::Testing::Performance::Benchmarker</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics.html">ActiveSupport::Testing::Performance::Metrics</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Base.html">ActiveSupport::Testing::Performance::Metrics::Base</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/CpuTime.html">ActiveSupport::Testing::Performance::Metrics::CpuTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/GcRuns.html">ActiveSupport::Testing::Performance::Metrics::GcRuns</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/GcTime.html">ActiveSupport::Testing::Performance::Metrics::GcTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Memory.html">ActiveSupport::Testing::Performance::Metrics::Memory</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Objects.html">ActiveSupport::Testing::Performance::Metrics::Objects</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/ProcessTime.html">ActiveSupport::Testing::Performance::Metrics::ProcessTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/Time.html">ActiveSupport::Testing::Performance::Metrics::Time</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Metrics/WallTime.html">ActiveSupport::Testing::Performance::Metrics::WallTime</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Performer.html">ActiveSupport::Testing::Performance::Performer</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/Performance/Profiler.html">ActiveSupport::Testing::Performance::Profiler</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/ProxyTestResult.html">ActiveSupport::Testing::ProxyTestResult</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/RemoteError.html">ActiveSupport::Testing::RemoteError</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown.html">ActiveSupport::Testing::SetupAndTeardown</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ClassMethods.html">ActiveSupport::Testing::SetupAndTeardown::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ForClassicTestUnit.html">ActiveSupport::Testing::SetupAndTeardown::ForClassicTestUnit</a></li>
+				
+					<li><a href="../../ActiveSupport/Testing/SetupAndTeardown/ForMiniTest.html">ActiveSupport::Testing::SetupAndTeardown::ForMiniTest</a></li>
+				
+					<li><a href="../../ActiveSupport/TimeWithZone.html">ActiveSupport::TimeWithZone</a></li>
+				
+					<li><a href="../../ActiveSupport/TimeZone.html">ActiveSupport::TimeZone</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini.html">ActiveSupport::XmlMini</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_LibXMLSAX.html">ActiveSupport::XmlMini_LibXMLSAX</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_LibXMLSAX/HashBuilder.html">ActiveSupport::XmlMini_LibXMLSAX::HashBuilder</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_NokogiriSAX.html">ActiveSupport::XmlMini_NokogiriSAX</a></li>
+				
+					<li><a href="../../ActiveSupport/XmlMini_NokogiriSAX/HashBuilder.html">ActiveSupport::XmlMini_NokogiriSAX::HashBuilder</a></li>
+				
+					<li><a href="../../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../../ActiveModel/AttributeMethods.html">ActiveModel::AttributeMethods</a></li>
+				
+					<li><a href="../../ActiveModel/AttributeMethods/ClassMethods.html">ActiveModel::AttributeMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/AttributeMethods/ClassMethods/AttributeMethodMatcher.html">ActiveModel::AttributeMethods::ClassMethods::AttributeMethodMatcher</a></li>
+				
+					<li><a href="../../ActiveModel/BlockValidator.html">ActiveModel::BlockValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Callbacks.html">ActiveModel::Callbacks</a></li>
+				
+					<li><a href="../../ActiveModel/Conversion.html">ActiveModel::Conversion</a></li>
+				
+					<li><a href="../../ActiveModel/DeprecatedErrorMethods.html">ActiveModel::DeprecatedErrorMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Dirty.html">ActiveModel::Dirty</a></li>
+				
+					<li><a href="../../ActiveModel/EachValidator.html">ActiveModel::EachValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Errors.html">ActiveModel::Errors</a></li>
+				
+					<li><a href="../../ActiveModel/Lint.html">ActiveModel::Lint</a></li>
+				
+					<li><a href="../../ActiveModel/Lint/Tests.html">ActiveModel::Lint::Tests</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity.html">ActiveModel::MassAssignmentSecurity</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/BlackList.html">ActiveModel::MassAssignmentSecurity::BlackList</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/ClassMethods.html">ActiveModel::MassAssignmentSecurity::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/PermissionSet.html">ActiveModel::MassAssignmentSecurity::PermissionSet</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/Sanitizer.html">ActiveModel::MassAssignmentSecurity::Sanitizer</a></li>
+				
+					<li><a href="../../ActiveModel/MassAssignmentSecurity/WhiteList.html">ActiveModel::MassAssignmentSecurity::WhiteList</a></li>
+				
+					<li><a href="../../ActiveModel/MissingAttributeError.html">ActiveModel::MissingAttributeError</a></li>
+				
+					<li><a href="../../ActiveModel/Name.html">ActiveModel::Name</a></li>
+				
+					<li><a href="../../ActiveModel/Naming.html">ActiveModel::Naming</a></li>
+				
+					<li><a href="../../ActiveModel/Observer.html">ActiveModel::Observer</a></li>
+				
+					<li><a href="../../ActiveModel/Observing.html">ActiveModel::Observing</a></li>
+				
+					<li><a href="../../ActiveModel/Observing/ClassMethods.html">ActiveModel::Observing::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Serialization.html">ActiveModel::Serialization</a></li>
+				
+					<li><a href="../../ActiveModel/Serializers.html">ActiveModel::Serializers</a></li>
+				
+					<li><a href="../../ActiveModel/Serializers/JSON.html">ActiveModel::Serializers::JSON</a></li>
+				
+					<li><a href="../../ActiveModel/Serializers/Xml.html">ActiveModel::Serializers::Xml</a></li>
+				
+					<li><a href="../../ActiveModel/Translation.html">ActiveModel::Translation</a></li>
+				
+					<li><a href="../../ActiveModel/Validations.html">ActiveModel::Validations</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/AcceptanceValidator.html">ActiveModel::Validations::AcceptanceValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/Callbacks.html">ActiveModel::Validations::Callbacks</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/Callbacks/ClassMethods.html">ActiveModel::Validations::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/ClassMethods.html">ActiveModel::Validations::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/ConfirmationValidator.html">ActiveModel::Validations::ConfirmationValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/ExclusionValidator.html">ActiveModel::Validations::ExclusionValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/FormatValidator.html">ActiveModel::Validations::FormatValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/HelperMethods.html">ActiveModel::Validations::HelperMethods</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/InclusionValidator.html">ActiveModel::Validations::InclusionValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/LengthValidator.html">ActiveModel::Validations::LengthValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/NumericalityValidator.html">ActiveModel::Validations::NumericalityValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validations/PresenceValidator.html">ActiveModel::Validations::PresenceValidator</a></li>
+				
+					<li><a href="../../ActiveModel/Validator.html">ActiveModel::Validator</a></li>
+				
+					<li><a href="../../ActiveResource/BadRequest.html">ActiveResource::BadRequest</a></li>
+				
+					<li><a href="../../ActiveResource/Base.html">ActiveResource::Base</a></li>
+				
+					<li><a href="../../ActiveResource/ClientError.html">ActiveResource::ClientError</a></li>
+				
+					<li><a href="../../ActiveResource/Connection.html">ActiveResource::Connection</a></li>
+				
+					<li><a href="../../ActiveResource/CustomMethods.html">ActiveResource::CustomMethods</a></li>
+				
+					<li><a href="../../ActiveResource/CustomMethods/ClassMethods.html">ActiveResource::CustomMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActiveResource/CustomMethods/InstanceMethods.html">ActiveResource::CustomMethods::InstanceMethods</a></li>
+				
+					<li><a href="../../ActiveResource/Errors.html">ActiveResource::Errors</a></li>
+				
+					<li><a href="../../ActiveResource/ForbiddenAccess.html">ActiveResource::ForbiddenAccess</a></li>
+				
+					<li><a href="../../ActiveResource/Formats.html">ActiveResource::Formats</a></li>
+				
+					<li><a href="../../ActiveResource/Formats/JsonFormat.html">ActiveResource::Formats::JsonFormat</a></li>
+				
+					<li><a href="../../ActiveResource/Formats/XmlFormat.html">ActiveResource::Formats::XmlFormat</a></li>
+				
+					<li><a href="../../ActiveResource/HttpMock.html">ActiveResource::HttpMock</a></li>
+				
+					<li><a href="../../ActiveResource/InvalidRequestError.html">ActiveResource::InvalidRequestError</a></li>
+				
+					<li><a href="../../ActiveResource/LogSubscriber.html">ActiveResource::LogSubscriber</a></li>
+				
+					<li><a href="../../ActiveResource/Observing.html">ActiveResource::Observing</a></li>
+				
+					<li><a href="../../ActiveResource/Railtie.html">ActiveResource::Railtie</a></li>
+				
+					<li><a href="../../ActiveResource/Request.html">ActiveResource::Request</a></li>
+				
+					<li><a href="../../ActiveResource/ResourceConflict.html">ActiveResource::ResourceConflict</a></li>
+				
+					<li><a href="../../ActiveResource/ResourceGone.html">ActiveResource::ResourceGone</a></li>
+				
+					<li><a href="../../ActiveResource/ResourceNotFound.html">ActiveResource::ResourceNotFound</a></li>
+				
+					<li><a href="../../ActiveResource/Response.html">ActiveResource::Response</a></li>
+				
+					<li><a href="../../ActiveResource/SSLError.html">ActiveResource::SSLError</a></li>
+				
+					<li><a href="../../ActiveResource/ServerError.html">ActiveResource::ServerError</a></li>
+				
+					<li><a href="../../ActiveResource/TimeoutError.html">ActiveResource::TimeoutError</a></li>
+				
+					<li><a href="../../ActiveResource/UnauthorizedAccess.html">ActiveResource::UnauthorizedAccess</a></li>
+				
+					<li><a href="../../ActiveResource/Validations.html">ActiveResource::Validations</a></li>
+				
+					<li><a href="../../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../../Test.html">Test</a></li>
+				
+					<li><a href="../../Test/Unit.html">Test::Unit</a></li>
+				
+					<li><a href="../../Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+				
+					<li><a href="../../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+				
+					<li><a href="../../ActionMailer/Base.html">ActionMailer::Base</a></li>
+				
+					<li><a href="../../ActionMailer/Base/DeprecatedHeaderProxy.html">ActionMailer::Base::DeprecatedHeaderProxy</a></li>
+				
+					<li><a href="../../ActionMailer/Base/DeprecatedUrlOptions.html">ActionMailer::Base::DeprecatedUrlOptions</a></li>
+				
+					<li><a href="../../I18n.html">I18n</a></li>
+				
+					<li><a href="../../I18n/ExceptionHandler.html">I18n::ExceptionHandler</a></li>
+				
+					<li><a href="../../I18n/Railtie.html">I18n::Railtie</a></li>
+				
+					<li><a href="../../ERB.html">ERB</a></li>
+				
+					<li><a href="../../ERB/Util.html">ERB::Util</a></li>
+				
+					<li><a href="../../Fixtures.html">Fixtures</a></li>
+				
+					<li><a href="../../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../../LoadError.html">LoadError</a></li>
+				
+					<li><a href="../../Logger/SimpleFormatter.html">Logger::SimpleFormatter</a></li>
+				
+					<li><a href="../../Benchmark.html">Benchmark</a></li>
+				
+					<li><a href="../../BigDecimal.html">BigDecimal</a></li>
+				
+					<li><a href="../../DateTime.html">DateTime</a></li>
+				
+					<li><a href="../../Enumerable.html">Enumerable</a></li>
+				
+					<li><a href="../../File.html">File</a></li>
+				
+					<li><a href="../../Fixnum.html">Fixnum</a></li>
+				
+					<li><a href="../../FixturesFileNotFound.html">FixturesFileNotFound</a></li>
+				
+					<li><a href="../../Float.html">Float</a></li>
+				
+					<li><a href="../../Integer.html">Integer</a></li>
+				
+					<li><a href="../../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../../NameError.html">NameError</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+					<li><a href="../../Process.html">Process</a></li>
+				
+					<li><a href="../../Rails.html">Rails</a></li>
+				
+					<li><a href="../../Time.html">Time</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActiveRecord::Associations::ClassMethods</h1>
+
+		<div id="description">
+			<p>
+Associations are a set of macro-like class methods for tying objects
+together through foreign keys. They express relationships like
+&#8220;Project has one Project Manager&#8221; or &#8220;Project belongs to
+a Portfolio&#8221;. Each macro adds a number of methods to the class which
+are specialized according to the collection or association symbol and the
+options hash. It works much the same way as Ruby&#8217;s own <tt>attr*</tt>
+methods.
+</p>
+<pre>
+  class Project &lt; ActiveRecord::Base
+    belongs_to              :portfolio
+    has_one                 :project_manager
+    has_many                :milestones
+    has_and_belongs_to_many :categories
+  end
+</pre>
+<p>
+The project class now has the following methods (and more) to ease the
+traversal and manipulation of its relationships:
+</p>
+<ul>
+<li><p>
+<tt>Project#portfolio, Project#portfolio=(portfolio),
+Project#portfolio.nil?</tt>
+</p>
+</li>
+<li><p>
+<tt>Project#project_manager, Project#project_manager=(project_manager),
+Project#project_manager.nil?,</tt>
+</p>
+</li>
+<li><p>
+<tt>Project#milestones.empty?, Project#milestones.size, Project#milestones,
+Project#milestones&lt;&lt;(milestone),</tt>
+<tt>Project#milestones.delete(milestone),
+Project#milestones.find(milestone_id), Project#milestones.find(:all,
+options),</tt> <tt>Project#milestones.build, Project#milestones.create</tt>
+</p>
+</li>
+<li><p>
+<tt>Project#categories.empty?, Project#categories.size, Project#categories,
+Project#categories&lt;&lt;(category1),</tt>
+<tt>Project#categories.delete(category1)</tt>
+</p>
+</li>
+</ul>
+<h3>A word of warning</h3>
+<p>
+Don&#8217;t create associations that have the same name as instance methods
+of <tt>ActiveRecord::Base</tt>. Since the association adds a method with
+that name to its model, it will override the inherited method and break
+things. For instance, <tt>attributes</tt> and <tt>connection</tt> would be
+bad choices for association names.
+</p>
+<h2>Auto-generated methods</h2>
+<h3>Singular associations (one-to-one)</h3>
+<pre>
+                                    |            |  belongs_to  |
+  generated methods                 | belongs_to | :polymorphic | has_one
+  ----------------------------------+------------+--------------+---------
+  other                             |     X      |      X       |    X
+  other=(other)                     |     X      |      X       |    X
+  build_other(attributes={})        |     X      |              |    X
+  create_other(attributes={})       |     X      |              |    X
+  other.create!(attributes={})      |            |              |    X
+</pre>
+<h3>Collection associations (one-to-many / many-to-many)</h3>
+<pre>
+                                    |       |          | has_many
+  generated methods                 | habtm | has_many | :through
+  ----------------------------------+-------+----------+----------
+  others                            |   X   |    X     |    X
+  others=(other,other,...)          |   X   |    X     |    X
+  other_ids                         |   X   |    X     |    X
+  other_ids=(id,id,...)             |   X   |    X     |    X
+  others&lt;&lt;                          |   X   |    X     |    X
+  others.push                       |   X   |    X     |    X
+  others.concat                     |   X   |    X     |    X
+  others.build(attributes={})       |   X   |    X     |    X
+  others.create(attributes={})      |   X   |    X     |    X
+  others.create!(attributes={})     |   X   |    X     |    X
+  others.size                       |   X   |    X     |    X
+  others.length                     |   X   |    X     |    X
+  others.count                      |   X   |    X     |    X
+  others.sum(args*,&amp;block)          |   X   |    X     |    X
+  others.empty?                     |   X   |    X     |    X
+  others.clear                      |   X   |    X     |    X
+  others.delete(other,other,...)    |   X   |    X     |    X
+  others.delete_all                 |   X   |    X     |
+  others.destroy_all                |   X   |    X     |    X
+  others.find(*args)                |   X   |    X     |    X
+  others.find_first                 |   X   |          |
+  others.exists?                    |   X   |    X     |    X
+  others.uniq                       |   X   |    X     |    X
+  others.reset                      |   X   |    X     |    X
+</pre>
+<h2>Cardinality and associations</h2>
+<p>
+Active Record associations can be used to describe one-to-one, one-to-many
+and many-to-many relationships between models. Each model uses an
+association to describe its role in the relation. The <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association is always used in the model that has the foreign key.
+</p>
+<h3>One-to-one</h3>
+<p>
+Use <tt><a href="ClassMethods.html#method-i-has_one">has_one</a></tt> in
+the base, and <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> in the
+associated model.
+</p>
+<pre>
+  class Employee &lt; ActiveRecord::Base
+    has_one :office
+  end
+  class Office &lt; ActiveRecord::Base
+    belongs_to :employee    # foreign key - employee_id
+  end
+</pre>
+<h3>One-to-many</h3>
+<p>
+Use <tt><a href="ClassMethods.html#method-i-has_many">has_many</a></tt> in
+the base, and <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> in the
+associated model.
+</p>
+<pre>
+  class Manager &lt; ActiveRecord::Base
+    has_many :employees
+  end
+  class Employee &lt; ActiveRecord::Base
+    belongs_to :manager     # foreign key - manager_id
+  end
+</pre>
+<h3>Many-to-many</h3>
+<p>
+There are two ways to build a many-to-many relationship.
+</p>
+<p>
+The first way uses a <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> association
+with the <tt>:through</tt> option and a join model, so there are two stages
+of associations.
+</p>
+<pre>
+  class Assignment &lt; ActiveRecord::Base
+    belongs_to :programmer  # foreign key - programmer_id
+    belongs_to :project     # foreign key - project_id
+  end
+  class Programmer &lt; ActiveRecord::Base
+    has_many :assignments
+    has_many :projects, :through =&gt; :assignments
+  end
+  class Project &lt; ActiveRecord::Base
+    has_many :assignments
+    has_many :programmers, :through =&gt; :assignments
+  end
+</pre>
+<p>
+For the second way, use <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+in both models. This requires a join table that has no corresponding model
+or primary key.
+</p>
+<pre>
+  class Programmer &lt; ActiveRecord::Base
+    has_and_belongs_to_many :projects       # foreign keys in the join table
+  end
+  class Project &lt; ActiveRecord::Base
+    has_and_belongs_to_many :programmers    # foreign keys in the join table
+  end
+</pre>
+<p>
+Choosing which way to build a many-to-many relationship is not always
+simple. If you need to work with the relationship model as its own entity,
+use <tt><a href="ClassMethods.html#method-i-has_many">has_many</a>
+:through</tt>. Use <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+when working with legacy schemas or when you never work directly with the
+relationship itself.
+</p>
+<h2>Is it a <tt><a href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> or <tt><a href="ClassMethods.html#method-i-has_one">has_one</a></tt> association?</h2>
+<p>
+Both express a 1-1 relationship. The difference is mostly where to place
+the foreign key, which goes on the table for the class declaring the <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+relationship.
+</p>
+<pre>
+  class User &lt; ActiveRecord::Base
+    # I reference an account.
+    belongs_to :account
+  end
+
+  class Account &lt; ActiveRecord::Base
+    # One user references me.
+    has_one :user
+  end
+</pre>
+<p>
+The tables for these classes could look something like:
+</p>
+<pre>
+  CREATE TABLE users (
+    id int(11) NOT NULL auto_increment,
+    account_id int(11) default NULL,
+    name varchar default NULL,
+    PRIMARY KEY  (id)
+  )
+
+  CREATE TABLE accounts (
+    id int(11) NOT NULL auto_increment,
+    name varchar default NULL,
+    PRIMARY KEY  (id)
+  )
+</pre>
+<h2>Unsaved objects and associations</h2>
+<p>
+You can manipulate objects and associations before they are saved to the
+database, but there is some special behavior you should be aware of, mostly
+involving the saving of associated objects.
+</p>
+<p>
+You can set the :autosave option on a <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt>, <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>, <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt>, or <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+association. Setting it to <tt>true</tt> will <em>always</em> save the
+members, whereas setting it to <tt>false</tt> will <em>never</em> save the
+members. More details about :autosave option is available at
+autosave_association.rb .
+</p>
+<h3>One-to-one associations</h3>
+<ul>
+<li><p>
+Assigning an object to a <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> association
+automatically saves that object and
+</p>
+</li>
+</ul>
+<p>
+the object being replaced (if there is one), in order to update their
+primary keys - except if the parent object is unsaved (<tt>new_record? ==
+true</tt>).
+</p>
+<ul>
+<li><p>
+If either of these saves fail (due to one of the objects being invalid) the
+assignment
+</p>
+</li>
+</ul>
+<p>
+statement returns <tt>false</tt> and the assignment is cancelled.
+</p>
+<ul>
+<li><p>
+If you wish to assign an object to a <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> association
+without saving it,
+</p>
+</li>
+</ul>
+<p>
+use the <tt>association.build</tt> method (documented below).
+</p>
+<ul>
+<li><p>
+Assigning an object to a <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association does not save the object, since
+</p>
+</li>
+</ul>
+<p>
+the foreign key field belongs on the parent. It does not save the parent
+either.
+</p>
+<h3>Collections</h3>
+<ul>
+<li><p>
+Adding an object to a collection (<tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> or <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>)
+automatically
+</p>
+</li>
+</ul>
+<p>
+saves that object, except if the parent object (the owner of the
+collection) is not yet stored in the database.
+</p>
+<ul>
+<li><p>
+If saving any of the objects being added to a collection (via <tt>push</tt>
+or similar)
+</p>
+</li>
+</ul>
+<p>
+fails, then <tt>push</tt> returns <tt>false</tt>.
+</p>
+<ul>
+<li><p>
+You can add an object to a collection without automatically saving it by
+using the
+</p>
+</li>
+</ul>
+<p>
+<tt>collection.build</tt> method (documented below).
+</p>
+<ul>
+<li><p>
+All unsaved (<tt>new_record? == true</tt>) members of the collection are
+automatically
+</p>
+</li>
+</ul>
+<p>
+saved when the parent is saved.
+</p>
+<h3>Association callbacks</h3>
+<p>
+Similar to the normal callbacks that hook into the life cycle of an Active
+Record object, you can also define callbacks that get triggered when you
+add an object to or remove an object from an association collection.
+</p>
+<pre>
+  class Project
+    has_and_belongs_to_many :developers, :after_add =&gt; :evaluate_velocity
+
+    def evaluate_velocity(developer)
+      ...
+    end
+  end
+</pre>
+<p>
+It&#8217;s possible to stack callbacks by passing them as an array.
+Example:
+</p>
+<pre>
+  class Project
+    has_and_belongs_to_many :developers,
+                            :after_add =&gt; [:evaluate_velocity, Proc.new { |p, d| p.shipping_date = Time.now}]
+  end
+</pre>
+<p>
+Possible callbacks are: <tt>before_add</tt>, <tt>after_add</tt>,
+<tt>before_remove</tt> and <tt>after_remove</tt>.
+</p>
+<p>
+Should any of the <tt>before_add</tt> callbacks throw an exception, the
+object does not get added to the collection. Same with the
+<tt>before_remove</tt> callbacks; if an exception is thrown the object
+doesn&#8217;t get removed.
+</p>
+<h3>Association extensions</h3>
+<p>
+The proxy objects that control the access to associations can be extended
+through anonymous modules. This is especially beneficial for adding new
+finders, creators, and other factory-type methods that are only used as
+part of this association.
+</p>
+<pre>
+  class Account &lt; ActiveRecord::Base
+    has_many :people do
+      def find_or_create_by_name(name)
+        first_name, last_name = name.split(&quot; &quot;, 2)
+        find_or_create_by_first_name_and_last_name(first_name, last_name)
+      end
+    end
+  end
+
+  person = Account.find(:first).people.find_or_create_by_name(&quot;David Heinemeier Hansson&quot;)
+  person.first_name # =&gt; &quot;David&quot;
+  person.last_name  # =&gt; &quot;Heinemeier Hansson&quot;
+</pre>
+<p>
+If you need to share the same extensions between many associations, you can
+use a named extension module.
+</p>
+<pre>
+  module FindOrCreateByNameExtension
+    def find_or_create_by_name(name)
+      first_name, last_name = name.split(&quot; &quot;, 2)
+      find_or_create_by_first_name_and_last_name(first_name, last_name)
+    end
+  end
+
+  class Account &lt; ActiveRecord::Base
+    has_many :people, :extend =&gt; FindOrCreateByNameExtension
+  end
+
+  class Company &lt; ActiveRecord::Base
+    has_many :people, :extend =&gt; FindOrCreateByNameExtension
+  end
+</pre>
+<p>
+If you need to use multiple named extension modules, you can specify an
+array of modules with the <tt>:extend</tt> option. In the case of name
+conflicts between methods in the modules, methods in modules later in the
+array supercede those earlier in the array.
+</p>
+<pre>
+  class Account &lt; ActiveRecord::Base
+    has_many :people, :extend =&gt; [FindOrCreateByNameExtension, FindRecentExtension]
+  end
+</pre>
+<p>
+Some extensions can only be made to work with knowledge of the association
+proxy&#8217;s internals. Extensions can access relevant state using
+accessors on the association proxy:
+</p>
+<ul>
+<li><p>
+<tt>proxy_owner</tt> - Returns the object the association is part of.
+</p>
+</li>
+<li><p>
+<tt>proxy_reflection</tt> - Returns the reflection object that describes
+the association.
+</p>
+</li>
+<li><p>
+<tt>proxy_target</tt> - Returns the associated object for <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> and <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt>, or the
+collection of associated objects for <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> and <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>.
+</p>
+</li>
+</ul>
+<h3>Association Join Models</h3>
+<p>
+Has Many associations can be configured with the <tt>:through</tt> option
+to use an explicit join model to retrieve the data.  This operates
+similarly to a <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+association.  The advantage is that you&#8217;re able to add validations,
+callbacks, and extra attributes on the join model.  Consider the following
+schema:
+</p>
+<pre>
+  class Author &lt; ActiveRecord::Base
+    has_many :authorships
+    has_many :books, :through =&gt; :authorships
+  end
+
+  class Authorship &lt; ActiveRecord::Base
+    belongs_to :author
+    belongs_to :book
+  end
+
+  @author = Author.find :first
+  @author.authorships.collect { |a| a.book } # selects all books that the author's authorships belong to
+  @author.books                              # selects all books by using the Authorship join model
+</pre>
+<p>
+You can also go through a <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> association on
+the join model:
+</p>
+<pre>
+  class Firm &lt; ActiveRecord::Base
+    has_many   :clients
+    has_many   :invoices, :through =&gt; :clients
+  end
+
+  class Client &lt; ActiveRecord::Base
+    belongs_to :firm
+    has_many   :invoices
+  end
+
+  class Invoice &lt; ActiveRecord::Base
+    belongs_to :client
+  end
+
+  @firm = Firm.find :first
+  @firm.clients.collect { |c| c.invoices }.flatten # select all invoices for all clients of the firm
+  @firm.invoices                                   # selects all invoices by going through the Client join model
+</pre>
+<p>
+Similarly you can go through a <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> association on
+the join model:
+</p>
+<pre>
+  class Group &lt; ActiveRecord::Base
+    has_many   :users
+    has_many   :avatars, :through =&gt; :users
+  end
+
+  class User &lt; ActiveRecord::Base
+    belongs_to :group
+    has_one    :avatar
+  end
+
+  class Avatar &lt; ActiveRecord::Base
+    belongs_to :user
+  end
+
+  @group = Group.first
+  @group.users.collect { |u| u.avatar }.flatten # select all avatars for all users in the group
+  @group.avatars                                # selects all avatars by going through the User join model.
+</pre>
+<p>
+An important caveat with going through <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> or <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> associations
+on the join model is that these associations are <b>read-only</b>.  For
+example, the following would not work following the previous example:
+</p>
+<pre>
+  @group.avatars &lt;&lt; Avatar.new   # this would work if User belonged_to Avatar rather than the other way around
+  @group.avatars.delete(@group.avatars.last)  # so would this
+</pre>
+<h3>Polymorphic Associations</h3>
+<p>
+Polymorphic associations on models are not restricted on what types of
+models they can be associated with.  Rather, they specify an interface that
+a <tt><a href="ClassMethods.html#method-i-has_many">has_many</a></tt>
+association must adhere to.
+</p>
+<pre>
+  class Asset &lt; ActiveRecord::Base
+    belongs_to :attachable, :polymorphic =&gt; true
+  end
+
+  class Post &lt; ActiveRecord::Base
+    has_many :assets, :as =&gt; :attachable         # The :as option specifies the polymorphic interface to use.
+  end
+
+  @asset.attachable = @post
+</pre>
+<p>
+This works by using a type column in addition to a foreign key to specify
+the associated record.  In the Asset example, you&#8217;d need an
+<tt>attachable_id</tt> integer column and an <tt>attachable_type</tt>
+string column.
+</p>
+<p>
+Using polymorphic associations in combination with single table inheritance
+(STI) is a little tricky. In order for the associations to work as
+expected, ensure that you store the base model for the STI models in the
+type column of the polymorphic association. To continue with the asset
+example above, suppose there are guest posts and member posts that use the
+posts table for STI. In this case, there must be a <tt>type</tt> column in
+the posts table.
+</p>
+<pre>
+  class Asset &lt; ActiveRecord::Base
+    belongs_to :attachable, :polymorphic =&gt; true
+
+    def attachable_type=(sType)
+       super(sType.to_s.classify.constantize.base_class.to_s)
+    end
+  end
+
+  class Post &lt; ActiveRecord::Base
+    # because we store &quot;Post&quot; in attachable_type now :dependent =&gt; :destroy will work
+    has_many :assets, :as =&gt; :attachable, :dependent =&gt; :destroy
+  end
+
+  class GuestPost &lt; Post
+  end
+
+  class MemberPost &lt; Post
+  end
+</pre>
+<h2>Caching</h2>
+<p>
+All of the methods are built on a simple caching principle that will keep
+the result of the last query around unless specifically instructed not to.
+The cache is even shared across methods to make it even cheaper to use the
+macro-added methods without worrying too much about performance at the
+first go.
+</p>
+<pre>
+  project.milestones             # fetches milestones from the database
+  project.milestones.size        # uses the milestone cache
+  project.milestones.empty?      # uses the milestone cache
+  project.milestones(true).size  # fetches milestones from the database
+  project.milestones             # uses the milestone cache
+</pre>
+<h2>Eager loading of associations</h2>
+<p>
+Eager loading is a way to find objects of a certain class and a number of
+named associations. This is one of the easiest ways of to prevent the
+dreaded 1+N problem in which fetching 100 posts that each need to display
+their author triggers 101 database queries. Through the use of eager
+loading, the 101 queries can be reduced to 2.
+</p>
+<pre>
+  class Post &lt; ActiveRecord::Base
+    belongs_to :author
+    has_many   :comments
+  end
+</pre>
+<p>
+Consider the following loop using the class above:
+</p>
+<pre>
+  for post in Post.all
+    puts &quot;Post:            &quot; + post.title
+    puts &quot;Written by:      &quot; + post.author.name
+    puts &quot;Last comment on: &quot; + post.comments.first.created_on
+  end
+</pre>
+<p>
+To iterate over these one hundred posts, we&#8217;ll generate 201 database
+queries. Let&#8217;s first just optimize it for retrieving the author:
+</p>
+<pre>
+  for post in Post.find(:all, :include =&gt; :author)
+</pre>
+<p>
+This references the name of the <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association that also used the <tt>:author</tt> symbol. After loading the
+posts, find will collect the <tt>author_id</tt> from each one and load all
+the referenced authors with one query. Doing so will cut down the number of
+queries from 201 to 102.
+</p>
+<p>
+We can improve upon the situation further by referencing both associations
+in the finder with:
+</p>
+<pre>
+  for post in Post.find(:all, :include =&gt; [ :author, :comments ])
+</pre>
+<p>
+This will load all comments with a single query. This reduces the total
+number of queries to 3. More generally the number of queries will be 1 plus
+the number of associations named (except if some of the associations are
+polymorphic <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> - see
+below).
+</p>
+<p>
+To include a deep hierarchy of associations, use a hash:
+</p>
+<pre>
+  for post in Post.find(:all, :include =&gt; [ :author, { :comments =&gt; { :author =&gt; :gravatar } } ])
+</pre>
+<p>
+That&#8217;ll grab not only all the comments but all their authors and
+gravatar pictures. You can mix and match symbols, arrays and hashes in any
+combination to describe the associations you want to load.
+</p>
+<p>
+All of this power shouldn&#8217;t fool you into thinking that you can pull
+out huge amounts of data with no performance penalty just because
+you&#8217;ve reduced the number of queries. The database still needs to
+send all the data to Active Record and it still needs to be processed. So
+it&#8217;s no catch-all for performance problems, but it&#8217;s a great
+way to cut down on the number of queries in a situation as the one
+described above.
+</p>
+<p>
+Since only one table is loaded at a time, conditions or orders cannot
+reference tables other than the main one. If this is the case Active Record
+falls back to the previously used LEFT OUTER JOIN based strategy. For
+example
+</p>
+<pre>
+  Post.includes([:author, :comments]).where(['comments.approved = ?', true]).all
+</pre>
+<p>
+This will result in a single SQL query with joins along the lines of:
+<tt>LEFT OUTER JOIN comments ON comments.post_id = posts.id</tt> and
+<tt>LEFT OUTER JOIN authors ON authors.id = posts.author_id</tt>. Note that
+using conditions like this can have unintended consequences. In the above
+example posts with no approved comments are not returned at all, because
+the conditions apply to the SQL statement as a whole and not just to the
+association. You must disambiguate column references for this fallback to
+happen, for example <tt>:order =&gt; &quot;author.name DESC&quot;</tt> will
+work but <tt>:order =&gt; &quot;name DESC&quot;</tt> will not.
+</p>
+<p>
+If you do want eager load only some members of an association it is usually
+more natural to <tt>:include</tt> an association which has conditions
+defined on it:
+</p>
+<pre>
+  class Post &lt; ActiveRecord::Base
+    has_many :approved_comments, :class_name =&gt; 'Comment', :conditions =&gt; ['approved = ?', true]
+  end
+
+  Post.find(:all, :include =&gt; :approved_comments)
+</pre>
+<p>
+This will load posts and eager load the <tt>approved_comments</tt>
+association, which contains only those comments that have been approved.
+</p>
+<p>
+If you eager load an association with a specified <tt>:limit</tt> option,
+it will be ignored, returning all the associated objects:
+</p>
+<pre>
+  class Picture &lt; ActiveRecord::Base
+    has_many :most_recent_comments, :class_name =&gt; 'Comment', :order =&gt; 'id DESC', :limit =&gt; 10
+  end
+
+  Picture.find(:first, :include =&gt; :most_recent_comments).most_recent_comments # =&gt; returns all associated comments.
+</pre>
+<p>
+When eager loaded, conditions are interpolated in the context of the model
+class, not the model instance.  Conditions are lazily interpolated before
+the actual model exists.
+</p>
+<p>
+Eager loading is supported with polymorphic associations.
+</p>
+<pre>
+  class Address &lt; ActiveRecord::Base
+    belongs_to :addressable, :polymorphic =&gt; true
+  end
+</pre>
+<p>
+A call that tries to eager load the addressable model
+</p>
+<pre>
+  Address.find(:all, :include =&gt; :addressable)
+</pre>
+<p>
+This will execute one query to load the addresses and load the addressables
+with one query per addressable type. For example if all the addressables
+are either of class Person or Company then a total of 3 queries will be
+executed. The list of addressable types to load is determined on the back
+of the addresses loaded. This is not supported if Active Record has to
+fallback to the previous implementation of eager loading and will raise
+ActiveRecord::EagerLoadPolymorphicError. The reason is that the parent
+model&#8217;s type is a column value so its corresponding table name cannot
+be put in the <tt>FROM</tt>/<tt>JOIN</tt> clauses of that query.
+</p>
+<h2>Table Aliasing</h2>
+<p>
+Active Record uses table aliasing in the case that a table is referenced
+multiple times in a join.  If a table is referenced only once, the standard
+table name is used.  The second time, the table is aliased as
+<tt>#{reflection_name}_#{parent_table_name}</tt>. Indexes are appended for
+any more successive uses of the table name.
+</p>
+<pre>
+  Post.find :all, :joins =&gt; :comments
+  # =&gt; SELECT ... FROM posts INNER JOIN comments ON ...
+  Post.find :all, :joins =&gt; :special_comments # STI
+  # =&gt; SELECT ... FROM posts INNER JOIN comments ON ... AND comments.type = 'SpecialComment'
+  Post.find :all, :joins =&gt; [:comments, :special_comments] # special_comments is the reflection name, posts is the parent table name
+  # =&gt; SELECT ... FROM posts INNER JOIN comments ON ... INNER JOIN comments special_comments_posts
+</pre>
+<p>
+Acts as tree example:
+</p>
+<pre>
+  TreeMixin.find :all, :joins =&gt; :children
+  # =&gt; SELECT ... FROM mixins INNER JOIN mixins childrens_mixins ...
+  TreeMixin.find :all, :joins =&gt; {:children =&gt; :parent}
+  # =&gt; SELECT ... FROM mixins INNER JOIN mixins childrens_mixins ...
+                              INNER JOIN parents_mixins ...
+  TreeMixin.find :all, :joins =&gt; {:children =&gt; {:parent =&gt; :children}}
+  # =&gt; SELECT ... FROM mixins INNER JOIN mixins childrens_mixins ...
+                              INNER JOIN parents_mixins ...
+                              INNER JOIN mixins childrens_mixins_2
+</pre>
+<p>
+Has and Belongs to Many join tables use the same idea, but add a
+<tt>_join</tt> suffix:
+</p>
+<pre>
+  Post.find :all, :joins =&gt; :categories
+  # =&gt; SELECT ... FROM posts INNER JOIN categories_posts ... INNER JOIN categories ...
+  Post.find :all, :joins =&gt; {:categories =&gt; :posts}
+  # =&gt; SELECT ... FROM posts INNER JOIN categories_posts ... INNER JOIN categories ...
+                             INNER JOIN categories_posts posts_categories_join INNER JOIN posts posts_categories
+  Post.find :all, :joins =&gt; {:categories =&gt; {:posts =&gt; :categories}}
+  # =&gt; SELECT ... FROM posts INNER JOIN categories_posts ... INNER JOIN categories ...
+                             INNER JOIN categories_posts posts_categories_join INNER JOIN posts posts_categories
+                             INNER JOIN categories_posts categories_posts_join INNER JOIN categories categories_posts_2
+</pre>
+<p>
+If you wish to specify your own custom joins using a <tt>:joins</tt>
+option, those table names will take precedence over the eager associations:
+</p>
+<pre>
+  Post.find :all, :joins =&gt; :comments, :joins =&gt; &quot;inner join comments ...&quot;
+  # =&gt; SELECT ... FROM posts INNER JOIN comments_posts ON ... INNER JOIN comments ...
+  Post.find :all, :joins =&gt; [:comments, :special_comments], :joins =&gt; &quot;inner join comments ...&quot;
+  # =&gt; SELECT ... FROM posts INNER JOIN comments comments_posts ON ...
+                             INNER JOIN comments special_comments_posts ...
+                             INNER JOIN comments ...
+</pre>
+<p>
+Table aliases are automatically truncated according to the maximum length
+of table identifiers according to the specific database.
+</p>
+<h2>Modules</h2>
+<p>
+By default, associations will look for objects within the current module
+scope. Consider:
+</p>
+<pre>
+  module MyApplication
+    module Business
+      class Firm &lt; ActiveRecord::Base
+         has_many :clients
+       end
+
+      class Client &lt; ActiveRecord::Base; end
+    end
+  end
+</pre>
+<p>
+When <tt>Firm#clients</tt> is called, it will in turn call
+<tt>MyApplication::Business::Client.find_all_by_firm_id(firm.id)</tt>. If
+you want to associate with a class in another module scope, this can be
+done by specifying the complete class name.
+</p>
+<pre>
+  module MyApplication
+    module Business
+      class Firm &lt; ActiveRecord::Base; end
+    end
+
+    module Billing
+      class Account &lt; ActiveRecord::Base
+        belongs_to :firm, :class_name =&gt; &quot;MyApplication::Business::Firm&quot;
+      end
+    end
+  end
+</pre>
+<h2>Bi-directional associations</h2>
+<p>
+When you specify an association there is usually an association on the
+associated model that specifies the same relationship in reverse.  For
+example, with the following models:
+</p>
+<pre>
+   class Dungeon &lt; ActiveRecord::Base
+     has_many :traps
+     has_one :evil_wizard
+   end
+
+   class Trap &lt; ActiveRecord::Base
+     belongs_to :dungeon
+   end
+
+   class EvilWizard &lt; ActiveRecord::Base
+     belongs_to :dungeon
+   end
+</pre>
+<p>
+The <tt>traps</tt> association on <tt>Dungeon</tt> and the the
+<tt>dungeon</tt> association on <tt>Trap</tt> are the inverse of each other
+and the inverse of the <tt>dungeon</tt> association on <tt>EvilWizard</tt>
+is the <tt>evil_wizard</tt> association on <tt>Dungeon</tt> (and
+vice-versa).  By default, Active Record doesn&#8217;t know anything about
+these inverse relationships and so no object loading optimisation is
+possible.  For example:
+</p>
+<pre>
+   d = Dungeon.first
+   t = d.traps.first
+   d.level == t.dungeon.level # =&gt; true
+   d.level = 10
+   d.level == t.dungeon.level # =&gt; false
+</pre>
+<p>
+The <tt>Dungeon</tt> instances <tt>d</tt> and <tt>t.dungeon</tt> in the
+above example refer to the same object data from the database, but are
+actually different in-memory copies of that data.  Specifying the
+<tt>:inverse_of</tt> option on associations lets you tell Active Record
+about inverse relationships and it will optimise object loading.  For
+example, if we changed our model definitions to:
+</p>
+<pre>
+   class Dungeon &lt; ActiveRecord::Base
+     has_many :traps, :inverse_of =&gt; :dungeon
+     has_one :evil_wizard, :inverse_of =&gt; :dungeon
+   end
+
+   class Trap &lt; ActiveRecord::Base
+     belongs_to :dungeon, :inverse_of =&gt; :traps
+   end
+
+   class EvilWizard &lt; ActiveRecord::Base
+     belongs_to :dungeon, :inverse_of =&gt; :evil_wizard
+   end
+</pre>
+<p>
+Then, from our code snippet above, <tt>d</tt> and <tt>t.dungeon</tt> are
+actually the same in-memory instance and our final <tt>d.level ==
+t.dungeon.level</tt> will return <tt>true</tt>.
+</p>
+<p>
+There are limitations to <tt>:inverse_of</tt> support:
+</p>
+<ul>
+<li><p>
+does not work with <tt>:through</tt> associations.
+</p>
+</li>
+<li><p>
+does not work with <tt>:polymorphic</tt> associations.
+</p>
+</li>
+<li><p>
+for <tt><a href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+associations <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> inverse
+associations are ignored.
+</p>
+</li>
+</ul>
+<h2>Type safety with <tt>ActiveRecord::AssociationTypeMismatch</tt></h2>
+<p>
+If you attempt to assign an object to an association that doesn&#8217;t
+match the inferred or specified <tt>:class_name</tt>, you&#8217;ll get an
+<tt>ActiveRecord::AssociationTypeMismatch</tt>.
+</p>
+<h2>Options</h2>
+<p>
+All of the association macros can be specialized through options. This
+makes cases more complex than the simple and guessable ones possible.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="belongs-to-method" class="method-detail ">
+				<a name="method-i-belongs_to"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">belongs_to</span><span
+						class="method-args">(association_id, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Specifies a one-to-one association with another class. This method should
+only be used if this class contains the foreign key. If the other class
+contains the foreign key, then you should use <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> instead. See
+also ActiveRecord::Associations::ClassMethods&#8217;s overview on when to
+use <tt><a href="ClassMethods.html#method-i-has_one">has_one</a></tt> and
+when to use <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>.
+</p>
+<p>
+Methods will be added for retrieval and query for a single associated
+object, for which this object holds an id:
+</p>
+<dl>
+<dt>association(force_reload = false)</dt><dd><p>
+Returns the associated object. <tt>nil</tt> is returned if none is found.
+</p>
+</dd>
+<dt>association=(associate)</dt><dd><p>
+Assigns the associate object, extracts the primary key, and sets it as the
+foreign key.
+</p>
+</dd>
+<dt>build_association(attributes = {})</dt><dd><p>
+Returns a new object of the associated type that has been instantiated with
+<tt>attributes</tt> and linked to this object through a foreign key, but
+has not yet been saved.
+</p>
+</dd>
+<dt>create_association(attributes = {})</dt><dd><p>
+Returns a new object of the associated type that has been instantiated with
+<tt>attributes</tt>, linked to this object through a foreign key, and that
+has already been saved (if it passed the validation).
+</p>
+</dd>
+</dl>
+<p>
+(<tt>association</tt> is replaced with the symbol passed as the first
+argument, so <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a> :author</tt>
+would add among others <tt>author.nil?</tt>.)
+</p>
+<h3>Example</h3>
+<p>
+A Post class declares <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a> :author</tt>,
+which will add:
+</p>
+<ul>
+<li><p>
+<tt>Post#author</tt> (similar to <tt>Author.find(author_id)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Post#author=(author)</tt> (similar to <tt>post.author_id =
+author.id</tt>)
+</p>
+</li>
+<li><p>
+<tt>Post#build_author</tt> (similar to <tt>post.author = Author.new</tt>)
+</p>
+</li>
+<li><p>
+<tt>Post#create_author</tt> (similar to <tt>post.author = Author.new;
+post.author.save; post.author</tt>)
+</p>
+</li>
+</ul>
+<p>
+The declaration can also include an options hash to specialize the behavior
+of the association.
+</p>
+<h3>Options</h3>
+<dl>
+<dt>:class_name</dt><dd><p>
+Specify the class name of the association. Use it only if that name
+can&#8217;t be inferred from the association name. So <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a> :author</tt> will by
+default be linked to the Author class, but if the real class name is
+Person, you&#8217;ll have to specify it with this option.
+</p>
+</dd>
+<dt>:conditions</dt><dd><p>
+Specify the conditions that the associated object must meet in order to be
+included as a <tt>WHERE</tt> SQL fragment, such as <tt>authorized = 1</tt>.
+</p>
+</dd>
+<dt>:select</dt><dd><p>
+By default, this is <tt>*</tt> as in <tt>SELECT * FROM</tt>, but can be
+changed if, for example, you want to do a join but not include the joined
+columns. Do not forget to include the primary and foreign keys, otherwise
+it will raise an error.
+</p>
+</dd>
+<dt>:foreign_key</dt><dd><p>
+Specify the foreign key used for the association. By default this is
+guessed to be the name of the association with an &#8220;_id&#8221; suffix.
+So a class that defines a <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a> :person</tt>
+association will use &#8220;person_id&#8220; as the default
+<tt>:foreign_key</tt>. Similarly, <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a>
+:favorite_person, :class_name =&gt; &quot;Person&quot;</tt> will use a
+foreign key of &#8220;favorite_person_id&#8220;.
+</p>
+</dd>
+<dt>:primary_key</dt><dd><p>
+Specify the method that returns the primary key of associated object used
+for the association. By default this is id.
+</p>
+</dd>
+<dt>:dependent</dt><dd><p>
+If set to <tt>:destroy</tt>, the associated object is destroyed when this
+object is. If set to <tt>:delete</tt>, the associated object is deleted
+<b>without</b> calling its destroy method. This option should not be
+specified when <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> is used in
+conjunction with a <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> relationship
+on another class because of the potential to leave orphaned records behind.
+</p>
+</dd>
+<dt>:counter_cache</dt><dd><p>
+Caches the number of belonging objects on the associate class through the
+use of <tt>increment_counter</tt> and <tt>decrement_counter</tt>. The
+counter cache is incremented when an object of this class is created and
+decremented when it&#8217;s destroyed. This requires that a column named
+<tt>#{table_name}_count</tt> (such as <tt>comments_count</tt> for a
+belonging Comment class) is used on the associate class (such as a Post
+class). You can also specify a custom counter cache column by providing a
+column name instead of a <tt>true</tt>/<tt>false</tt> value to this option
+(e.g., <tt>:counter_cache =&gt; :my_custom_counter</tt>.) Note: Specifying
+a counter cache will add it to that model&#8217;s list of readonly
+attributes using <tt>attr_readonly</tt>.
+</p>
+</dd>
+<dt>:include</dt><dd><p>
+Specify second-order associations that should be eager loaded when this
+object is loaded.
+</p>
+</dd>
+<dt>:polymorphic</dt><dd><p>
+Specify this association is a polymorphic association by passing
+<tt>true</tt>. Note: If you&#8217;ve enabled the counter cache, then you
+may want to add the counter cache attribute to the <tt>attr_readonly</tt>
+list in the associated classes (e.g. <tt>class Post; attr_readonly
+:comments_count; end</tt>).
+</p>
+</dd>
+<dt>:readonly</dt><dd><p>
+If true, the associated object is readonly through the association.
+</p>
+</dd>
+<dt>:validate</dt><dd><p>
+If <tt>false</tt>, don&#8217;t validate the associated objects when saving
+the parent object. <tt>false</tt> by default.
+</p>
+</dd>
+<dt>:autosave</dt><dd><p>
+If true, always save the associated object or destroy it if marked for
+destruction, when saving the parent object. If false, never save or destroy
+the associated object. By default, only save the associated object if
+it&#8217;s a new record.
+</p>
+</dd>
+<dt>:touch</dt><dd><p>
+If true, the associated object will be touched (the updated_at/on
+attributes set to now) when this record is either saved or destroyed. If
+you specify a symbol, that attribute will be updated with the current time
+instead of the updated_at/on attribute.
+</p>
+</dd>
+<dt>:inverse_of</dt><dd><p>
+Specifies the name of the <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> or <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> association on
+the associated object that is the inverse of this <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association.  Does not work in combination with the <tt>:polymorphic</tt>
+options. See ActiveRecord::Associations::ClassMethods&#8217;s overview on
+Bi-directional associations for more detail.
+</p>
+</dd>
+</dl>
+<p>
+Option examples:
+</p>
+<pre>
+  belongs_to :firm, :foreign_key =&gt; &quot;client_of&quot;
+  belongs_to :person, :primary_key =&gt; &quot;name&quot;, :foreign_key =&gt; &quot;person_name&quot;
+  belongs_to :author, :class_name =&gt; &quot;Person&quot;, :foreign_key =&gt; &quot;author_id&quot;
+  belongs_to :valid_coupon, :class_name =&gt; &quot;Coupon&quot;, :foreign_key =&gt; &quot;coupon_id&quot;,
+             :conditions =&gt; 'discounts &gt; #{payments_count}'
+  belongs_to :attachable, :polymorphic =&gt; true
+  belongs_to :project, :readonly =&gt; true
+  belongs_to :post, :counter_cache =&gt; true
+  belongs_to :company, :touch =&gt; true
+  belongs_to :company, :touch =&gt; :employees_last_updated_at</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="belongs-to-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1219</span>
+1219:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">belongs_to</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span> = {})
+1220:         <span class="ruby-identifier">reflection</span> = <span class="ruby-identifier">create_belongs_to_reflection</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span>)
+1221: 
+1222:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:polymorphic</span>]
+1223:           <span class="ruby-identifier">association_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">BelongsToPolymorphicAssociation</span>)
+1224:         <span class="ruby-keyword kw">else</span>
+1225:           <span class="ruby-identifier">association_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">BelongsToAssociation</span>)
+1226:           <span class="ruby-identifier">association_constructor_method</span>(<span class="ruby-value">:build</span>,  <span class="ruby-identifier">reflection</span>, <span class="ruby-constant">BelongsToAssociation</span>)
+1227:           <span class="ruby-identifier">association_constructor_method</span>(<span class="ruby-value">:create</span>, <span class="ruby-identifier">reflection</span>, <span class="ruby-constant">BelongsToAssociation</span>)
+1228:         <span class="ruby-keyword kw">end</span>
+1229: 
+1230:         <span class="ruby-identifier">add_counter_cache_callbacks</span>(<span class="ruby-identifier">reflection</span>)          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:counter_cache</span>]
+1231:         <span class="ruby-identifier">add_touch_callbacks</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:touch</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:touch</span>]
+1232: 
+1233:         <span class="ruby-identifier">configure_dependency_for_belongs_to</span>(<span class="ruby-identifier">reflection</span>)
+1234:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-and-belongs-to-many-method" class="method-detail ">
+				<a name="method-i-has_and_belongs_to_many"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_and_belongs_to_many</span><span
+						class="method-args">(association_id, options = {}, &extension)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Specifies a many-to-many relationship with another class. This associates
+two classes via an intermediate join table.  Unless the join table is
+explicitly specified as an option, it is guessed using the lexical order of
+the class names. So a join between Developer and Project will give the
+default join table name of &#8220;developers_projects&#8220; because
+&#8220;D&#8221; outranks &#8220;P&#8221;. Note that this precedence is
+calculated using the <tt>&lt;</tt> operator for String.  This means that if
+the strings are of different lengths, and the strings are equal when
+compared up to the shortest length, then the longer string is considered of
+higher lexical precedence than the shorter one.  For example, one would
+expect the tables &#8220;paper_boxes&#8220; and &#8220;papers&#8221; to
+generate a join table name of &#8220;papers_paper_boxes&#8220; because of
+the length of the name &#8220;paper_boxes&#8220;, but it in fact generates
+a join table name of &#8220;paper_boxes_papers&#8220;.  Be aware of this
+caveat, and use the custom <tt>:join_table</tt> option if you need to.
+</p>
+<p>
+The join table should not have a primary key or a model associated with it.
+You must manually generate the join table with a migration such as this:
+</p>
+<pre>
+  class CreateDevelopersProjectsJoinTable &lt; ActiveRecord::Migration
+    def self.up
+      create_table :developers_projects, :id =&gt; false do |t|
+        t.integer :developer_id
+        t.integer :project_id
+      end
+    end
+
+    def self.down
+      drop_table :developers_projects
+    end
+  end
+</pre>
+<p>
+Deprecated: Any additional fields added to the join table will be placed as
+attributes when pulling records out through <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+associations. Records returned from join tables with additional attributes
+will be marked as readonly (because we can&#8217;t save changes to the
+additional attributes). It&#8217;s strongly recommended that you upgrade
+any associations with attributes to a real join model (see introduction).
+</p>
+<p>
+Adds the following methods for retrieval and query:
+</p>
+<dl>
+<dt>collection(force_reload = false)</dt><dd><p>
+Returns an array of all the associated objects. An empty array is returned
+if none are found.
+</p>
+</dd>
+<dt>collection<<(object, &#8230;)</dt><dd><p>
+Adds one or more objects to the collection by creating associations in the
+join table (<tt>collection.push</tt> and <tt>collection.concat</tt> are
+aliases to this method). Note that this operation instantly fires update
+sql without waiting for the save or update call on the parent object.
+</p>
+</dd>
+<dt>collection.delete(object, &#8230;)</dt><dd><p>
+Removes one or more objects from the collection by removing their
+associations from the join table. This does not destroy the objects.
+</p>
+</dd>
+<dt>collection=objects</dt><dd><p>
+Replaces the collection&#8217;s content by deleting and adding objects as
+appropriate.
+</p>
+</dd>
+<dt>collection_singular_ids</dt><dd><p>
+Returns an array of the associated objects&#8217; ids.
+</p>
+</dd>
+<dt>collection_singular_ids=ids</dt><dd><p>
+Replace the collection by the objects identified by the primary keys in
+<tt>ids</tt>.
+</p>
+</dd>
+<dt>collection.clear</dt><dd><p>
+Removes every object from the collection. This does not destroy the
+objects.
+</p>
+</dd>
+<dt>collection.empty?</dt><dd><p>
+Returns <tt>true</tt> if there are no associated objects.
+</p>
+</dd>
+<dt>collection.size</dt><dd><p>
+Returns the number of associated objects.
+</p>
+</dd>
+<dt>collection.find(id)</dt><dd><p>
+Finds an associated object responding to the <tt>id</tt> and that meets the
+condition that it has to be associated with this object. Uses the same
+rules as ActiveRecord::Base.find.
+</p>
+</dd>
+<dt>collection.exists?(&#8230;)</dt><dd><p>
+Checks whether an associated object with the given conditions exists. Uses
+the same rules as ActiveRecord::Base.exists?.
+</p>
+</dd>
+<dt>collection.build(attributes = {})</dt><dd><p>
+Returns a new object of the collection type that has been instantiated with
+<tt>attributes</tt> and linked to this object through the join table, but
+has not yet been saved.
+</p>
+</dd>
+<dt>collection.create(attributes = {})</dt><dd><p>
+Returns a new object of the collection type that has been instantiated with
+<tt>attributes</tt>, linked to this object through the join table, and that
+has already been saved (if it passed the validation).
+</p>
+</dd>
+</dl>
+<p>
+(<tt>collection</tt> is replaced with the symbol passed as the first
+argument, so <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a>
+:categories</tt> would add among others <tt>categories.empty?</tt>.)
+</p>
+<h3>Example</h3>
+<p>
+A Developer class declares <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a>
+:projects</tt>, which will add:
+</p>
+<ul>
+<li><p>
+<tt>Developer#projects</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects&lt;&lt;</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.delete</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects=</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#project_ids</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#project_ids=</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.clear</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.empty?</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.size</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.find(id)</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.exists?(...)</tt>
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.build</tt> (similar to
+<tt>Project.new(&quot;project_id&quot; =&gt; id)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Developer#projects.create</tt> (similar to <tt>c =
+Project.new(&quot;project_id&quot; =&gt; id); c.save; c</tt>)
+</p>
+</li>
+</ul>
+<p>
+The declaration may include an options hash to specialize the behavior of
+the association.
+</p>
+<h3>Options</h3>
+<dl>
+<dt>:class_name</dt><dd><p>
+Specify the class name of the association. Use it only if that name
+can&#8217;t be inferred from the association name. So <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a>
+:projects</tt> will by default be linked to the Project class, but if the
+real class name is SuperProject, you&#8217;ll have to specify it with this
+option.
+</p>
+</dd>
+<dt>:join_table</dt><dd><p>
+Specify the name of the join table if the default based on lexical order
+isn&#8217;t what you want. <b>WARNING:</b> If you&#8217;re overwriting the
+table name of either class, the <tt>table_name</tt> method MUST be declared
+underneath any <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+declaration in order to work.
+</p>
+</dd>
+<dt>:foreign_key</dt><dd><p>
+Specify the foreign key used for the association. By default this is
+guessed to be the name of this class in lower-case and &#8220;_id&#8221;
+suffixed. So a Person class that makes a <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+association to Project will use &#8220;person_id&#8220; as the default
+<tt>:foreign_key</tt>.
+</p>
+</dd>
+<dt>:association_foreign_key</dt><dd><p>
+Specify the foreign key used for the association on the receiving side of
+the association. By default this is guessed to be the name of the
+associated class in lower-case and &#8220;_id&#8221; suffixed. So if a
+Person class makes a <tt><a
+href="ClassMethods.html#method-i-has_and_belongs_to_many">has_and_belongs_to_many</a></tt>
+association to Project, the association will use &#8220;project_id&#8220;
+as the default <tt>:association_foreign_key</tt>.
+</p>
+</dd>
+<dt>:conditions</dt><dd><p>
+Specify the conditions that the associated object must meet in order to be
+included as a <tt>WHERE</tt> SQL fragment, such as <tt>authorized = 1</tt>.
+Record creations from the association are scoped if a hash is used. <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :posts, :conditions
+=&gt; {:published =&gt; true}</tt> will create published posts with
+<tt>@blog.posts.create</tt> or <tt>@blog.posts.build</tt>.
+</p>
+</dd>
+<dt>:order</dt><dd><p>
+Specify the order in which the associated objects are returned as an
+<tt>ORDER BY</tt> SQL fragment, such as <tt>last_name, first_name DESC</tt>
+</p>
+</dd>
+<dt>:uniq</dt><dd><p>
+If true, duplicate associated objects will be ignored by accessors and
+query methods.
+</p>
+</dd>
+<dt>:finder_sql</dt><dd><p>
+Overwrite the default generated SQL statement used to fetch the association
+with a manual statement
+</p>
+</dd>
+<dt>:counter_sql</dt><dd><p>
+Specify a complete SQL statement to fetch the size of the association. If
+<tt>:finder_sql</tt> is specified but not <tt>:counter_sql</tt>,
+<tt>:counter_sql</tt> will be generated by replacing <tt>SELECT ...
+FROM</tt> with <tt>SELECT COUNT(*) FROM</tt>.
+</p>
+</dd>
+<dt>:delete_sql</dt><dd><p>
+Overwrite the default generated SQL statement used to remove links between
+the associated classes with a manual statement.
+</p>
+</dd>
+<dt>:insert_sql</dt><dd><p>
+Overwrite the default generated SQL statement used to add links between the
+associated classes with a manual statement.
+</p>
+</dd>
+<dt>:extend</dt><dd><p>
+Anonymous module for extending the proxy, see &#8220;Association
+extensions&#8221;.
+</p>
+</dd>
+<dt>:include</dt><dd><p>
+Specify second-order associations that should be eager loaded when the
+collection is loaded.
+</p>
+</dd>
+<dt>:group</dt><dd><p>
+An attribute name by which the result should be grouped. Uses the <tt>GROUP
+BY</tt> SQL-clause.
+</p>
+</dd>
+<dt>:having</dt><dd><p>
+Combined with <tt>:group</tt> this can be used to filter the records that a
+<tt>GROUP BY</tt> returns. Uses the <tt>HAVING</tt> SQL-clause.
+</p>
+</dd>
+<dt>:limit</dt><dd><p>
+An integer determining the limit on the number of rows that should be
+returned.
+</p>
+</dd>
+<dt>:offset</dt><dd><p>
+An integer determining the offset from where the rows should be fetched. So
+at 5, it would skip the first 4 rows.
+</p>
+</dd>
+<dt>:select</dt><dd><p>
+By default, this is <tt>*</tt> as in <tt>SELECT * FROM</tt>, but can be
+changed if, for example, you want to do a join but not include the joined
+columns. Do not forget to include the primary and foreign keys, otherwise
+it will raise an error.
+</p>
+</dd>
+<dt>:readonly</dt><dd><p>
+If true, all the associated objects are readonly through the association.
+</p>
+</dd>
+<dt>:validate</dt><dd><p>
+If <tt>false</tt>, don&#8217;t validate the associated objects when saving
+the parent object. <tt>true</tt> by default.
+</p>
+</dd>
+<dt>:autosave</dt><dd><p>
+If true, always save the associated objects or destroy them if marked for
+destruction, when saving the parent object. If false, never save or destroy
+the associated objects. By default, only save associated objects that are
+new records.
+</p>
+</dd>
+</dl>
+<p>
+Option examples:
+</p>
+<pre>
+  has_and_belongs_to_many :projects
+  has_and_belongs_to_many :projects, :include =&gt; [ :milestones, :manager ]
+  has_and_belongs_to_many :nations, :class_name =&gt; &quot;Country&quot;
+  has_and_belongs_to_many :categories, :join_table =&gt; &quot;prods_cats&quot;
+  has_and_belongs_to_many :categories, :readonly =&gt; true
+  has_and_belongs_to_many :active_projects, :join_table =&gt; 'developers_projects', :delete_sql =&gt;
+  'DELETE FROM developers_projects WHERE active=1 AND developer_id = #{id} AND project_id = #{record.id}'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="has-and-belongs-to-many-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1410</span>
+1410:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_and_belongs_to_many</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">extension</span>)
+1411:         <span class="ruby-identifier">reflection</span> = <span class="ruby-identifier">create_has_and_belongs_to_many_reflection</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">extension</span>)
+1412:         <span class="ruby-identifier">collection_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">HasAndBelongsToManyAssociation</span>)
+1413: 
+1414:         <span class="ruby-identifier">configure_after_destroy_method_for_has_and_belongs_to_many</span>(<span class="ruby-identifier">reflection</span>)
+1415: 
+1416:         <span class="ruby-identifier">add_association_callbacks</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+1417:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-many-method" class="method-detail ">
+				<a name="method-i-has_many"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_many</span><span
+						class="method-args">(association_id, options = {}, &extension)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Specifies a one-to-many association. The following methods for retrieval
+and query of collections of associated objects will be added:
+</p>
+<dl>
+<dt>collection(force_reload = false)</dt><dd><p>
+Returns an array of all the associated objects. An empty array is returned
+if none are found.
+</p>
+</dd>
+<dt>collection<<(object, &#8230;)</dt><dd><p>
+Adds one or more objects to the collection by setting their foreign keys to
+the collection&#8217;s primary key. Note that this operation instantly
+fires update sql without waiting for the save or update call on the parent
+object.
+</p>
+</dd>
+<dt>collection.delete(object, &#8230;)</dt><dd><p>
+Removes one or more objects from the collection by setting their foreign
+keys to <tt>NULL</tt>. Objects will be in addition destroyed if
+they&#8217;re associated with <tt>:dependent =&gt; :destroy</tt>, and
+deleted if they&#8217;re associated with <tt>:dependent =&gt;
+:delete_all</tt>.
+</p>
+</dd>
+<dt>collection=objects</dt><dd><p>
+Replaces the collections content by deleting and adding objects as
+appropriate. If the <tt>:through</tt> option is true callbacks in the join
+models are triggered except destroy callbacks, since deletion is direct.
+</p>
+</dd>
+<dt>collection_singular_ids</dt><dd><p>
+Returns an array of the associated objects&#8217; ids
+</p>
+</dd>
+<dt>collection_singular_ids=ids</dt><dd><p>
+Replace the collection with the objects identified by the primary keys in
+<tt>ids</tt>. This method loads the models and calls <tt>collection=</tt>.
+See above.
+</p>
+</dd>
+<dt>collection.clear</dt><dd><p>
+Removes every object from the collection. This destroys the associated
+objects if they are associated with <tt>:dependent =&gt; :destroy</tt>,
+deletes them directly from the database if <tt>:dependent =&gt;
+:delete_all</tt>, otherwise sets their foreign keys to <tt>NULL</tt>. If
+the <tt>:through</tt> option is true no destroy callbacks are invoked on
+the join models. Join models are directly deleted.
+</p>
+</dd>
+<dt>collection.empty?</dt><dd><p>
+Returns <tt>true</tt> if there are no associated objects.
+</p>
+</dd>
+<dt>collection.size</dt><dd><p>
+Returns the number of associated objects.
+</p>
+</dd>
+<dt>collection.find(&#8230;)</dt><dd><p>
+Finds an associated object according to the same rules as
+ActiveRecord::Base.find.
+</p>
+</dd>
+<dt>collection.exists?(&#8230;)</dt><dd><p>
+Checks whether an associated object with the given conditions exists. Uses
+the same rules as ActiveRecord::Base.exists?.
+</p>
+</dd>
+<dt>collection.build(attributes = {}, &#8230;)</dt><dd><p>
+Returns one or more new objects of the collection type that have been
+instantiated with <tt>attributes</tt> and linked to this object through a
+foreign key, but have not yet been saved.
+</p>
+</dd>
+<dt>collection.create(attributes = {})</dt><dd><p>
+Returns a new object of the collection type that has been instantiated with
+<tt>attributes</tt>, linked to this object through a foreign key, and that
+has already been saved (if it passed the validation). <b>Note</b>: This
+only works if the base model already exists in the DB, not if it is a new
+(unsaved) record!
+</p>
+</dd>
+</dl>
+<p>
+(<b>Note</b>: <tt>collection</tt> is replaced with the symbol passed as the
+first argument, so <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :clients</tt> would
+add among others <tt>clients.empty?</tt>.)
+</p>
+<h3>Example</h3>
+<p>
+Example: A Firm class declares <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :clients</tt>,
+which will add:
+</p>
+<ul>
+<li><p>
+<tt>Firm#clients</tt> (similar to <tt>Clients.find :all, :conditions =&gt;
+[&quot;firm_id = ?&quot;, id]</tt>)
+</p>
+</li>
+<li><p>
+<tt>Firm#clients&lt;&lt;</tt>
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.delete</tt>
+</p>
+</li>
+<li><p>
+<tt>Firm#clients=</tt>
+</p>
+</li>
+<li><p>
+<tt>Firm#client_ids</tt>
+</p>
+</li>
+<li><p>
+<tt>Firm#client_ids=</tt>
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.clear</tt>
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.empty?</tt> (similar to <tt>firm.clients.size == 0</tt>)
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.size</tt> (similar to <tt>Client.count &quot;firm_id =
+#{id}&quot;</tt>)
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.find</tt> (similar to <tt>Client.find(id, :conditions
+=&gt; &quot;firm_id = #{id}&quot;)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.exists?(:name =&gt; 'ACME')</tt> (similar to
+<tt>Client.exists?(:name =&gt; 'ACME', :firm_id =&gt; firm.id)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.build</tt> (similar to <tt>Client.new(&quot;firm_id&quot;
+=&gt; id)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Firm#clients.create</tt> (similar to <tt>c =
+Client.new(&quot;firm_id&quot; =&gt; id); c.save; c</tt>)
+</p>
+</li>
+</ul>
+<p>
+The declaration can also include an options hash to specialize the behavior
+of the association.
+</p>
+<h3>Supported options</h3>
+<dl>
+<dt>:class_name</dt><dd><p>
+Specify the class name of the association. Use it only if that name
+can&#8217;t be inferred from the association name. So <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :products</tt> will
+by default be linked to the Product class, but if the real class name is
+SpecialProduct, you&#8217;ll have to specify it with this option.
+</p>
+</dd>
+<dt>:conditions</dt><dd><p>
+Specify the conditions that the associated objects must meet in order to be
+included as a <tt>WHERE</tt> SQL fragment, such as <tt>price &gt; 5 AND
+name LIKE 'B%'</tt>.  Record creations from the association are scoped if a
+hash is used. <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :posts, :conditions
+=&gt; {:published =&gt; true}</tt> will create published posts with
+<tt>@blog.posts.create</tt> or <tt>@blog.posts.build</tt>.
+</p>
+</dd>
+<dt>:order</dt><dd><p>
+Specify the order in which the associated objects are returned as an
+<tt>ORDER BY</tt> SQL fragment, such as <tt>last_name, first_name
+DESC</tt>.
+</p>
+</dd>
+<dt>:foreign_key</dt><dd><p>
+Specify the foreign key used for the association. By default this is
+guessed to be the name of this class in lower-case and &#8220;_id&#8221;
+suffixed. So a Person class that makes a <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> association
+will use &#8220;person_id&#8220; as the default <tt>:foreign_key</tt>.
+</p>
+</dd>
+<dt>:primary_key</dt><dd><p>
+Specify the method that returns the primary key used for the association.
+By default this is <tt>id</tt>.
+</p>
+</dd>
+<dt>:dependent</dt><dd><p>
+If set to <tt>:destroy</tt> all the associated objects are destroyed
+alongside this object by calling their <tt>destroy</tt> method.  If set to
+<tt>:delete_all</tt> all associated objects are deleted <b>without</b>
+calling their <tt>destroy</tt> method.  If set to <tt>:nullify</tt> all
+associated objects&#8217; foreign keys are set to <tt>NULL</tt>
+<b>without</b> calling their <tt>save</tt> callbacks. If set to
+<tt>:restrict</tt> this object cannot be deleted if it has any associated
+object.
+</p>
+<p>
+<b>Warning:</b> This option is ignored when used with <tt>:through</tt>
+option.
+</p>
+</dd>
+<dt>:finder_sql</dt><dd><p>
+Specify a complete SQL statement to fetch the association. This is a good
+way to go for complex associations that depend on multiple tables. Note:
+When this option is used, <tt>find_in_collection</tt> is <em>not</em>
+added.
+</p>
+</dd>
+<dt>:counter_sql</dt><dd><p>
+Specify a complete SQL statement to fetch the size of the association. If
+<tt>:finder_sql</tt> is specified but not <tt>:counter_sql</tt>,
+<tt>:counter_sql</tt> will be generated by replacing <tt>SELECT ...
+FROM</tt> with <tt>SELECT COUNT(*) FROM</tt>.
+</p>
+</dd>
+<dt>:extend</dt><dd><p>
+Specify a named module for extending the proxy. See &#8220;Association
+extensions&#8221;.
+</p>
+</dd>
+<dt>:include</dt><dd><p>
+Specify second-order associations that should be eager loaded when the
+collection is loaded.
+</p>
+</dd>
+<dt>:group</dt><dd><p>
+An attribute name by which the result should be grouped. Uses the <tt>GROUP
+BY</tt> SQL-clause.
+</p>
+</dd>
+<dt>:having</dt><dd><p>
+Combined with <tt>:group</tt> this can be used to filter the records that a
+<tt>GROUP BY</tt> returns. Uses the <tt>HAVING</tt> SQL-clause.
+</p>
+</dd>
+<dt>:limit</dt><dd><p>
+An integer determining the limit on the number of rows that should be
+returned.
+</p>
+</dd>
+<dt>:offset</dt><dd><p>
+An integer determining the offset from where the rows should be fetched. So
+at 5, it would skip the first 4 rows.
+</p>
+</dd>
+<dt>:select</dt><dd><p>
+By default, this is <tt>*</tt> as in <tt>SELECT * FROM</tt>, but can be
+changed if you, for example, want to do a join but not include the joined
+columns. Do not forget to include the primary and foreign keys, otherwise
+it will raise an error.
+</p>
+</dd>
+<dt>:as</dt><dd><p>
+Specifies a polymorphic interface (See <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>).
+</p>
+</dd>
+<dt>:through</dt><dd><p>
+Specifies a join model through which to perform the query.  Options for
+<tt>:class_name</tt> and <tt>:foreign_key</tt> are ignored, as the
+association uses the source reflection. You can only use a
+<tt>:through</tt> query through a <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>, <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> or <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> association on
+the join model. The collection of join models can be managed via the
+collection API. For example, new join models are created for newly
+associated objects, and if some are gone their rows are deleted (directly,
+no destroy callbacks are triggered).
+</p>
+</dd>
+<dt>:source</dt><dd><p>
+Specifies the source association name used by <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :through</tt>
+queries. Only use it if the name cannot be inferred from the association.
+<tt><a href="ClassMethods.html#method-i-has_many">has_many</a>
+:subscribers, :through =&gt; :subscriptions</tt> will look for either
+<tt>:subscribers</tt> or <tt>:subscriber</tt> on Subscription, unless a
+<tt>:source</tt> is given.
+</p>
+</dd>
+<dt>:source_type</dt><dd><p>
+Specifies type of the source association used by <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a> :through</tt>
+queries where the source association is a polymorphic <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>.
+</p>
+</dd>
+<dt>:uniq</dt><dd><p>
+If true, duplicates will be omitted from the collection. Useful in
+conjunction with <tt>:through</tt>.
+</p>
+</dd>
+<dt>:readonly</dt><dd><p>
+If true, all the associated objects are readonly through the association.
+</p>
+</dd>
+<dt>:validate</dt><dd><p>
+If <tt>false</tt>, don&#8217;t validate the associated objects when saving
+the parent object. true by default.
+</p>
+</dd>
+<dt>:autosave</dt><dd><p>
+If true, always save the associated objects or destroy them if marked for
+destruction, when saving the parent object. If false, never save or destroy
+the associated objects. By default, only save associated objects that are
+new records.
+</p>
+</dd>
+<dt>:inverse_of</dt><dd><p>
+Specifies the name of the <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association on the associated object that is the inverse of this <tt><a
+href="ClassMethods.html#method-i-has_many">has_many</a></tt> association.
+Does not work in combination with <tt>:through</tt> or <tt>:as</tt>
+options. See ActiveRecord::Associations::ClassMethods&#8217;s overview on
+Bi-directional associations for more detail.
+</p>
+</dd>
+</dl>
+<p>
+Option examples:
+</p>
+<pre>
+  has_many :comments, :order =&gt; &quot;posted_on&quot;
+  has_many :comments, :include =&gt; :author
+  has_many :people, :class_name =&gt; &quot;Person&quot;, :conditions =&gt; &quot;deleted = 0&quot;, :order =&gt; &quot;name&quot;
+  has_many :tracks, :order =&gt; &quot;position&quot;, :dependent =&gt; :destroy
+  has_many :comments, :dependent =&gt; :nullify
+  has_many :tags, :as =&gt; :taggable
+  has_many :reports, :readonly =&gt; true
+  has_many :subscribers, :through =&gt; :subscriptions, :source =&gt; :user
+  has_many :subscribers, :class_name =&gt; &quot;Person&quot;, :finder_sql =&gt;
+      'SELECT DISTINCT people.* ' +
+      'FROM people p, post_subscriptions ps ' +
+      'WHERE ps.post_id = #{id} AND ps.person_id = p.id ' +
+      'ORDER BY p.first_name'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="has-many-source">
+<pre>
+     <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 982</span>
+982:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_many</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">extension</span>)
+983:         <span class="ruby-identifier">reflection</span> = <span class="ruby-identifier">create_has_many_reflection</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">extension</span>)
+984:         <span class="ruby-identifier">configure_dependency_for_has_many</span>(<span class="ruby-identifier">reflection</span>)
+985:         <span class="ruby-identifier">add_association_callbacks</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">options</span>)
+986: 
+987:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:through</span>]
+988:           <span class="ruby-identifier">collection_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">HasManyThroughAssociation</span>)
+989:         <span class="ruby-keyword kw">else</span>
+990:           <span class="ruby-identifier">collection_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">HasManyAssociation</span>)
+991:         <span class="ruby-keyword kw">end</span>
+992:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-one-method" class="method-detail ">
+				<a name="method-i-has_one"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_one</span><span
+						class="method-args">(association_id, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Specifies a one-to-one association with another class. This method should
+only be used if the other class contains the foreign key. If the current
+class contains the foreign key, then you should use <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt> instead.
+See also ActiveRecord::Associations::ClassMethods&#8217;s overview on when
+to use <a href="ClassMethods.html#method-i-has_one">has_one</a> and when to
+use belongs_to.
+</p>
+<p>
+The following methods for retrieval and query of a single associated object
+will be added:
+</p>
+<dl>
+<dt>association(force_reload = false)</dt><dd><p>
+Returns the associated object. <tt>nil</tt> is returned if none is found.
+</p>
+</dd>
+<dt>association=(associate)</dt><dd><p>
+Assigns the associate object, extracts the primary key, sets it as the
+foreign key, and saves the associate object.
+</p>
+</dd>
+<dt>build_association(attributes = {})</dt><dd><p>
+Returns a new object of the associated type that has been instantiated with
+<tt>attributes</tt> and linked to this object through a foreign key, but
+has not yet been saved. <b>Note:</b> This ONLY works if an association
+already exists. It will NOT work if the association is <tt>nil</tt>.
+</p>
+</dd>
+<dt>create_association(attributes = {})</dt><dd><p>
+Returns a new object of the associated type that has been instantiated with
+<tt>attributes</tt>, linked to this object through a foreign key, and that
+has already been saved (if it passed the validation).
+</p>
+</dd>
+</dl>
+<p>
+(<tt>association</tt> is replaced with the symbol passed as the first
+argument, so <tt><a href="ClassMethods.html#method-i-has_one">has_one</a>
+:manager</tt> would add among others <tt>manager.nil?</tt>.)
+</p>
+<h3>Example</h3>
+<p>
+An Account class declares <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a> :beneficiary</tt>,
+which will add:
+</p>
+<ul>
+<li><p>
+<tt>Account#beneficiary</tt> (similar to <tt>Beneficiary.find(:first,
+:conditions =&gt; &quot;account_id = #{id}&quot;)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Account#beneficiary=(beneficiary)</tt> (similar to
+<tt>beneficiary.account_id = account.id; beneficiary.save</tt>)
+</p>
+</li>
+<li><p>
+<tt>Account#build_beneficiary</tt> (similar to
+<tt>Beneficiary.new(&quot;account_id&quot; =&gt; id)</tt>)
+</p>
+</li>
+<li><p>
+<tt>Account#create_beneficiary</tt> (similar to <tt>b =
+Beneficiary.new(&quot;account_id&quot; =&gt; id); b.save; b</tt>)
+</p>
+</li>
+</ul>
+<h3>Options</h3>
+<p>
+The declaration can also include an options hash to specialize the behavior
+of the association.
+</p>
+<p>
+Options are:
+</p>
+<dl>
+<dt>:class_name</dt><dd><p>
+Specify the class name of the association. Use it only if that name
+can&#8217;t be inferred from the association name. So <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a> :manager</tt> will by
+default be linked to the Manager class, but if the real class name is
+Person, you&#8217;ll have to specify it with this option.
+</p>
+</dd>
+<dt>:conditions</dt><dd><p>
+Specify the conditions that the associated object must meet in order to be
+included as a <tt>WHERE</tt> SQL fragment, such as <tt>rank = 5</tt>.
+Record creation from the association is scoped if a hash is used. <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a> :account, :conditions
+=&gt; {:enabled =&gt; true}</tt> will create an enabled account with
+<tt>@company.create_account</tt> or <tt>@company.build_account</tt>.
+</p>
+</dd>
+<dt>:order</dt><dd><p>
+Specify the order in which the associated objects are returned as an
+<tt>ORDER BY</tt> SQL fragment, such as <tt>last_name, first_name
+DESC</tt>.
+</p>
+</dd>
+<dt>:dependent</dt><dd><p>
+If set to <tt>:destroy</tt>, the associated object is destroyed when this
+object is. If set to <tt>:delete</tt>, the associated object is deleted
+<b>without</b> calling its destroy method. If set to <tt>:nullify</tt>, the
+associated object&#8217;s foreign key is set to <tt>NULL</tt>. Also,
+association is assigned.
+</p>
+</dd>
+<dt>:foreign_key</dt><dd><p>
+Specify the foreign key used for the association. By default this is
+guessed to be the name of this class in lower-case and &#8220;_id&#8221;
+suffixed. So a Person class that makes a <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> association will
+use &#8220;person_id&#8220; as the default <tt>:foreign_key</tt>.
+</p>
+</dd>
+<dt>:primary_key</dt><dd><p>
+Specify the method that returns the primary key used for the association.
+By default this is <tt>id</tt>.
+</p>
+</dd>
+<dt>:include</dt><dd><p>
+Specify second-order associations that should be eager loaded when this
+object is loaded.
+</p>
+</dd>
+<dt>:as</dt><dd><p>
+Specifies a polymorphic interface (See <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>).
+</p>
+</dd>
+<dt>:select</dt><dd><p>
+By default, this is <tt>*</tt> as in <tt>SELECT * FROM</tt>, but can be
+changed if, for example, you want to do a join but not include the joined
+columns. Do not forget to include the primary and foreign keys, otherwise
+it will raise an error.
+</p>
+</dd>
+<dt>:through</dt><dd><p>
+Specifies a Join Model through which to perform the query.  Options for
+<tt>:class_name</tt> and <tt>:foreign_key</tt> are ignored, as the
+association uses the source reflection. You can only use a
+<tt>:through</tt> query through a <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> or <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association on the join model.
+</p>
+</dd>
+<dt>:source</dt><dd><p>
+Specifies the source association name used by <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a> :through</tt>
+queries. Only use it if the name cannot be inferred from the association.
+<tt><a href="ClassMethods.html#method-i-has_one">has_one</a> :favorite,
+:through =&gt; :favorites</tt> will look for a <tt>:favorite</tt> on
+Favorite, unless a <tt>:source</tt> is given.
+</p>
+</dd>
+<dt>:source_type</dt><dd><p>
+Specifies type of the source association used by <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a> :through</tt> queries
+where the source association is a polymorphic <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>.
+</p>
+</dd>
+<dt>:readonly</dt><dd><p>
+If true, the associated object is readonly through the association.
+</p>
+</dd>
+<dt>:validate</dt><dd><p>
+If <tt>false</tt>, don&#8217;t validate the associated object when saving
+the parent object. <tt>false</tt> by default.
+</p>
+</dd>
+<dt>:autosave</dt><dd><p>
+If true, always save the associated object or destroy it if marked for
+destruction, when saving the parent object. If false, never save or destroy
+the associated object. By default, only save the associated object if
+it&#8217;s a new record.
+</p>
+</dd>
+<dt>:inverse_of</dt><dd><p>
+Specifies the name of the <tt><a
+href="ClassMethods.html#method-i-belongs_to">belongs_to</a></tt>
+association on the associated object that is the inverse of this <tt><a
+href="ClassMethods.html#method-i-has_one">has_one</a></tt> association. 
+Does not work in combination with <tt>:through</tt> or <tt>:as</tt>
+options. See ActiveRecord::Associations::ClassMethods&#8217;s overview on
+Bi-directional associations for more detail.
+</p>
+</dd>
+</dl>
+<p>
+Option examples:
+</p>
+<pre>
+  has_one :credit_card, :dependent =&gt; :destroy  # destroys the associated credit card
+  has_one :credit_card, :dependent =&gt; :nullify  # updates the associated records foreign
+                                                # key value to NULL rather than destroying it
+  has_one :last_comment, :class_name =&gt; &quot;Comment&quot;, :order =&gt; &quot;posted_on&quot;
+  has_one :project_manager, :class_name =&gt; &quot;Person&quot;, :conditions =&gt; &quot;role = 'project_manager'&quot;
+  has_one :attachment, :as =&gt; :attachable
+  has_one :boss, :readonly =&gt; :true
+  has_one :club, :through =&gt; :membership
+  has_one :primary_address, :through =&gt; :addressables, :conditions =&gt; [&quot;addressable.primary = ?&quot;, true], :source =&gt; :addressable</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="has-one-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1100</span>
+1100:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_one</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span> = {})
+1101:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:through</span>]
+1102:           <span class="ruby-identifier">reflection</span> = <span class="ruby-identifier">create_has_one_through_reflection</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span>)
+1103:           <span class="ruby-identifier">association_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">HasOneThroughAssociation</span>)
+1104:         <span class="ruby-keyword kw">else</span>
+1105:           <span class="ruby-identifier">reflection</span> = <span class="ruby-identifier">create_has_one_reflection</span>(<span class="ruby-identifier">association_id</span>, <span class="ruby-identifier">options</span>)
+1106:           <span class="ruby-identifier">association_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-constant">HasOneAssociation</span>)
+1107:           <span class="ruby-identifier">association_constructor_method</span>(<span class="ruby-value">:build</span>,  <span class="ruby-identifier">reflection</span>, <span class="ruby-constant">HasOneAssociation</span>)
+1108:           <span class="ruby-identifier">association_constructor_method</span>(<span class="ruby-value">:create</span>, <span class="ruby-identifier">reflection</span>, <span class="ruby-constant">HasOneAssociation</span>)
+1109:           <span class="ruby-identifier">configure_dependency_for_has_one</span>(<span class="ruby-identifier">reflection</span>)
+1110:         <span class="ruby-keyword kw">end</span>
+1111:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="add-counter-cache-callbacks-method" class="method-detail ">
+				<a name="method-i-add_counter_cache_callbacks"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_counter_cache_callbacks</span><span
+						class="method-args">(reflection)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="add-counter-cache-callbacks-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1547</span>
+1547:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_counter_cache_callbacks</span>(<span class="ruby-identifier">reflection</span>)
+1548:           <span class="ruby-identifier">cache_column</span> = <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">counter_cache_column</span>
+1549: 
+1550:           <span class="ruby-identifier">method_name</span> = <span class="ruby-node">&quot;belongs_to_counter_cache_after_create_for_#{reflection.name}&quot;</span>.<span class="ruby-identifier">to_sym</span>
+1551:           <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-keyword kw">do</span>
+1552:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1553:             <span class="ruby-identifier">association</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">increment_counter</span>(<span class="ruby-identifier">cache_column</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">nil?</span>
+1554:           <span class="ruby-keyword kw">end</span>
+1555:           <span class="ruby-identifier">after_create</span>(<span class="ruby-identifier">method_name</span>)
+1556: 
+1557:           <span class="ruby-identifier">method_name</span> = <span class="ruby-node">&quot;belongs_to_counter_cache_before_destroy_for_#{reflection.name}&quot;</span>.<span class="ruby-identifier">to_sym</span>
+1558:           <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-keyword kw">do</span>
+1559:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1560:             <span class="ruby-identifier">association</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">decrement_counter</span>(<span class="ruby-identifier">cache_column</span>, <span class="ruby-identifier">association</span>.<span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">nil?</span>
+1561:           <span class="ruby-keyword kw">end</span>
+1562:           <span class="ruby-identifier">before_destroy</span>(<span class="ruby-identifier">method_name</span>)
+1563: 
+1564:           <span class="ruby-identifier">module_eval</span>(
+1565:             <span class="ruby-node">&quot;#{reflection.class_name}.send(:attr_readonly,\&quot;#{cache_column}\&quot;.intern) if defined?(#{reflection.class_name}) &amp;&amp; #{reflection.class_name}.respond_to?(:attr_readonly)&quot;</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-keyword kw">__LINE__</span>
+1566:           )
+1567:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-touch-callbacks-method" class="method-detail ">
+				<a name="method-i-add_touch_callbacks"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_touch_callbacks</span><span
+						class="method-args">(reflection, touch_attribute)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="add-touch-callbacks-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1569</span>
+1569:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_touch_callbacks</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">touch_attribute</span>)
+1570:           <span class="ruby-identifier">method_name</span> = <span class="ruby-value">:&quot;belongs_to_touch_after_save_or_destroy_for_#{reflection.name}&quot;</span>
+1571:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-keyword kw">do</span>
+1572:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1573: 
+1574:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">touch_attribute</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+1575:               <span class="ruby-identifier">association</span>.<span class="ruby-identifier">touch</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">nil?</span>
+1576:             <span class="ruby-keyword kw">else</span>
+1577:               <span class="ruby-identifier">association</span>.<span class="ruby-identifier">touch</span>(<span class="ruby-identifier">touch_attribute</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">nil?</span>
+1578:             <span class="ruby-keyword kw">end</span>
+1579:           <span class="ruby-keyword kw">end</span>
+1580:           <span class="ruby-identifier">after_save</span>(<span class="ruby-identifier">method_name</span>)
+1581:           <span class="ruby-identifier">after_touch</span>(<span class="ruby-identifier">method_name</span>)
+1582:           <span class="ruby-identifier">after_destroy</span>(<span class="ruby-identifier">method_name</span>)
+1583:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="association-accessor-methods-method" class="method-detail ">
+				<a name="method-i-association_accessor_methods"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">association_accessor_methods</span><span
+						class="method-args">(reflection, association_proxy_class)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="association-accessor-methods-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1435</span>
+1435:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">association_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">association_proxy_class</span>)
+1436:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>*<span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+1437:             <span class="ruby-identifier">force_reload</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">empty?</span>
+1438:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_instance_get</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1439: 
+1440:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">force_reload</span>
+1441:               <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_proxy_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">reflection</span>)
+1442:               <span class="ruby-identifier">retval</span> = <span class="ruby-identifier">force_reload</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">uncached</span> { <span class="ruby-identifier">association</span>.<span class="ruby-identifier">reload</span> } <span class="ruby-operator">:</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">reload</span>
+1443:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">retval</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">association_proxy_class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">BelongsToAssociation</span>
+1444:                 <span class="ruby-identifier">association_instance_set</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-keyword kw">nil</span>)
+1445:                 <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+1446:               <span class="ruby-keyword kw">end</span>
+1447:               <span class="ruby-identifier">association_instance_set</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">association</span>)
+1448:             <span class="ruby-keyword kw">end</span>
+1449: 
+1450:             <span class="ruby-identifier">association</span>.<span class="ruby-identifier">target</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">association</span>
+1451:           <span class="ruby-keyword kw">end</span>
+1452: 
+1453:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;loaded_#{reflection.name}?&quot;</span>) <span class="ruby-keyword kw">do</span>
+1454:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_instance_get</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1455:             <span class="ruby-identifier">association</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">loaded?</span>
+1456:           <span class="ruby-keyword kw">end</span>
+1457: 
+1458:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;#{reflection.name}=&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">new_value</span><span class="ruby-operator">|</span>
+1459:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_instance_get</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1460: 
+1461:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">target</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">new_value</span>
+1462:               <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_proxy_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">reflection</span>)
+1463:             <span class="ruby-keyword kw">end</span>
+1464: 
+1465:             <span class="ruby-identifier">association</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">new_value</span>)
+1466:             <span class="ruby-identifier">association_instance_set</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">new_value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">association</span>)
+1467:           <span class="ruby-keyword kw">end</span>
+1468: 
+1469:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;set_#{reflection.name}_target&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target</span><span class="ruby-operator">|</span>
+1470:             <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">association_proxy_class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">BelongsToAssociation</span>
+1471:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_proxy_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">reflection</span>)
+1472:             <span class="ruby-identifier">association</span>.<span class="ruby-identifier">target</span> = <span class="ruby-identifier">target</span>
+1473:             <span class="ruby-identifier">association_instance_set</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">association</span>)
+1474:           <span class="ruby-keyword kw">end</span>
+1475:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="association-constructor-method-method" class="method-detail ">
+				<a name="method-i-association_constructor_method"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">association_constructor_method</span><span
+						class="method-args">(constructor, reflection, association_proxy_class)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="association-constructor-method-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1528</span>
+1528:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">association_constructor_method</span>(<span class="ruby-identifier">constructor</span>, <span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">association_proxy_class</span>)
+1529:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;#{constructor}_#{reflection.name}&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>*<span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+1530:             <span class="ruby-identifier">attributees</span>      = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">empty?</span>
+1531:             <span class="ruby-identifier">replace_existing</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]
+1532:             <span class="ruby-identifier">association</span>      = <span class="ruby-identifier">association_instance_get</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1533: 
+1534:             <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association</span>
+1535:               <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_proxy_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">reflection</span>)
+1536:               <span class="ruby-identifier">association_instance_set</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">association</span>)
+1537:             <span class="ruby-keyword kw">end</span>
+1538: 
+1539:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">association_proxy_class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">HasOneAssociation</span>
+1540:               <span class="ruby-identifier">association</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">constructor</span>, <span class="ruby-identifier">attributees</span>, <span class="ruby-identifier">replace_existing</span>)
+1541:             <span class="ruby-keyword kw">else</span>
+1542:               <span class="ruby-identifier">association</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">constructor</span>, <span class="ruby-identifier">attributees</span>)
+1543:             <span class="ruby-keyword kw">end</span>
+1544:           <span class="ruby-keyword kw">end</span>
+1545:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="collection-accessor-methods-method" class="method-detail ">
+				<a name="method-i-collection_accessor_methods"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">collection_accessor_methods</span><span
+						class="method-args">(reflection, association_proxy_class, writer = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="collection-accessor-methods-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1508</span>
+1508:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collection_accessor_methods</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">association_proxy_class</span>, <span class="ruby-identifier">writer</span> = <span class="ruby-keyword kw">true</span>)
+1509:           <span class="ruby-identifier">collection_reader_method</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">association_proxy_class</span>)
+1510: 
+1511:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">writer</span>
+1512:             <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;#{reflection.name}=&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">new_value</span><span class="ruby-operator">|</span>
+1513:               <span class="ruby-comment cmt"># Loads proxy class instance (defined in collection_reader_method) if not already loaded</span>
+1514:               <span class="ruby-identifier">association</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1515:               <span class="ruby-identifier">association</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">new_value</span>)
+1516:               <span class="ruby-identifier">association</span>
+1517:             <span class="ruby-keyword kw">end</span>
+1518: 
+1519:             <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;#{reflection.name.to_s.singularize}_ids=&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">new_value</span><span class="ruby-operator">|</span>
+1520:               <span class="ruby-identifier">pk_column</span> = <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">primary_key_column</span>
+1521:               <span class="ruby-identifier">ids</span> = (<span class="ruby-identifier">new_value</span> <span class="ruby-operator">||</span> []).<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">nid</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nid</span>.<span class="ruby-identifier">blank?</span> }
+1522:               <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">map!</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pk_column</span>.<span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">i</span>) }
+1523:               <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{reflection.name}=&quot;</span>, <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ids</span>).<span class="ruby-identifier">index_by</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> }.<span class="ruby-identifier">values_at</span>(*<span class="ruby-identifier">ids</span>))
+1524:             <span class="ruby-keyword kw">end</span>
+1525:           <span class="ruby-keyword kw">end</span>
+1526:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="collection-reader-method-method" class="method-detail ">
+				<a name="method-i-collection_reader_method"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">collection_reader_method</span><span
+						class="method-args">(reflection, association_proxy_class)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="collection-reader-method-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1477</span>
+1477:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collection_reader_method</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">association_proxy_class</span>)
+1478:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>*<span class="ruby-identifier">params</span><span class="ruby-operator">|</span>
+1479:             <span class="ruby-identifier">force_reload</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">empty?</span>
+1480:             <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_instance_get</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>)
+1481: 
+1482:             <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">association</span>
+1483:               <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association_proxy_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">reflection</span>)
+1484:               <span class="ruby-identifier">association_instance_set</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">association</span>)
+1485:             <span class="ruby-keyword kw">end</span>
+1486: 
+1487:             <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">uncached</span> { <span class="ruby-identifier">association</span>.<span class="ruby-identifier">reload</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">force_reload</span>
+1488: 
+1489:             <span class="ruby-identifier">association</span>
+1490:           <span class="ruby-keyword kw">end</span>
+1491: 
+1492:           <span class="ruby-identifier">redefine_method</span>(<span class="ruby-node">&quot;#{reflection.name.to_s.singularize}_ids&quot;</span>) <span class="ruby-keyword kw">do</span>
+1493:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">loaded?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:finder_sql</span>]
+1494:               <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> }
+1495:             <span class="ruby-keyword kw">else</span>
+1496:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">through_reflection</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">source_reflection</span>.<span class="ruby-identifier">belongs_to?</span>
+1497:                 <span class="ruby-identifier">through</span> = <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">through_reflection</span>
+1498:                 <span class="ruby-identifier">primary_key</span> = <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">source_reflection</span>.<span class="ruby-identifier">primary_key_name</span>
+1499:                 <span class="ruby-identifier">send</span>(<span class="ruby-identifier">through</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">select</span>(<span class="ruby-node">&quot;DISTINCT #{through.quoted_table_name}.#{primary_key}&quot;</span>).<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">primary_key</span>) }
+1500:               <span class="ruby-keyword kw">else</span>
+1501:                 <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">select</span>(<span class="ruby-node">&quot;#{reflection.quoted_table_name}.#{reflection.klass.primary_key}&quot;</span>).<span class="ruby-identifier">except</span>(<span class="ruby-value">:includes</span>).<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> }
+1502:               <span class="ruby-keyword kw">end</span>
+1503:             <span class="ruby-keyword kw">end</span>
+1504:           <span class="ruby-keyword kw">end</span>
+1505: 
+1506:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="configure-dependency-for-has-many-method" class="method-detail ">
+				<a name="method-i-configure_dependency_for_has_many"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">configure_dependency_for_has_many</span><span
+						class="method-args">(reflection, extra_conditions = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates before_destroy callback methods that nullify, delete or destroy <a
+href="ClassMethods.html#method-i-has_many">has_many</a> associated objects,
+according to the defined :dependent rule. If the association is marked as
+:dependent => :restrict, create a callback that prevents deleting entirely.
+</p>
+<p>
+See HasManyAssociation#delete_records.  Dependent associations delete
+children, otherwise foreign key is set to NULL. See
+HasManyAssociation#delete_records. Dependent associations delete children
+if the option is set to :destroy or :delete_all, set the foreign key to
+NULL if the option is set to :nullify, and do not touch the child records
+if the option is set to :restrict.
+</p>
+<p>
+The <tt>extra_conditions</tt> parameter, which is not used within the main
+Active Record codebase, is meant to allow plugins to define extra finder
+conditions.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="configure-dependency-for-has-many-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1600</span>
+1600:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure_dependency_for_has_many</span>(<span class="ruby-identifier">reflection</span>, <span class="ruby-identifier">extra_conditions</span> = <span class="ruby-keyword kw">nil</span>)
+1601:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:dependent</span>)
+1602:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">options</span>[<span class="ruby-value">:dependent</span>]
+1603:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:destroy</span>
+1604:                 <span class="ruby-identifier">method_name</span> = <span class="ruby-node">&quot;has_many_dependent_destroy_for_#{reflection.name}&quot;</span>.<span class="ruby-identifier">to_sym</span>
+1605:                 <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-keyword kw">do</span>
+1606:                   <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+1607:                     <span class="ruby-comment cmt"># No point in executing the counter update since we're going to destroy the parent anyway</span>
+1608:                     <span class="ruby-identifier">counter_method</span> = (<span class="ruby-value str">'belongs_to_counter_cache_before_destroy_for_'</span> <span class="ruby-operator">+</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>).<span class="ruby-identifier">to_sym</span>
+1609:                     <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">counter_method</span>) <span class="ruby-keyword kw">then</span>
+1610:                       <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">o</span>
+1611:                         <span class="ruby-keyword kw">self</span>
+1612:                       <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-identifier">counter_method</span>, <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> {})
+1613:                     <span class="ruby-keyword kw">end</span>
+1614:                     <span class="ruby-identifier">o</span>.<span class="ruby-identifier">destroy</span>
+1615:                   <span class="ruby-keyword kw">end</span>
+1616:                 <span class="ruby-keyword kw">end</span>
+1617:                 <span class="ruby-identifier">before_destroy</span> <span class="ruby-identifier">method_name</span>
+1618:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:delete_all</span>
+1619:                 <span class="ruby-identifier">before_destroy</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span>
+1620:                   <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:delete_all_has_many_dependencies</span>,
+1621:                   <span class="ruby-identifier">record</span>,
+1622:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>,
+1623:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">klass</span>,
+1624:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">dependent_conditions</span>(<span class="ruby-identifier">record</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">extra_conditions</span>))
+1625:                 <span class="ruby-keyword kw">end</span>
+1626:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:nullify</span>
+1627:                 <span class="ruby-identifier">before_destroy</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">record</span><span class="ruby-operator">|</span>
+1628:                   <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:nullify_has_many_dependencies</span>,
+1629:                   <span class="ruby-identifier">record</span>,
+1630:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>,
+1631:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">klass</span>,
+1632:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">primary_key_name</span>,
+1633:                   <span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">dependent_conditions</span>(<span class="ruby-identifier">record</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">extra_conditions</span>))
+1634:                 <span class="ruby-keyword kw">end</span>
+1635:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:restrict</span>
+1636:                 <span class="ruby-identifier">method_name</span> = <span class="ruby-node">&quot;has_many_dependent_restrict_for_#{reflection.name}&quot;</span>.<span class="ruby-identifier">to_sym</span>
+1637:                 <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-keyword kw">do</span>
+1638:                   <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">reflection</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">empty?</span>
+1639:                     <span class="ruby-identifier">raise</span> <span class="ruby-constant">DeleteRestrictionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">reflection</span>)
+1640:                   <span class="ruby-keyword kw">end</span>
+1641:                 <span class="ruby-keyword kw">end</span>
+1642:                 <span class="ruby-identifier">before_destroy</span> <span class="ruby-identifier">method_name</span>
+1643:               <span class="ruby-keyword kw">else</span>
+1644:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;The :dependent option expects either :destroy, :delete_all, :nullify or :restrict (#{reflection.options[:dependent].inspect})&quot;</span>
+1645:             <span class="ruby-keyword kw">end</span>
+1646:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-table-name-method" class="method-detail ">
+				<a name="method-i-join_table_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join_table_name</span><span
+						class="method-args">(first_table_name, second_table_name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Generates a join table name from two provided table names. The names in the
+join table names end up in lexicographic order.
+</p>
+<pre>
+  join_table_name(&quot;members&quot;, &quot;clubs&quot;)         # =&gt; &quot;clubs_members&quot;
+  join_table_name(&quot;members&quot;, &quot;special_clubs&quot;) # =&gt; &quot;members_special_clubs&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="join-table-name-source">
+<pre>
+      <span class="ruby-comment cmt"># File /Users/bjoern/.rvm/gems/ruby-1.9.2-p180/gems/activerecord-3.0.7/lib/active_record/associations.rb, line 1425</span>
+1425:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join_table_name</span>(<span class="ruby-identifier">first_table_name</span>, <span class="ruby-identifier">second_table_name</span>)
+1426:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">first_table_name</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">second_table_name</span>
+1427:             <span class="ruby-identifier">join_table</span> = <span class="ruby-node">&quot;#{first_table_name}_#{second_table_name}&quot;</span>
+1428:           <span class="ruby-keyword kw">else</span>
+1429:             <span class="ruby-identifier">join_table</span> = <span class="ruby-node">&quot;#{second_table_name}_#{first_table_name}&quot;</span>
+1430:           <span class="ruby-keyword kw">end</span>
+1431: 
+1432:           <span class="ruby-identifier">table_name_prefix</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">join_table</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">table_name_suffix</span>
+1433:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
