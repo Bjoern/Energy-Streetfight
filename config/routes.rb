@@ -63,6 +63,9 @@ IslandsServer::Application.routes.draw do
     resources :problems, :only => [:index]
     #resources :resource_types, :only => [:index]
     resources :users
+
+    resource :game, :only => [:index]
+
     resource :votes, :only => [:index, :create, :show]
     resource :meter_readings, :only => [:index, :create, :show, :update, :destroy]
     

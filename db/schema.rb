@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620102930) do
+ActiveRecord::Schema.define(:version => 20110620104720) do
 
   create_table "games", :force => true do |t|
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_updating"
   end
 
   create_table "islands", :force => true do |t|
