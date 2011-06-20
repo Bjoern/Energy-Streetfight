@@ -11,7 +11,7 @@ class ShipsController < ApplicationController
     end
 
     def show
-	@ship = Ship.find(params[:id])
+	@ship = @current_user.ship
 
 	respond_to do |format|
 	    format.json {render :json => @ship}
