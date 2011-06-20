@@ -1,7 +1,7 @@
-"id","name"
-1,"Seeds"
-2,"Water Filters"
-3,"Books"
-4,"Windkraftanlage"
-5,"Medicine"
-6,"Biologists"
+"id","name","game_id"
+1,"Seeds",1
+2,"Water Filters",1
+3,"Books",1
+4,"Windkraftanlage",1
+5,"Medicine",1
+6,"Biologists",1

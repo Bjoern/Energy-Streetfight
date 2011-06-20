@@ -58,6 +58,7 @@ def import_users
 	    user = User.new()
 	    user.password = "esf"
 	    user.code = code
+	    user.game_id = 1
 	    user.ship_id = ship_id
 	    user.id = id.to_i
 	    #user.save
