@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620105437) do
+ActiveRecord::Schema.define(:version => 20110620114308) do
 
   create_table "games", :force => true do |t|
     t.text     "description"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20110620105437) do
 
   create_table "islands", :force => true do |t|
     t.string   "name"
-    t.text     "description"
     t.integer  "x"
     t.integer  "y"
     t.integer  "diameter"
