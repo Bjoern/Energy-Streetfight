@@ -21,15 +21,13 @@ ActiveRecord::Schema.define(:version => 20110620114308) do
   end
 
   create_table "islands", :force => true do |t|
-    t.string   "name"
-    t.integer  "x"
-    t.integer  "y"
-    t.integer  "diameter"
-    t.integer  "game_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "resource_id"
-    t.integer  "problem_id"
+    t.string  "name"
+    t.integer "x"
+    t.integer "y"
+    t.integer "diameter"
+    t.integer "game_id"
+    t.integer "resource_id"
+    t.integer "problem_id"
   end
 
   create_table "meter_readings", :force => true do |t|
@@ -41,31 +39,25 @@ ActiveRecord::Schema.define(:version => 20110620114308) do
   end
 
   create_table "problems", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "game_id"
-    t.integer  "resource_id"
-    t.string   "name"
+    t.integer "game_id"
+    t.integer "resource_id"
+    t.string  "name"
   end
 
   create_table "resources", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.integer  "game_id"
+    t.string  "name"
+    t.integer "game_id"
   end
 
   create_table "ships", :force => true do |t|
-    t.string   "house_number"
-    t.integer  "game_id"
-    t.integer  "destination_id"
-    t.float    "speed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.float    "x"
-    t.float    "y"
-    t.string   "name"
-    t.integer  "resource_id"
+    t.string  "house_number"
+    t.integer "game_id"
+    t.integer "destination_id"
+    t.float   "speed"
+    t.float   "x"
+    t.float   "y"
+    t.string  "name"
+    t.integer "resource_id"
   end
 
   create_table "users", :force => true do |t|

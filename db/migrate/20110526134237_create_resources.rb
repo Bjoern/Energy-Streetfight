@@ -5,8 +5,6 @@ class CreateResources < ActiveRecord::Migration
       t.references :island
       t.references :ship
       t.references :resource_type
-
-      t.timestamps
     end
   end
 

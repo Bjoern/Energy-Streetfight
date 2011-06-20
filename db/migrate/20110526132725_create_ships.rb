@@ -5,8 +5,6 @@ class CreateShips < ActiveRecord::Migration
       t.references :game
       t.references :destination
       t.float :speed
-
-      t.timestamps
     end
   end
 

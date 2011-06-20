@@ -3,6 +3,6 @@ class Ship < ActiveRecord::Base
   belongs_to :destination
   has_many :users
   #-> see users #has_many :meter_readings
-  has_one :resource #cargo
+  belongs_to :resource #cargo
   has_many :votes
 end
