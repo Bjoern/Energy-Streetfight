@@ -1,7 +1,7 @@
-"id","name","description","problem_type_id"
-1,"Seeds","Seeds",1
-2,"Water Filters","Water Filters",2
-3,"Books","Books",3
-4,"Windkraftanlage","Windkraftanlage",4
-5,"Medicine","Medicine",5
-6,"Biologists","Biologists",6
+"id","name"
+1,"Seeds"
+2,"Water Filters"
+3,"Books"
+4,"Windkraftanlage"
+5,"Medicine"
+6,"Biologists"

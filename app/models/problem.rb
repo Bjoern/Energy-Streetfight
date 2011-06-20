@@ -1,4 +1,4 @@
 class Problem < ActiveRecord::Base
-  belongs_to :problem_type
-  belongs_to :island
+    belongs_to :game
+    has_one :resource #the resource that resolves this problem
 end
