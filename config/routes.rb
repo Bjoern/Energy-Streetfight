@@ -56,7 +56,7 @@ IslandsServer::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-    resources :ships, :only => [:index, :show]
+    resources :ships, :only => [:index]
     resources :resources, :only => [:index]
     resources :islands, :only => [:index]
     resources :problem_types, :only => [:index]
@@ -65,6 +65,7 @@ IslandsServer::Application.routes.draw do
     resources :users
 
     resource :game, :only => [:show]
+    resource :ship, :only => [:show]
 
     resource :votes, :only => [:index, :create, :show]
     resource :meter_readings, :only => [:index, :create, :show, :update, :destroy]
