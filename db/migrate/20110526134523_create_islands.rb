@@ -7,8 +7,6 @@ class CreateIslands < ActiveRecord::Migration
       t.integer :y
       t.integer :diameter
       t.references :game
-
-      t.timestamps
     end
   end
 

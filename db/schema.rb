@@ -10,24 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110618214343) do
+ActiveRecord::Schema.define(:version => 20110620172832) do
 
   create_table "games", :force => true do |t|
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_updating"
+    t.integer  "turn"
   end
 
   create_table "islands", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "x"
-    t.integer  "y"
-    t.integer  "diameter"
-    t.integer  "game_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "resource_id"
+    t.string  "name"
+    t.integer "x"
+    t.integer "y"
+    t.integer "diameter"
+    t.integer "game_id"
+    t.integer "resource_id"
+    t.integer "problem_id"
   end
 
   create_table "meter_readings", :force => true do |t|
@@ -38,38 +38,28 @@ ActiveRecord::Schema.define(:version => 20110618214343) do
     t.datetime "updated_at"
   end
 
-  create_table "problem_types", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "game_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "problems", :force => true do |t|
-    t.integer  "problem_type_id"
-    t.integer  "island_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "game_id"
+    t.integer "resource_id"
+    t.string  "name"
   end
 
   create_table "resources", :force => true do |t|
-    t.integer  "problem_type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.integer "game_id"
   end
 
   create_table "ships", :force => true do |t|
-    t.string   "house_number"
-    t.integer  "game_id"
-    t.integer  "destination_id"
-    t.float    "speed"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "x"
-    t.integer  "y"
-    t.string   "name"
-    t.integer  "resource_id"
+    t.string  "house_number"
+    t.integer "game_id"
+    t.integer "destination_id"
+    t.float   "speed"
+    t.float   "x"
+    t.float   "y"
+    t.string  "name"
+    t.integer "resource_id"
+    t.integer "problems_solved", :default => 0
+    t.string  "next_action"
   end
 
   create_table "users", :force => true do |t|
@@ -80,16 +70,17 @@ ActiveRecord::Schema.define(:version => 20110618214343) do
     t.string   "name"
     t.string   "code"
     t.string   "email"
+    t.integer  "game_id"
   end
 
   create_table "votes", :force => true do |t|
     t.integer  "turn"
     t.integer  "user_id"
     t.integer  "destination_id"
-    t.string   "action"
-    t.integer  "resource_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "load",           :default => false
+    t.boolean  "unload",         :default => false
   end
 
 end

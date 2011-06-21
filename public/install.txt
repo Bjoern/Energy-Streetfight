@@ -1,0 +1,3 @@
+• Configure the "connect.php" file
+• Test the configuration by calling the "test.php" page
+• call ONCE the "codeGenerator5.php" page

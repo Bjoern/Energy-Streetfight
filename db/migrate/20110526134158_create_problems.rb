@@ -3,8 +3,6 @@ class CreateProblems < ActiveRecord::Migration
     create_table :problems do |t|
       t.references :problem_type
       t.references :island
-
-      t.timestamps
     end
   end
 
