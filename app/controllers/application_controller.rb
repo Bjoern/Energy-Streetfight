@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     #this is not really secure, at least not with our current 5 digit codes...
     #I bowed to the team decision here :-(
     def authenticate
-	@current_user = User.find_by_code(params[:code])
+	@current_user = User.find_by_code(params[:username])
 
 	#ip = request.remote_ip
 
