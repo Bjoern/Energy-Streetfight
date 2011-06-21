@@ -56,7 +56,7 @@ def import_users
 	    puts "data: #{data},  id: #{id}, code: #{code} ship_id: #{ship_id}"
 
 	    user = User.new()
-	    user.password = "esf"
+	    #user.password = "esf"
 	    user.code = code
 	    user.game_id = 1
 	    user.ship_id = ship_id

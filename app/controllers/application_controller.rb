@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery
+    #TODO protect_from_forgery
     before_filter :authenticate
     before_filter :find_game
 
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     #this is not really secure, at least not with our current 5 digit codes...
     #I bowed to the team decision here :-(
     def authenticate
-	@current_user = User.find_by_code(params[:username])
+	@current_user = User.find_by_code(params[:code])
 
 	#ip = request.remote_ip
 
@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
 	end
     end
 
+    #unused at the moment
     def authenticate_basic_auth
 	authenticate_or_request_with_http_basic do |username, password|
 	    @current_user = User.authenticate(username, password)

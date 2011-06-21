@@ -4,13 +4,13 @@ class VotesController < ApplicationController
 	vote.update_attributes(params)
 	vote.save
 
-	responds_to do |format|
+	respond_to do |format|
 	    format.json {render :json => vote}
 	    format.xml {render :xml => vote}
 	end
     end
 
-    def index
+    def summary
 	votes = Vote.joins(:user).where(:users => {:ship_id => @current_user.ship.id}, :turn => @game.turn)
 
 	destinations = {}
@@ -19,7 +19,7 @@ class VotesController < ApplicationController
 
 	votes.each do |vote|
 	    if(vote.destination_id)
-		destinations[destination_id] = destinations[destination_id] ? destinations[destination_id] : 1 
+		destinations[vote.destination_id] = destinations[vote.destination_id] ? destinations[vote.destination_id]+1 : 1 
 	    end
 
 	    if vote.load
@@ -38,7 +38,7 @@ class VotesController < ApplicationController
 	    total: votes.size
 	}
 
-	responds_to do |format|
+	respond_to do |format|
 	    format.json {render :json => result}
 	    format.xml {render :xml => result}
 	end
@@ -47,7 +47,7 @@ class VotesController < ApplicationController
     def show
 	vote = @current_user.votes.find(params[:id])
 
-	responds_to do |format|
+	respond_to do |format|
 	    format.json {render :json => vote}
 	    format.xml {render :xml => vote}
 	end
