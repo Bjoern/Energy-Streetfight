@@ -22,4 +22,3 @@ doc/api
 db/seeds/users.csv
 db/development.sqlite3
 db/test.sqlite3
-*.swf
