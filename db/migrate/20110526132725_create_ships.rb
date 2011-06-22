@@ -4,7 +4,7 @@ class CreateShips < ActiveRecord::Migration
       t.string :house_number
       t.references :game
       t.references :destination
-      t.float :speed
+      t.float :speed, :default => 22
     end
   end
 

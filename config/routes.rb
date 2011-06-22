@@ -69,7 +69,7 @@ IslandsServer::Application.routes.draw do
     resource :ship, :only => [:show]
 
     resource :vote, :only => [:create, :show]
-    resource :meter_readings, :only => [:index, :create, :show, :update, :destroy]
+    resources :meter_readings, :only => [:create, :show]
 
     get 'votes/summary'
    
