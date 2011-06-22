@@ -62,12 +62,13 @@ IslandsServer::Application.routes.draw do
     resources :problem_types, :only => [:index]
     resources :problems, :only => [:index]
     #resources :resource_types, :only => [:index]
-    resources :users
+
+    resource :user, :only => [:show]
 
     resource :game, :only => [:show]
     resource :ship, :only => [:show]
 
-    resource :votes, :only => [:index, :create, :show]
+    resource :vote, :only => [:create, :show]
     resource :meter_readings, :only => [:index, :create, :show, :update, :destroy]
 
     get 'votes/summary'

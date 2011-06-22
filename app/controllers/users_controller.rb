@@ -18,4 +18,11 @@ class UsersController < ApplicationController
 	#as requested by flash client, provide OK in text
 	render :text => "mess=ok"
     end
+
+    def show
+	respond_to do |format|
+	    format.json {render :json => @current_user}
+	    format.xml {render :xml => @current_user}
+	end
+    end
 end
