@@ -8,6 +8,8 @@ gem 'RedCloth', '>= 4.1.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'thin'
+
 #gem 'pg'
 
 # Use unicorn as the web server
@@ -32,3 +34,8 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :production do
+  gem 'pg'
+end
+
