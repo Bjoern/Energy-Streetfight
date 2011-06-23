@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
     #TODO protect_from_forgery
     before_filter :authenticate
     before_filter :check_and_init_game
+    before_filter :ensure_domain
+
+    APP_DOMAIN = 'www.energy-streetfight.com'
 
     private
 
@@ -33,4 +36,14 @@ class ApplicationController < ActionController::Base
 	    render :text => "mess=game_updating", :status => 503
 	end
     end
+
+
+
+  def ensure_domain
+    if request.env['HTTP_HOST'] != APP_DOMAIN
+      # HTTP 301 is a "permanent" redirect
+      redirect_to "http://#{APP_DOMAIN}", :status => 301
+    end
+  end
+
 end
