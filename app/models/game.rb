@@ -7,11 +7,7 @@ class Game < ActiveRecord::Base
     has_many :resources
     has_many :users    
 
-    def start
-	render :start
-    end
-
-    update_game
+    def update_game
 	#game = Game.find(1)
 
 	is_updating = true

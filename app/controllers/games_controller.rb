@@ -1,5 +1,11 @@
 class GamesController < ApplicationController
-    skip_before_filter :authenticate, :only => [:show]
+    skip_before_filter :authenticate, :only => [:show, :start]
+
+    def start
+	puts "render start"
+	render :start
+    end
+
 
     def show 
 	result = {
