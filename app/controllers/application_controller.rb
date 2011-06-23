@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     #TODO protect_from_forgery
     before_filter :authenticate
     before_filter :check_and_init_game
-   # before_filter :ensure_domain
+    before_filter :ensure_domain
 
     APP_DOMAIN = 'www.energy-streetfight.com'
 
