@@ -34,7 +34,7 @@ def read_csv_fixture(fixture_file)
 end
 
 def read_csv_fixtures
-    ["games.csv", "ships.csv","islands.csv", "resources.csv", "problems.csv"].each do |filename|
+    ["games.csv", "ships.csv","users.csv","islands.csv", "resources.csv", "problems.csv"].each do |filename|
 	File.open("db/seeds/#{filename}") do |fixture_file|
 	    #Dir.glob(File.join(RAILS_ROOT, 'db', 'seeds', '*.csv')).each do |fixture_file|
 	    read_csv_fixture(fixture_file)
@@ -115,4 +115,4 @@ def import_map
 end
 
 read_csv_fixtures
-import_users
+#import_users
