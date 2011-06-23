@@ -1,5 +1,5 @@
 <config>
-	<domain>localhost:3000</domain>
+	<domain>www.energy-streetfight.com</domain>
 
 	<login>
 		<action>login</action>
