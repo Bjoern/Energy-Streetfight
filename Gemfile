@@ -7,8 +7,10 @@ gem 'RedCloth', '>= 4.1.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+#gem 'pg'
+
+gem 'thin'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -32,3 +34,8 @@ gem 'pg'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :production do
+  gem 'pg'
+end
+
