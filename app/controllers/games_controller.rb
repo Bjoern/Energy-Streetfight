@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
     def start
 	puts "render start"
-	render :start
+	render :start, :layout => false
     end
 
 
