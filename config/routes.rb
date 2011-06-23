@@ -62,15 +62,22 @@ IslandsServer::Application.routes.draw do
     resources :problem_types, :only => [:index]
     resources :problems, :only => [:index]
     #resources :resource_types, :only => [:index]
-    resources :users
+
+    resource :user, :only => [:show]
 
     resource :game, :only => [:show]
     resource :ship, :only => [:show]
 
-    resource :votes, :only => [:index, :create, :show]
-    resource :meter_readings, :only => [:index, :create, :show, :update, :destroy]
-    
+    resource :vote, :only => [:create, :show]
+    resources :meter_readings, :only => [:create, :show]
+
+    get 'votes/summary'
+   
+    match 'votes/summary' => 'votes#summary', :via => :post
+
     #legacy interface requested by flash client
     match '/register' => 'users#register'
     match '/login' => 'users#login'
+
+
 end
