@@ -11,32 +11,8 @@ class VotesController < ApplicationController
     end
 
     def summary
-	votes = Vote.joins(:user).where(:users => {:ship_id => @current_user.ship.id}, :turn => @game.turn)
 
-	destinations = {}
-	load_votes = 0
-	unload_votes = 0
-
-	votes.each do |vote|
-	    if(vote.destination_id)
-		destinations[vote.destination_id] = destinations[vote.destination_id] ? destinations[vote.destination_id]+1 : 1 
-	    end
-
-	    if vote.load
-		load_votes += 1
-	    end
-
-	    if vote.unload
-		unload_votes += 1
-	    end
-	end
-
-	result = {
-	    destinations: destinations,
-	    load_votes: load_votes,
-	    unload_votes: unload_votes,
-	    total: votes.size
-	}
+	result = Vote.summary(@current_user.ship, @game.turn)
 
 	respond_to do |format|
 	    format.json {render :json => result}

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     #TODO protect_from_forgery
     before_filter :authenticate
-    before_filter :find_game
+    before_filter :check_and_init_game
 
     private
 
@@ -27,7 +27,10 @@ class ApplicationController < ActionController::Base
 	end
     end
 
-    def find_game
+    def check_and_init_game
 	@game = Game.first
+	if @game.is_updating
+	    render :text => "mess=game_updating", :status => 503
+	end
     end
 end
