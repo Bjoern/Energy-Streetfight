@@ -7,7 +7,6 @@ class Game < ActiveRecord::Base
     has_many :resources
     has_many :users    
 
-
     def update_game
 	#game = Game.find(1)
 

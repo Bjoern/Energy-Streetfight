@@ -40,6 +40,7 @@ class ApplicationController < ActionController::Base
 
 
   def ensure_domain
+      puts "host: #{request.env['HTTP_HOST']}"
     if request.env['HTTP_HOST'] != APP_DOMAIN
       # HTTP 301 is a "permanent" redirect
       redirect_to "http://#{APP_DOMAIN}", :status => 301
