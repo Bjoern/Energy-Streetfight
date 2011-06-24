@@ -20,10 +20,10 @@
 	</register>
 
 	<reading>
-		<action>meter_readings</action>
+		<action>reading</action>
 		<parametres>
 			<code>code</code>
-			<meter_reading>reading</meter_reading>
+			<meter_reading>meterValue</meter_reading>
 		</parametres>
 	</reading>
 
@@ -31,7 +31,7 @@
 		<action>vote</action>
 		<parametres>
 			<code>code</code>
-			<sail_to>destination_id</sail_to>
+			<sail_to>sail</sail_to>
 			<load>load</load>
 			<unload>unload</unload>
 		</parametres>

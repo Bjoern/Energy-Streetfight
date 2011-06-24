@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    skip_before_filter :authenticate, :only => [:show, :start]
+    skip_before_filter :authenticate, :only => [:show, :start, :update_game]
 
     def start
 	puts "render start"
@@ -24,5 +24,10 @@ class GamesController < ApplicationController
 	    format.json {render :json => result}
 	    format.xml {render :xml => result}
 	end
+    end
+
+    def update_game
+	Game.update
+	render :text => "updated"
     end
 end

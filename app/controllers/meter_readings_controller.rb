@@ -1,5 +1,4 @@
 class MeterReadingsController < ApplicationController
-    validates_presence_of :reading
 
     def create
 	reading = @current_user.meter_readings.find_or_initialize_by_turn(compute_turn)
@@ -34,6 +33,6 @@ class MeterReadingsController < ApplicationController
 
     #only one reading every three turns
     def compute_turn
-	1+(@game.turn/3)*3
+	@game.next_meter_reading_turn
     end
 end

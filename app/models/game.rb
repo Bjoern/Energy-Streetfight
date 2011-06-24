@@ -7,74 +7,88 @@ class Game < ActiveRecord::Base
     has_many :resources
     has_many :users    
 
-    def update_game
-	#game = Game.find(1)
+    def self.update
+	g = Game.first
 
-	is_updating = true
+	g.is_updating = true
 
-	save!
+	g.save!
 
-	puts "updating game to turn #{turn}"
-    
+	puts "updating game to turn #{g.turn}"
+
 	begin
-
-
-	    #ships = game.ships
-
-	    #islands = game.islands
-
 	    islands_map = {}
 
-	    islands.each do |island|
+	    g.islands.each do |island|
 		#puts "mapping island #{island.id}"
 		islands_map[island.id] = island
 	    end
+
+	    #group by island and sort by speed => fastest boat solves island problem first
+	    ships = g.ships.sort do |a,b|
+		a.destination_id == b.destination_id ? a.speed <=> b.speed : a.destination_id <=> b.destination_id
+	    end
+
+	    
 
 	    ships.each do |ship|
 
 		#puts "processing ship #{ship.id}"
 		destination = islands_map[ship.destination_id]
 
-		votes_summary = Vote.summary(ship, turn)
+		votes_summary = Vote.summary(ship, g.turn)
 
-		if destination and is_ship_on_island(ship, destination)
+		if destination and Game.is_ship_on_island(ship, destination)
+		    total = votes_summary[:total]
+		    is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
+		    is_load = votes_summary[:load_votes] >= total/2.0
 
+		    if(is_unload and ship.resource)
+			Game.unload_resource(ship, destination) #TODO several ships arriving at the same time?
+		    end
 		end
 
 		#count votes
 		#do action
 	    end
-	    #transaction do
+	    
+	    #update speeds
+	    #if g.turn 
 
-		puts "islands and ships processed, update turn number #{turn}"
+	    Game.transaction do
 
-		new_turn = 1+turn
+		puts "islands and ships processed, update turn number #{g.turn}"
 
-		puts "new turn: #{new_turn}"
-		turn = new_turn 
-		puts "turn after update: #{turn}"
+		new_turn = 1+g.turn
 
-		description = "bla bla"
+		g.turn = new_turn 
+		puts "turn after update: #{g.turn}"
 
-		puts "save result #{save!}"
+
+		puts "save result #{g.save!}"
 
 		#raise "whatever"
-	    #end
+	    end
 
 	ensure
-	    is_updating = false
+	    g.is_updating = false
 	    puts "ensuring"
-	    self.save!
+	    is_saved = g.save
+
+	    puts "is_saved #{is_saved}"
 	end
-	puts "turn at the end: #{turn} new load #{Game.first.turn}"
-
+	puts "turn at the end: #{g.turn} new load #{Game.first.turn}"
     end
 
-    def is_ship_on_island(ship, island)
-	distance(ship.x, ship.y, island.x, island.y) <= island.diameter	
+    def self.unload_resource(ship, island)
+	
     end
 
-    def distance(x1,y1,x2,y2)
+    def self.is_ship_on_island(ship, island)
+	Game.distance(ship.x, ship.y, island.x, island.y) <= island.diameter	
+    end
+
+    def self.distance(x1,y1,x2,y2)
 	Math.hypot(x1-x2,y1-y2)
     end
 
@@ -84,6 +98,11 @@ class Game < ActiveRecord::Base
 
     def after_rollback
 	puts "rolled back"
+    end
+
+    #only one reading every three turns
+    def next_meter_reading_turn
+	1+(turn/3)*3
     end
 
 end
