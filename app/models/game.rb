@@ -29,8 +29,6 @@ class Game < ActiveRecord::Base
 		a.destination_id == b.destination_id ? a.speed <=> b.speed : a.destination_id <=> b.destination_id
 	    end
 
-	    
-
 	    ships.each do |ship|
 
 		#puts "processing ship #{ship.id}"
@@ -80,6 +78,21 @@ class Game < ActiveRecord::Base
 	puts "turn at the end: #{g.turn} new load #{Game.first.turn}"
     end
 
+#> - when are meter readings submitted?
+#
+#One round out of three the meter readings are submitted. This happens each Monday evening, before midnight.  The other votes are due on Wednesday before midnight and Friday before midnight. Does this answer your third question, too?
+#
+#> - how is speed calculated from meter readings?
+#EC(n) = EnergyConsumption for week n for considered house
+#MR(n) = MeterReading for week n
+#ECmax(n) = Highest energy consumption among all houses on week n
+#ECmin(n) = Lowest energy consumption among all houses on week n
+#
+#ECn = MR(n) - MR(n-1)
+#
+#Speed(n) = SpeedMin + ((EC(n) - ECmin(n))/(ECmax(n) - ECmin(n)))*(SpeedMax - SpeedMin)
+#
+
     def self.unload_resource(ship, island)
 	
     end
@@ -96,9 +109,6 @@ class Game < ActiveRecord::Base
 	puts "committed"
     end
 
-    def after_rollback
-	puts "rolled back"
-    end
 
     #only one reading every three turns
     def next_meter_reading_turn

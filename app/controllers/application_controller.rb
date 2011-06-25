@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
     before_filter :check_and_init_game
    # before_filter :ensure_domain
 
+    rescue_from ActiveRecord::RecordInvalid, :with => :show_errors
+
+    def show_errors(exception)
+	render :text => "mess=fail", :Status => 400
+    end
+
     APP_DOMAIN = 'www.energy-streetfight.com'
 
     private
