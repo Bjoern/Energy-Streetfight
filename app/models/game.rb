@@ -51,7 +51,16 @@ class Game < ActiveRecord::Base
 	    end
 	    
 	    #update speeds
-	    #if g.turn 
+	    if g.turn == g.next_meter_reading_turn
+		#get average consumption for each crew mate
+		# => EC(n)
+
+		ships.each do |ship|
+		    average_consumption = 0
+
+
+		end
+	    end	
 
 	    Game.transaction do
 
