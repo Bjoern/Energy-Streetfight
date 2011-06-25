@@ -37,4 +37,11 @@
 		</parametres>
 	</votes>
 
+	<game>
+	    <action>game.xml</action>
+	</game>
+
+	<user>
+	    <action>user.xml</action>
+	</user>
 </config>
