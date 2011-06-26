@@ -1,47 +1,44 @@
 <config>
-	<domain>
-		
-	</domain>
+	<domain>localhost:3000</domain>
 
 	<login>
-		<action>login_meter.txt</action>
+		<action>login</action>
 		<parametres>
 			<code>code</code>
 		</parametres>
 	</login>
-	
-	<registration>
-		<action>login_meter.txt</action>
-		<parametres>
-			<code>code</code>
-			<first_name>firstName</first_name>
-			<last_name>lastName</last_name>
-			<email>email</email>
-			<team_name>team</team_name>
-		</parametres>
-	</registration>
 
+	<registration>
+	    <action>register</action>
+	    <parametres>
+		<code>code</code>
+		<first_name>firstName</first_name>
+		<last_name>lastName</last_name>
+		<email>email</email>
+		<team_name>team</team_name>
+	    </parametres>
+	</registration>
 	<reading>
-		<action>login_meter.txt</action>
+		<action>meter_readings</action>
 		<parametres>
 			<code>code</code>
-			<meter_reading>meterValue</meter_reading>
+			<meter_reading>reading</meter_reading>
 		</parametres>
 	</reading>
 	<game>
-		<action>game.xml</action>
+	    <action>game.xml</action>
 	</game>
+
 	<user>
-		<action>user.xml</action>
+	    <action>user.xml</action>
 	</user>
 	<votes>
 		<action>vote</action>
 		<parametres>
 			<code>code</code>
-			<sail_to>sail</sail_to>
+			<sail_to>destination_id</sail_to>
 			<load>load</load>
 			<unload>unload</unload>
 		</parametres>
 	</votes>
-
 </config>
