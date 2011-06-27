@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-hunger1:
-  problem_type: hunger 
-  island: haiti
-
-drought1:
-  problem_type: drought
-  island: malta
