@@ -119,11 +119,12 @@ class Game < ActiveRecord::Base
 	    destination = ship.destination
 	    speed = ship.speed
 	    if(destination and speed > 0)
-		distance = Game.distance(ship.x, ship.y, destination.x, destination.y)
+		distance = Game.distance(ship.x, ship.y, destination.x, destination.y) #distance to center of island
 #		speed = [distance - destination.diameter, speed].min #don't sail through island
 
-		if distance - destination.diameter/2 < ship.speed
-		    speed = distance - destination.diameter/2
+		distance_to_border = Game.distance_to_island(ship, destination)
+		if  distance_to_border <= ship.speed
+		    speed = distance_to_border
 		    ship.harbor = destination #ship arrived on island
 		    puts "ship #{ship.name} has arrived on #{destination.name}"
 		else
