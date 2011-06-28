@@ -14,6 +14,15 @@ body{
 #flashContent{
 	width:100%;
 	height:100%;
+	font-size: 12px;
+}
+#flashContent a{
+	text-decoration: none;
+	color:black;
+}
+
+#flashContent a:hover{
+	background-color: #4ED00D;
 }
 
 .container{
