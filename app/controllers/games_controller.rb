@@ -1,11 +1,16 @@
 class GamesController < ApplicationController
-    skip_before_filter :authenticate, :only => [:show, :start, :update_game]
+    skip_before_filter :authenticate, :only => [:show, :start, :registrieren]
 
     def start
 	puts "render start"
+	@flash_name = 'game.swf'
 	render :start, :layout => false
     end
 
+    def registrieren
+	@flash_name = 'register.swf'
+	render :start, :layout => false
+    end
 
     def show 
 	result = {
@@ -26,8 +31,8 @@ class GamesController < ApplicationController
 	end
     end
 
-    def update_game
-	Game.update
-	render :text => "updated"
-    end
+  #  def update_game
+	#Game.update
+#	render :text => "updated"
+   # end
 end

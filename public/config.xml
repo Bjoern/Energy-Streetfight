@@ -8,7 +8,7 @@
 		</parametres>
 	</login>
 
-	<registration>
+	<register>
 	    <action>register</action>
 	    <parametres>
 		<code>code</code>
@@ -17,7 +17,7 @@
 		<email>email</email>
 		<team_name>team</team_name>
 	    </parametres>
-	</registration>
+	</register>
 	<reading>
 		<action>meter_readings</action>
 		<parametres>
