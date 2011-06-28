@@ -31,6 +31,9 @@
 
 	<user>
 	    <action>user.xml</action>
+	    <parametres>
+		<user_code>code</user_code>
+	    </parametres>
 	</user>
 	<votes>
 		<action>vote</action>

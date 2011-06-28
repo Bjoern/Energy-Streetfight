@@ -76,13 +76,13 @@ class Game < ActiveRecord::Base
 
 		end
 
+		#update positions before speed - new speed will only apply in the coming rounds
+		Game.update_positions(ships)
+
 		#update speeds
 		if g.turn == g.next_meter_reading_turn
 		    Game.update_speeds(ships, g.turn = 1)		
 		end	
-
-		Game.update_positions(ships)
-
 
 		ships.each do |ship|
 		    ship.save
@@ -173,6 +173,7 @@ class Game < ActiveRecord::Base
 			    consumption = consumption/turns
 			    total_consumption += consumption
 			    total_users += 1
+			    puts "user #{user.id} has consumption #{consumption}"
 			end	
 		    else
 			puts "no previous_reading"
@@ -202,7 +203,7 @@ class Game < ActiveRecord::Base
 
 	ships_count = 0
 
-	if max_consumption
+	if max_consumption and max_consumption - min_consumption > 0
 	    ships.each do |ship|
 		#update speeds
 		if ship.consumption 
