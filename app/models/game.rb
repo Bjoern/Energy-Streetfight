@@ -43,6 +43,9 @@ class Game < ActiveRecord::Base
 		    votes_summary = Vote.summary(ship, g.turn)
 
 		    if destination and Game.is_ship_on_island(ship, destination)
+
+			ship.harbor = destination #ship has landed
+
 			total = votes_summary[:total]
 			is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
 			is_load = votes_summary[:load_votes] >= total/2.0
@@ -55,7 +58,8 @@ class Game < ActiveRecord::Base
 			    #load
 			    ship.resource = destination.resource
 			end
-
+		    else
+			ship.destination = nil #ship is at sea
 		    end
 
 		    #determine new destination

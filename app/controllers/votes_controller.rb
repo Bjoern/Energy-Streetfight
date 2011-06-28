@@ -12,7 +12,8 @@ class VotesController < ApplicationController
 
     def summary
 
-	result = Vote.summary(@current_user.ship, @game.turn)
+	turn = params[:turn] ? params[:turn].to_i : @game.turn
+	result = Vote.summary(@current_user.ship, turn)
 
 	respond_to do |format|
 	    format.json {render :json => result}
