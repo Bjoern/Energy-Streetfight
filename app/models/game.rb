@@ -40,11 +40,11 @@ class Game < ActiveRecord::Base
 		    #puts "processing ship #{ship.id}"
 		    destination = ship.destination_id ? islands_map[ship.destination_id] : nil
 
-		    votes_summary = Vote.summary(ship, g.turn)
+		    votes_summary = Vote.summary(ship.id, g.turn)
 
 		    if destination and Game.is_ship_on_island(ship, destination)
 
-			ship.harbor = destination #ship has landed
+			#ship.harbor = destination #ship has landed
 
 			total = votes_summary[:total]
 			is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
@@ -58,8 +58,8 @@ class Game < ActiveRecord::Base
 			    #load
 			    ship.resource = destination.resource
 			end
-		    else
-			ship.destination = nil #ship is at sea
+		    #else
+		#	ship.destination = nil #ship is at sea
 		    end
 
 		    #determine new destination
@@ -121,12 +121,19 @@ class Game < ActiveRecord::Base
 	    speed = ship.speed
 	    if(destination and speed > 0)
 		distance = Game.distance(ship.x, ship.y, destination.x, destination.y)
-
 		speed = [distance - destination.diameter, speed].min #don't sail through island
+
+		if distance - destination.diameter < ship.speed
+		    speed = distance - destination.diameter
+		    ship.harbor = destination #ship arrived on island
+		    puts "ship #{ship.name} has arrived on #{destination.name}"
+		else
+		    ship.harbor = nil #ship is still at sea
+		end
 
 		factor = distance > 0 ? speed/distance : 0
 
-		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{ship.speed}, dest.x #{destination.x}, dest.y #{destination.y}"
+		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{speed}, dest.x #{destination.x}, dest.y #{destination.y}, diameter #{destination.diameter}"
 
 		ship.x += (destination.x - ship.x)*factor
 		ship.y += (destination.y - ship.y)*factor

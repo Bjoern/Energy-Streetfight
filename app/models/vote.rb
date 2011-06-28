@@ -4,8 +4,8 @@ class Vote < ActiveRecord::Base
     belongs_to :ship
     belongs_to :user
 
-    def self.summary(ship, turn)
-	votes = Vote.joins(:user).where(:users => {:ship_id => ship.id}, :turn => turn)
+    def self.summary(ship_id, turn)
+	votes = Vote.joins(:user).where(:users => {:ship_id => ship_id}, :turn => turn)
 
 	destinations = {}
 	load_votes = 0
