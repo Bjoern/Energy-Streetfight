@@ -29,9 +29,7 @@ class Game < ActiveRecord::Base
 	    end
 
 	    #group by island and sort by speed => fastest boat solves island problem first
-	    ships = g.ships.sort do |a,b|
-		a.destination_id == b.destination_id ? a.speed <=> b.speed : a.destination_id <=> b.destination_id
-	    end
+	    ships = Game.sort_ships_by_time_to_destination(g.ships)
 
 	    Game.transaction do
 		ships.each do |ship|
@@ -269,6 +267,10 @@ class Game < ActiveRecord::Base
 	Math.hypot(x1-x2,y1-y2)
     end
 
+    def self.distance_to_island(ship, island)
+	Math.hypot(ship.x-island.x, ship.y-island.y)-island.diameter/2
+    end
+
    # def after_commit
 	#puts "committed"
     #end
@@ -277,6 +279,15 @@ class Game < ActiveRecord::Base
     #only one reading every three turns
     def next_meter_reading_turn
 	1+(turn/3)*3
+    end
+
+    def self.sort_ships_by_time_to_destination(ships)
+	ships.sort do |a,b|
+	    time_a = a.destination ? Game.distance_to_island(a, a.destination)/a.speed : 0
+	    time_b = b.destination ? Game.distance_to_island(b, b.destination)/b.speed : 0
+
+	    time_a <=> time_b
+	end
     end
 
 end
