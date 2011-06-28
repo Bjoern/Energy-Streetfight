@@ -2,6 +2,14 @@ class VotesController < ApplicationController
     def create
 	vote = @current_user.votes.find_or_initialize_by_turn(@game.turn)
 	vote.update_attributes(params)
+	if vote.load
+	    vote.load_resource = @current_user.ship.destination.resource
+	end
+
+	if vote.unload
+	    vote.unload_resource = @current_user.ship.resource
+	end
+
 	vote.save
 
 	respond_to do |format|
