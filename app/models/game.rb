@@ -7,8 +7,8 @@ class Game < ActiveRecord::Base
     has_many :resources
     has_many :users    
 
-    def self.update
-	g = Game.first
+    def self.update(id)
+	g = Game.find(id)
 
 	g.is_updating = true
 
@@ -33,52 +33,56 @@ class Game < ActiveRecord::Base
 		a.destination_id == b.destination_id ? a.speed <=> b.speed : a.destination_id <=> b.destination_id
 	    end
 
-	    ships.each do |ship|
+	    Game.transaction do
+		ships.each do |ship|
 
-		#puts "processing ship #{ship.id}"
-		destination = ship.destination_id ? islands_map[ship.destination_id] : nil
+		    puts "processing ship #{ship.name}, id #{ship.id}, speed: #{ship.speed}"
+		    #puts "processing ship #{ship.id}"
+		    destination = ship.destination_id ? islands_map[ship.destination_id] : nil
 
-		votes_summary = Vote.summary(ship, g.turn)
+		    votes_summary = Vote.summary(ship, g.turn)
 
-		if destination and Game.is_ship_on_island(ship, destination)
-		    total = votes_summary[:total]
-		    is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
-		    is_load = votes_summary[:load_votes] >= total/2.0
+		    if destination and Game.is_ship_on_island(ship, destination)
+			total = votes_summary[:total]
+			is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
+			is_load = votes_summary[:load_votes] >= total/2.0
 
-		    if(is_unload and ship.resource)
-			Game.unload_resource(ship, destination, problem_free_islands) #TODO several ships arriving at the same time with same speed?
-		    end
+			if(is_unload and ship.resource)
+			    Game.unload_resource(ship, destination, problem_free_islands) #TODO several ships arriving at the same time with same speed?
+			end
 
-		    if(is_load and not ship.resource)
-			#load
-			ship.resource = destination.resource
+			if(is_load and not ship.resource)
+			    #load
+			    ship.resource = destination.resource
+			end
+
 		    end
 
 		    #determine new destination
 		    new_destination_id = nil
 		    destination_votes = 0
-		    
+
 		    votes_summary[:destinations].each do |dest_id, votes|
-			if (not new_destination) or votes > destination_votes
-			    new_destination_id = dest
+			if (not new_destination_id) or votes > destination_votes
+			    new_destination_id = dest_id
 			end
 		    end
 
 		    if new_destination_id
 			ship.destination = islands_map[new_destination_id]
+			puts "new destination: #{ship.destination}, id: #{new_destination_id}"
 			puts "ship #{ship.name} set sail for island #{ship.destination.name}"
 		    end
+
 		end
-	    end
-	    
-	    #update speeds
-	    if g.turn == g.next_meter_reading_turn
-		Game.update_speeds(ships)		
-	    end	
 
-	    Game.update_positions(ships)
+		#update speeds
+		if g.turn == g.next_meter_reading_turn
+		    Game.update_speeds(ships, g.turn = 1)		
+		end	
 
-	    Game.transaction do
+		Game.update_positions(ships)
+
 
 		ships.each do |ship|
 		    ship.save
@@ -118,8 +122,13 @@ class Game < ActiveRecord::Base
 
 		factor = distance > 0 ? speed/distance : 0
 
+		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{ship.speed}, dest.x #{destination.x}, dest.y #{destination.y}"
+
 		ship.x += (destination.x - ship.x)*factor
 		ship.y += (destination.y - ship.y)*factor
+
+		puts "ship #{ship.name} moved to x: #{ship.x}, y: #{ship.y}"
+
 	    end
 	end
     end
@@ -138,9 +147,11 @@ class Game < ActiveRecord::Base
 #
 #Speed(n) = SpeedMin + ((EC(n) - ECmin(n))/(ECmax(n) - ECmin(n)))*(SpeedMax - SpeedMin)
 #
-    def self.update_speeds(ships)
+    def self.update_speeds(ships, is_first_turn)
 	#get average consumption for each crew mate
 	# => EC(n)
+
+	puts "updating speeds"
 
 	min_consumption = 0
 	max_consumption = nil
@@ -153,6 +164,7 @@ class Game < ActiveRecord::Base
 	    total_users = 0 
 	    ship.users.each do |user|
 		if user.last_reading
+		    puts "user #{user.id} has last reading #{user.last_reading.reading}"
 		    if user.previous_reading
 			consumption = user.last_reading.reading - user.previous_reading.reading
 			turns = user.last_reading.turn - user.previous_reading.turn
@@ -162,6 +174,8 @@ class Game < ActiveRecord::Base
 			    total_consumption += consumption
 			    total_users += 1
 			end	
+		    else
+			puts "no previous_reading"
 		    end
 		    user.previous_reading = user.last_reading
 		    user.last_reading = nil
@@ -179,7 +193,9 @@ class Game < ActiveRecord::Base
 		if (not max_consumption) or (ship.consumption > max_consumption)
 		    max_consumption = ship.consumption
 		end 
+		puts "ship #{ship.name} has consumption #{ship.consumption}"
 	    else
+		puts "ship #{ship.name} has zero consumption"
 		ship_consumption = nil
 	    end
 	end
@@ -196,7 +212,7 @@ class Game < ActiveRecord::Base
 
 		    ships_count += 1
 		else
-		    ship.speed = 0
+		    ship.speed = 0 if not is_first_turn
 		end	    
 	    end
 	end
