@@ -1,5 +1,6 @@
 desc "This task is called by the Heroku cron add-on"
 task :cron => :environment do
-    #game = Game.find(1)
-    #game.update_game
-  end
+   if [1,3,5].includes?(Time.new.wday)
+	Game.update
+    end
+end

@@ -80,7 +80,7 @@ IslandsServer::Application.routes.draw do
     match '/login' => 'users#login'
 
     #match '/update' => 'games#update_game'
-   # match '/registrieren' => redirect("/", :status => 302)
+    match '/registrieren' => 'games#registrieren'
     root :to => 'games#start'
 
 end

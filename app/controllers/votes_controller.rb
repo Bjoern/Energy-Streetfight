@@ -2,6 +2,14 @@ class VotesController < ApplicationController
     def create
 	vote = @current_user.votes.find_or_initialize_by_turn(@game.turn)
 	vote.update_attributes(params)
+	if vote.load
+	    vote.load_resource = @current_user.ship.destination.resource
+	end
+
+	if vote.unload
+	    vote.unload_resource = @current_user.ship.resource
+	end
+
 	vote.save
 
 	respond_to do |format|
@@ -12,7 +20,8 @@ class VotesController < ApplicationController
 
     def summary
 
-	result = Vote.summary(@current_user.ship, @game.turn)
+	turn = params[:turn] ? params[:turn].to_i : @game.turn
+	result = Vote.summary(@current_user.ship_id, turn)
 
 	respond_to do |format|
 	    format.json {render :json => result}

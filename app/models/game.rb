@@ -29,9 +29,7 @@ class Game < ActiveRecord::Base
 	    end
 
 	    #group by island and sort by speed => fastest boat solves island problem first
-	    ships = g.ships.sort do |a,b|
-		a.destination_id == b.destination_id ? a.speed <=> b.speed : a.destination_id <=> b.destination_id
-	    end
+	    ships = Game.sort_ships_by_time_to_destination(g.ships)
 
 	    Game.transaction do
 		ships.each do |ship|
@@ -40,9 +38,12 @@ class Game < ActiveRecord::Base
 		    #puts "processing ship #{ship.id}"
 		    destination = ship.destination_id ? islands_map[ship.destination_id] : nil
 
-		    votes_summary = Vote.summary(ship, g.turn)
+		    votes_summary = Vote.summary(ship.id, g.turn)
 
-		    if destination and Game.is_ship_on_island(ship, destination)
+		    if destination and ship.harbor_id == ship.destination_id # Game.is_ship_on_island(ship, destination)
+
+			#ship.harbor = destination #ship has landed
+			puts "ship #{ship.name} is on island #{destination.name}, deciding actions"
 			total = votes_summary[:total]
 			is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
 			is_load = votes_summary[:load_votes] >= total/2.0
@@ -54,8 +55,10 @@ class Game < ActiveRecord::Base
 			if(is_load and not ship.resource)
 			    #load
 			    ship.resource = destination.resource
+			    puts "#{ship.name} has loaded #{destination.resource.name}"
 			end
-
+		    #else
+		#	ship.destination = nil #ship is at sea
 		    end
 
 		    #determine new destination
@@ -76,13 +79,13 @@ class Game < ActiveRecord::Base
 
 		end
 
+		#update positions before speed - new speed will only apply in the coming rounds
+		Game.update_positions(ships)
+
 		#update speeds
 		if g.turn == g.next_meter_reading_turn
 		    Game.update_speeds(ships, g.turn = 1)		
 		end	
-
-		Game.update_positions(ships)
-
 
 		ships.each do |ship|
 		    ship.save
@@ -116,13 +119,21 @@ class Game < ActiveRecord::Base
 	    destination = ship.destination
 	    speed = ship.speed
 	    if(destination and speed > 0)
-		distance = Game.distance(ship.x, ship.y, destination.x, destination.y)
+		distance = Game.distance(ship.x, ship.y, destination.x, destination.y) #distance to center of island
+#		speed = [distance - destination.diameter, speed].min #don't sail through island
 
-		speed = [distance - destination.diameter, speed].min #don't sail through island
+		distance_to_border = Game.distance_to_island(ship, destination)
+		if  distance_to_border <= ship.speed
+		    speed = distance_to_border
+		    ship.harbor = destination #ship arrived on island
+		    puts "ship #{ship.name} has arrived on #{destination.name}"
+		else
+		    ship.harbor = nil #ship is still at sea
+		end
 
 		factor = distance > 0 ? speed/distance : 0
 
-		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{ship.speed}, dest.x #{destination.x}, dest.y #{destination.y}"
+		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{speed}, dest.x #{destination.x}, dest.y #{destination.y}, radius #{destination.diameter/2}"
 
 		ship.x += (destination.x - ship.x)*factor
 		ship.y += (destination.y - ship.y)*factor
@@ -173,6 +184,7 @@ class Game < ActiveRecord::Base
 			    consumption = consumption/turns
 			    total_consumption += consumption
 			    total_users += 1
+			    puts "user #{user.id} has consumption #{consumption}"
 			end	
 		    else
 			puts "no previous_reading"
@@ -202,7 +214,7 @@ class Game < ActiveRecord::Base
 
 	ships_count = 0
 
-	if max_consumption
+	if max_consumption and max_consumption - min_consumption > 0
 	    ships.each do |ship|
 		#update speeds
 		if ship.consumption 
@@ -219,12 +231,17 @@ class Game < ActiveRecord::Base
     end
 
     def self.unload_resource(ship, island, problem_free_islands)
+
+	puts "ship #{ship.name} unloads #{ship.resource.name} on #{island.name}"
+
 	if island.problem and ship.resource = island.problem.resource
 	    #solve it
 	    ship.problems_solved += 1
 	    problem = island.problem
 	    island.problem = nil
 	    island.save
+
+	    #puts "ship #{ship.name} solved #{problem.name} on #{island.name}"
 
 	    problem_free_islands << island
 	    #find new island for problem
@@ -251,6 +268,10 @@ class Game < ActiveRecord::Base
 	Math.hypot(x1-x2,y1-y2)
     end
 
+    def self.distance_to_island(ship, island)
+	Math.hypot(ship.x-island.x, ship.y-island.y)-island.diameter/2
+    end
+
    # def after_commit
 	#puts "committed"
     #end
@@ -259,6 +280,15 @@ class Game < ActiveRecord::Base
     #only one reading every three turns
     def next_meter_reading_turn
 	1+(turn/3)*3
+    end
+
+    def self.sort_ships_by_time_to_destination(ships)
+	ships.sort do |a,b|
+	    time_a = a.destination ? Game.distance_to_island(a, a.destination)/a.speed : 0
+	    time_b = b.destination ? Game.distance_to_island(b, b.destination)/b.speed : 0
+
+	    time_a <=> time_b
+	end
     end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110626174741) do
+ActiveRecord::Schema.define(:version => 20110628144255) do
 
   create_table "games", :force => true do |t|
     t.text     "description"
@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(:version => 20110626174741) do
     t.string  "name"
     t.integer "resource_id"
     t.integer "problems_solved", :default => 0
-    t.string  "next_action"
     t.float   "travel_time",     :default => 0.0
     t.float   "consumption"
+    t.integer "harbor_id"
   end
 
   create_table "users", :force => true do |t|
@@ -85,8 +85,10 @@ ActiveRecord::Schema.define(:version => 20110626174741) do
     t.integer  "destination_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "load",           :default => false
-    t.boolean  "unload",         :default => false
+    t.boolean  "load",               :default => false
+    t.boolean  "unload",             :default => false
+    t.integer  "load_resource_id"
+    t.integer  "unload_resource_id"
   end
 
 end

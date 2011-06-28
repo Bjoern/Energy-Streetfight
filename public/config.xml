@@ -8,7 +8,7 @@
 		</parametres>
 	</login>
 
-	<registration>
+	<register>
 	    <action>register</action>
 	    <parametres>
 		<code>code</code>
@@ -17,7 +17,7 @@
 		<email>email</email>
 		<team_name>team</team_name>
 	    </parametres>
-	</registration>
+	</register>
 	<reading>
 		<action>meter_readings</action>
 		<parametres>
@@ -31,7 +31,25 @@
 
 	<user>
 	    <action>user.xml</action>
+	    <parametres>
+		<user_code>code</user_code>
+	    </parametres>
 	</user>
+	<vote_summary>
+	    <action>votes/summary.xml</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<turn>turn</turn>
+		</parametres>
+	</vote_summary>
+	<vote_status>
+		<action>votes/summary.xml</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<turn>turn</turn>
+		</parametres>
+	</vote_status>
+
 	<votes>
 		<action>vote</action>
 		<parametres>
