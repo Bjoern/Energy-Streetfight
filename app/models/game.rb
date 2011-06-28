@@ -42,10 +42,10 @@ class Game < ActiveRecord::Base
 
 		    votes_summary = Vote.summary(ship.id, g.turn)
 
-		    if destination and Game.is_ship_on_island(ship, destination)
+		    if destination and ship.harbor_id == ship.destination_id # Game.is_ship_on_island(ship, destination)
 
 			#ship.harbor = destination #ship has landed
-
+			puts "ship #{ship.name} is on island #{destination.name}, deciding actions"
 			total = votes_summary[:total]
 			is_unload = votes_summary[:unload_votes] >= total/2.0 #TODO stalemate resolution
 			is_load = votes_summary[:load_votes] >= total/2.0
@@ -57,6 +57,7 @@ class Game < ActiveRecord::Base
 			if(is_load and not ship.resource)
 			    #load
 			    ship.resource = destination.resource
+			    puts "#{ship.name} has loaded #{destination.resource.name}"
 			end
 		    #else
 		#	ship.destination = nil #ship is at sea
@@ -121,10 +122,10 @@ class Game < ActiveRecord::Base
 	    speed = ship.speed
 	    if(destination and speed > 0)
 		distance = Game.distance(ship.x, ship.y, destination.x, destination.y)
-		speed = [distance - destination.diameter, speed].min #don't sail through island
+#		speed = [distance - destination.diameter, speed].min #don't sail through island
 
-		if distance - destination.diameter < ship.speed
-		    speed = distance - destination.diameter
+		if distance - destination.diameter/2 < ship.speed
+		    speed = distance - destination.diameter/2
 		    ship.harbor = destination #ship arrived on island
 		    puts "ship #{ship.name} has arrived on #{destination.name}"
 		else
@@ -133,7 +134,7 @@ class Game < ActiveRecord::Base
 
 		factor = distance > 0 ? speed/distance : 0
 
-		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{speed}, dest.x #{destination.x}, dest.y #{destination.y}, diameter #{destination.diameter}"
+		puts "ship #{ship.name} x: #{ship.x}, y: #{ship.y}, distance: #{distance}, speed: #{speed}, dest.x #{destination.x}, dest.y #{destination.y}, radius #{destination.diameter/2}"
 
 		ship.x += (destination.x - ship.x)*factor
 		ship.y += (destination.y - ship.y)*factor
@@ -231,12 +232,17 @@ class Game < ActiveRecord::Base
     end
 
     def self.unload_resource(ship, island, problem_free_islands)
+
+	puts "ship #{ship.name} unloads #{ship.resource.name} on #{island.name}"
+
 	if island.problem and ship.resource = island.problem.resource
 	    #solve it
 	    ship.problems_solved += 1
 	    problem = island.problem
 	    island.problem = nil
 	    island.save
+
+	    #puts "ship #{ship.name} solved #{problem.name} on #{island.name}"
 
 	    problem_free_islands << island
 	    #find new island for problem

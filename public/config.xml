@@ -35,6 +35,21 @@
 		<user_code>code</user_code>
 	    </parametres>
 	</user>
+	<vote_summary>
+	    <action>votes/summary.xml</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<turn>turn</turn>
+		</parametres>
+	</vote_summary>
+	<vote_status>
+		<action>votes/summary.xml</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<turn>turn</turn>
+		</parametres>
+	</vote_status>
+
 	<votes>
 		<action>vote</action>
 		<parametres>

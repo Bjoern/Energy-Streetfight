@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20110628122038) do
     t.integer "problems_solved", :default => 0
     t.float   "travel_time",     :default => 0.0
     t.float   "consumption"
-    t.integer "harbor"
+    t.integer "harbor_id"
   end
 
   create_table "users", :force => true do |t|

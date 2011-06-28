@@ -1,0 +1,64 @@
+<config>
+	<domain>
+		localhost:8888/energyStreetFight/site/delivery/www/_php
+	</domain>
+
+	<login>
+		<action>login.php</action>
+		<parametres>
+			<code>code</code>
+		</parametres>
+	</login>
+	
+	<registration>
+		<action>register.php</action>
+		<parametres>
+			<code>code</code>
+			<first_name>firstName</first_name>
+			<last_name>lastName</last_name>
+			<email>email</email>
+			<team_name>team</team_name>
+		</parametres>
+	</registration>
+
+	<reading>
+		<action>reading.php</action>
+		<parametres>
+			<code>code</code>
+			<meter_reading>meterValue</meter_reading>
+		</parametres>
+	</reading>
+	<game>
+		<action>game.xml</action>
+	</game>
+	<user>
+		<action>user.xml</action>
+		<parametres>
+			<user_code>code</user_code>
+		</parametres>
+	</user>
+	<vote_summary>
+		<action>votes.xml</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<turn>turn</turn>
+		</parametres>
+	</vote_summary>
+	<vote_status>
+		<action>votes.xml</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<turn>turn</turn>
+		</parametres>
+	</vote_status>
+	<votes>
+		<action>vote</action>
+		<parametres>
+			<vote_code>code</vote_code>
+			<sail_to>sail</sail_to>
+			<load>load</load>
+			<unload>unload</unload>
+		</parametres>
+	</votes>
+
+</config>
