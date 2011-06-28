@@ -19,6 +19,13 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
     end
 
     test "update game" do
+
+	problem_counts = {}
+
+	(1..6).each do |i|
+	    problem_counts[i] = Island.where("problem_id = ?", i).count
+	end
+
 	Game.update(1)
 
 	ship1 = Ship.find(1)
@@ -34,5 +41,8 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
 	#ship 2 has resource 5 on board
 	assert_equal(5, ship2.resource_id)
 
+	(1..6).each do |i|
+	   assert_equal problem_counts[i], Island.where("problem_id = ?", i).count, "number of problems of type #{i} have remained the same"
+	end
     end
 end
