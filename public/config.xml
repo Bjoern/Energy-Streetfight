@@ -8,7 +8,7 @@
 		</parametres>
 	</login>
 
-	<register>
+	<registration>
 	    <action>register</action>
 	    <parametres>
 		<code>code</code>
@@ -17,24 +17,28 @@
 		<email>email</email>
 		<team_name>team</team_name>
 	    </parametres>
-	</register>
-
+	</registration>
 	<reading>
-		<action>reading</action>
+		<action>meter_readings</action>
 		<parametres>
 			<code>code</code>
-			<meter_reading>meterValue</meter_reading>
+			<meter_reading>reading</meter_reading>
 		</parametres>
 	</reading>
+	<game>
+	    <action>game.xml</action>
+	</game>
 
+	<user>
+	    <action>user.xml</action>
+	</user>
 	<votes>
 		<action>vote</action>
 		<parametres>
 			<code>code</code>
-			<sail_to>sail</sail_to>
+			<sail_to>destination_id</sail_to>
 			<load>load</load>
 			<unload>unload</unload>
 		</parametres>
 	</votes>
-
 </config>

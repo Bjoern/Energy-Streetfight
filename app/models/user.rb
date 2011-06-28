@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
     belongs_to :ship
     has_many :meter_readings
     has_many :votes
+
+    belongs_to :last_reading, :class_name => "MeterReading"
+    belongs_to :previous_reading, :class_name => "MeterReading"
 end

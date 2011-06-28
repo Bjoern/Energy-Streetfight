@@ -2,10 +2,13 @@ class MeterReadingsController < ApplicationController
 
     def create
 	reading = @current_user.meter_readings.find_or_initialize_by_turn(compute_turn)
-	reading.update_attributes(params)
+	reading.attributes = params
 	reading.user = @current_user
 	reading.turn = compute_turn
-	reading.save
+	if reading.save
+	    @current_user.last_reading = reading 
+	    @current_user.save 
+	end
 
 	respond_to do |format|
 	    format.json {render :json => reading}
@@ -33,6 +36,6 @@ class MeterReadingsController < ApplicationController
 
     #only one reading every three turns
     def compute_turn
-	1+(@game.turn/3)*3
+	@game.next_meter_reading_turn
     end
 end
