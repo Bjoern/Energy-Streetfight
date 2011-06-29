@@ -14,7 +14,7 @@ class Game < ActiveRecord::Base
 
 	g.save!
 
-	puts "updating game to turn #{g.turn}"
+	puts "updating game to turn #{g.turn+1}"
 
 	begin
 	    islands_map = {}
@@ -55,7 +55,7 @@ class Game < ActiveRecord::Base
 			if(is_load and not ship.resource)
 			    #load
 			    ship.resource = destination.resource
-			    puts "#{ship.name} has loaded #{destination.resource.name}"
+			    puts "#{ship.name} has loaded #{destination.resource ? destination.resource.name : 'nothing'}"
 			end
 		    #else
 		#	ship.destination = nil #ship is at sea
@@ -83,8 +83,8 @@ class Game < ActiveRecord::Base
 		Game.update_positions(ships)
 
 		#update speeds
-		if g.turn == g.next_meter_reading_turn
-		    Game.update_speeds(ships, g.turn = 1)		
+		if g.turn % 3 == 1 #g.next_meter_reading_turn
+		    Game.update_speeds(ships, g.turn == 1)		
 		end	
 
 		ships.each do |ship|
@@ -179,6 +179,8 @@ class Game < ActiveRecord::Base
 		    if user.previous_reading
 			consumption = user.last_reading.reading - user.previous_reading.reading
 			turns = user.last_reading.turn - user.previous_reading.turn
+
+			puts "user consumption: #{consumption}, turns: #{turns}"
 
 			if turns > 0 and consumption > 0
 			    consumption = consumption/turns
@@ -279,7 +281,7 @@ class Game < ActiveRecord::Base
 
     #only one reading every three turns
     def next_meter_reading_turn
-	1+(turn/3)*3
+	1+(turn/3+1)*3
     end
 
     def self.sort_ships_by_time_to_destination(ships)

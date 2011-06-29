@@ -19,6 +19,9 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
     end
 
     test "update game" do
+	User.all.each do |user|
+	    #assert_equal(user.last_reading.turn, 1)
+	end
 
 	problem_counts = {}
 
@@ -43,6 +46,50 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
 
 	(1..6).each do |i|
 	   assert_equal problem_counts[i], Island.where("problem_id = ?", i).count, "number of problems of type #{i} have remained the same"
+	end
+
+	u = User.first
+
+	assert_nil(u.last_reading, "user has no last_reading")
+	assert_not_nil(u.previous_reading, "user has previous_reading")
+
+	Ship.all.each do |ship|
+	    assert_equal(22.0, ship.speed, "all ships have speed 22")
+	end
+
+	assert_equal(2, Game.find(1).turn, "turn is 2")
+
+	puts "create second meter readings"
+
+	User.all.each_with_index do |user, i|
+	    #create some meter readings
+	    post "/meter_readings", :code => user.code, :reading => (i+1000)
+	end
+
+	User.all.each_with_index do |user, i|
+	    assert_not_nil user.last_reading, "user has last reading"
+	end
+
+	puts "new update"
+
+	Game.update(1)
+
+	assert_equal(3, Game.find(1).turn, "turn is 3")
+
+	Game.update(1)
+
+	assert_equal(4, Game.find(1).turn, "turn is 4")
+
+	Ship.all.each do |ship|
+	    assert_equal(22.0, ship.speed, "all ships have speed 22")
+	end
+
+	Game.update(1)
+
+	assert_equal(5, Game.find(1).turn, "turn is 5")
+	Ship.all.each do |ship|
+
+	    assert_not_equal(22.0, ship.speed, "ship #{ship.id} does not have speed 22")
 	end
     end
 end
