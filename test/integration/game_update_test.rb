@@ -4,13 +4,13 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
     fixtures :all
 
     def setup
-	User.all.each_with_index do |user, i|
+	User.all.each do |user|
 
 	    #create some votes
-	    post "/vote", :code => user.code, :destination_id => (i % 20) + 1, :load => true, :unload => true
+	    post "/vote", :code => user.code, :destination_id => (user.id % 20) + 1, :load => true, :unload => true
 
 	    #create some meter readings
-	    post "/meter_readings", :code => user.code, :reading => i
+	    post "/meter_readings", :code => user.code, :reading => user.id
 	end
     end
 
@@ -61,9 +61,9 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
 
 	puts "create second meter readings"
 
-	User.all.each_with_index do |user, i|
+	User.all.each do |user|
 	    #create some meter readings
-	    post "/meter_readings", :code => user.code, :reading => (i+1000)
+	    post "/meter_readings", :code => user.code, :reading => (user.id+user.id*100)
 	end
 
 	User.all.each_with_index do |user, i|
