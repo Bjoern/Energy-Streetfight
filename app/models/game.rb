@@ -198,7 +198,7 @@ class Game < ActiveRecord::Base
 	    end
 
 	    #only create new speed if at least one user entered a meter reading
-	    if total_users > 0 and g.turn > 1
+	    if total_users > 0 and not is_first_turn
 		ship.consumption = total_consumption
 		if ship.consumption < min_consumption
 		    min_consumption = ship.consumption
@@ -281,7 +281,7 @@ class Game < ActiveRecord::Base
 
     #only one reading every three turns
     def next_meter_reading_turn
-	1+(turn/3+1)*3
+	1+((turn+1)/3)*3
     end
 
     def self.sort_ships_by_time_to_destination(ships)

@@ -64,7 +64,7 @@ class GameUpdateTest < ActionDispatch::IntegrationTest
 
 	User.all.each_with_index do |user, i|
 	    #create some meter readings
-	    post "/meter_readings", :code => user.code, :reading => (i+1000)
+	    post "/meter_readings", :code => user.code, :reading => (i+i*100)
 	end
 
 	User.all.each_with_index do |user, i|
