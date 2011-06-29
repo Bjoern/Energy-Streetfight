@@ -8,12 +8,17 @@ class MeterReadingsController < ApplicationController
 	if reading.save
 	    @current_user.last_reading = reading 
 	    @current_user.save 
+	else
+	    render :text => "mess=fail"
 	end
 
-	respond_to do |format|
-	    format.json {render :json => reading}
-	    format.xml {render :xml => reading}
-	end
+	render :text => "mess=ok"
+	#render :xml => reading
+	
+	#respond_to do |format|
+	 #   format.json {render :json => reading}
+	  #  format.xml {render :xml => reading}
+	#end
     end
 
    #def index
