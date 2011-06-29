@@ -1,21 +1,35 @@
 class VotesController < ApplicationController
     def create
+	puts "create vote"
+	
 	vote = @current_user.votes.find_or_initialize_by_turn(@game.turn)
-	vote.update_attributes(params)
+	vote.attributes = params
+	
+	puts "assigned"
+
 	if vote.load
-	    vote.load_resource = @current_user.ship.destination.resource
+	    destination = @current_user.ship.destination
+	    vote.load_resource = destination ? destination.resource : nil
 	end
+
+	puts "load resource assigned"
 
 	if vote.unload
 	    vote.unload_resource = @current_user.ship.resource
 	end
 
-	vote.save
+	puts "unload resource assigned"
 
-	respond_to do |format|
-	    format.json {render :json => vote}
-	    format.xml {render :xml => vote}
-	end
+	vote.turn = @game.turn
+
+	puts "vote saved: #{vote.save}"
+
+	render :xml => vote
+
+	#respond_to do |format|
+	#    format.json {render :json => vote}
+	#    format.xml {render :xml => vote}
+	#end
     end
 
     def summary

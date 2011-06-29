@@ -53,8 +53,8 @@
 	<votes>
 		<action>vote</action>
 		<parametres>
-			<code>code</code>
-			<sail_to>destination_id</sail_to>
+			<vote_code>code</vote_code>
+			<destination_id>destination_id</destination_id>
 			<load>load</load>
 			<unload>unload</unload>
 		</parametres>
